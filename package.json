@@ -21,7 +21,9 @@
     "@biomejs/biome": "2.2.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "pnpm -F client",
+    "admin": "pnpm -F admin"
   },
   "keywords": [],
   "author": "",
