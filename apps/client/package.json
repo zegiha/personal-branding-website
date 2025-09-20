@@ -10,8 +10,11 @@
     "format": "biome format --write"
   },
   "peerDependencies": {
+    "next": "*",
     "react": "*",
-    "react-dom": "*",
-    "next": "*"
+    "react-dom": "*"
+  },
+  "dependencies": {
+    "design-kit": "workspace:*"
   }
 }

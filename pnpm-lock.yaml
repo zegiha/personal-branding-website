@@ -48,6 +48,9 @@ importers:
 
   apps/client:
     dependencies:
+      design-kit:
+        specifier: workspace:*
+        version: link:../../packages/design-kit
       next:
         specifier: '*'
         version: 15.5.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -57,6 +60,10 @@ importers:
       react-dom:
         specifier: '*'
         version: 19.1.0(react@19.1.0)
+
+  packages/design-kit: {}
+
+  packages/ui-kit: {}
 
 packages:
 
