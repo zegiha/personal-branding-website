@@ -1,2 +1,2 @@
-export { paletteHex, paletteRgb } from './tokens/palette'
+export { palette } from './tokens/palette'
 export { semantic } from './tokens/semnatic'

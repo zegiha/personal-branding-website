@@ -54,7 +54,7 @@ type AccentTokens = {
   }
 }
 
-type ThemeTokens = {
+type DefaultThemeTokens = {
   label: LabelTokens
   container: ContainerTokens
   fill: FillTokens
@@ -66,6 +66,8 @@ type ThemeTokens = {
 }
 
 export declare const semantic: {
-  light: ThemeTokens
-  dark: ThemeTokens
+  default: {
+    light: DefaultThemeTokens
+    dark: DefaultThemeTokens
+  }
 }

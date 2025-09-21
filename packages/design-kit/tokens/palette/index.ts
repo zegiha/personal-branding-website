@@ -1,6 +1,6 @@
 import './index.css';
 
-export const paletteHex = {
+const paletteHexDefault = {
   gray: {
     '00': '#FFFFFF',
     '10': '#F5F5F5',
@@ -34,7 +34,7 @@ export const paletteHex = {
   }
 }
 
-export const paletteRgb = {
+const paletteRgbDefault = {
   gray: {
     '00': '255, 255, 255',
     '10': '245, 245, 245',
@@ -65,5 +65,12 @@ export const paletteRgb = {
   green: {
     '00': '17, 214, 116',
     '10': '18, 235, 127',
+  }
+}
+
+export const palette = {
+  default: {
+    hex: paletteHexDefault,
+    rgb: paletteRgbDefault,
   }
 }

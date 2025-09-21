@@ -15,7 +15,7 @@ type ColorScale = {
   '10': string
 }
 
-export declare const paletteHex: {
+type PaletteHex = {
   gray: GrayScale
   red: ColorScale
   pink: ColorScale
@@ -24,11 +24,18 @@ export declare const paletteHex: {
   green: ColorScale
 }
 
-export declare const paletteRgb: {
+type PaletteRgb = {
   gray: GrayScale
   red: ColorScale
   pink: ColorScale
   blue: ColorScale
   yellow: ColorScale
   green: ColorScale
+}
+
+export declare const palette: {
+  default: {
+    hex: PaletteHex
+    rgb: PaletteRgb
+  }
 }
