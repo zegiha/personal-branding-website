@@ -12,7 +12,8 @@
   "peerDependencies": {
     "next": "*",
     "react": "*",
-    "react-dom": "*"
+    "react-dom": "*",
+    "zod": "*"
   },
   "dependencies": {
     "design-kit": "workspace:*"
