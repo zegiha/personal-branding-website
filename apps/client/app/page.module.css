@@ -1,0 +1,14 @@
+.page {
+  display: flex;
+  gap: 16px;
+  background-color: var(--semantic-container-odd);
+  padding: 128px;
+}
+
+.button {
+  background-color: var(--semantic-accent-blue);
+  color: var(--semantic-white-static);
+  padding: 16px;
+  outline: none;
+  border: none;
+}
