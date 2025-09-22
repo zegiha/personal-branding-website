@@ -18,8 +18,9 @@ export async function changeTheme(theme: ThemeEnum) {
       const themeMode = getThemeModeFromClient()
 
       html.classList.remove(...(Object.values(ThemeEnum).map(v => `${v}-palette`)))
+      html.classList.remove(...(Object.values(ThemeEnum).map(v => `${v}-radius`)))
       html.classList.remove(...(Object.values(ThemeEnum).map(v => `${v}-${themeMode}`)))
-      html.classList.add(`${theme}-palette`, `${theme}-${themeMode}`)
+      html.classList.add(`${theme}-palette`, `${theme}-radius`, `${theme}-${themeMode}`)
     }
   } catch(e) {
     console.error(e)
