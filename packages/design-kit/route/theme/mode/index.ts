@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
+import {ThemeModeEnum} from '../../../const/ThemeModeEnum'
 import { cookies } from "next/headers";
 import * as z from "zod";
 
 const ThemeModePostEntity = z.object({
-  themeMode: z.enum(['light', 'dark'])
+  themeMode: z.enum(Object.values(ThemeModeEnum))
 })
 
 export async function POST(req: NextRequest) {
