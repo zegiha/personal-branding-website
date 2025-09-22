@@ -19,8 +19,9 @@ export async function changeTheme(theme: ThemeEnum) {
 
       html.classList.remove(...(Object.values(ThemeEnum).map(v => `${v}-palette`)))
       html.classList.remove(...(Object.values(ThemeEnum).map(v => `${v}-radius`)))
+      html.classList.remove(...(Object.values(ThemeEnum).map(v => `${v}-typography`)))
       html.classList.remove(...(Object.values(ThemeEnum).map(v => `${v}-${themeMode}`)))
-      html.classList.add(`${theme}-palette`, `${theme}-radius`, `${theme}-${themeMode}`)
+      html.classList.add(`${theme}-palette`, `${theme}-radius`, `${theme}-typography`, `${theme}-${themeMode}`)
     }
   } catch(e) {
     console.error(e)

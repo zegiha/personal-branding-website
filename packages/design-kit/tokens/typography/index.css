@@ -1,0 +1,9 @@
+.typography-bold {font-weight: 700;}
+.typography-medium {font-weight: 500;}
+.typography-regular {font-weight: 400;}
+
+.typography-italic {font-style: italic;}
+.typography-underline {text-decoration: underline;}
+
+.typography-pretendard {font-family: 'Pretendard', sans-serif;}
+.typography-jetbrainsMono {font-family: 'JetBrains Mono', monospace;}
