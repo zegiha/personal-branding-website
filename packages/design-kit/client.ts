@@ -1,4 +1,4 @@
-export { getThemeFromClient } from './utils/getThemeFromClient'
-export { getThemeModeFromClient } from './utils/getThemeModeFromClient'
-export { changeTheme } from './utils/changeTheme'
-export { changeThemeMode } from './utils/chageThemeMode'
+export { getThemeFromClient } from './helper/getThemeFromClient'
+export { getThemeModeFromClient } from './helper/getThemeModeFromClient'
+export { changeTheme } from './helper/changeTheme'
+export { changeThemeMode } from './helper/chageThemeMode'

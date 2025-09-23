@@ -1,3 +1,3 @@
-export { getThemeFromServer } from './utils/getThemeFromServer'
-export { getThemeModeFromServer } from './utils/getThemeModeFromServer'
-export { getDesignKitClass } from './utils/getDesignKitClass'
+export { getThemeFromServer } from './helper/getThemeFromServer'
+export { getThemeModeFromServer } from './helper/getThemeModeFromServer'
+export { getDesignKitClass } from './helper/getDesignKitClass'
