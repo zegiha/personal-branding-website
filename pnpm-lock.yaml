@@ -11,6 +11,9 @@ importers:
       '@lucide/lab':
         specifier: ^0.1.2
         version: 0.1.2
+      classnames:
+        specifier: ^2.5.1
+        version: 2.5.1
       lucide-react:
         specifier: ^0.544.0
         version: 0.544.0(react@19.1.0)
@@ -341,6 +344,9 @@ packages:
   caniuse-lite@1.0.30001743:
     resolution: {integrity: sha512-e6Ojr7RV14Un7dz6ASD0aZDmQPT/A+eZU+nuTNfjqmRrmkmQlnTNWH0SKmqagx9PeW87UVqapSurtAXifmtdmw==}
 
+  classnames@2.5.1:
+    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
+
   client-only@0.0.1:
     resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
 
@@ -642,6 +648,8 @@ snapshots:
       csstype: 3.1.3
 
   caniuse-lite@1.0.30001743: {}
+
+  classnames@2.5.1: {}
 
   client-only@0.0.1: {}
 
