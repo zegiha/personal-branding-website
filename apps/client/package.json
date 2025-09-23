@@ -10,12 +10,15 @@
     "format": "biome format --write"
   },
   "peerDependencies": {
+    "@lucide/lab": "*",
+    "lucide-react": "*",
     "next": "*",
     "react": "*",
     "react-dom": "*",
     "zod": "*"
   },
   "dependencies": {
-    "design-kit": "workspace:*"
+    "design-kit": "workspace:*",
+    "ui-kit": "workspace:*"
   }
 }
