@@ -75,6 +75,9 @@ importers:
       react-dom:
         specifier: '*'
         version: 19.1.0(react@19.1.0)
+      ui-kit:
+        specifier: workspace:*
+        version: link:../../packages/ui-kit
       zod:
         specifier: '*'
         version: 4.1.11
