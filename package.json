@@ -27,7 +27,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "pnpm -F client",
     "admin": "pnpm -F admin",
-    "design-kit": "pnpm -F design-kit"
+    "design-kit": "pnpm -F design-kit",
+    "ui-kit": "pnpm -F ui-kit"
   },
   "keywords": [],
   "author": "",
