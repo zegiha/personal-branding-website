@@ -1,5 +1,4 @@
 import './lucide.css'
-import './katex.css'
 
 export { palette } from './tokens/palette'
 export { semantic } from './tokens/semnatic'

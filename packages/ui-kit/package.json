@@ -10,5 +10,8 @@
   "author": "",
   "license": "ISC",
   "private": true,
-  "packageManager": "pnpm@10.16.1"
+  "packageManager": "pnpm@10.16.1",
+  "dependencies": {
+    "katex": "^0.16.22"
+  }
 }

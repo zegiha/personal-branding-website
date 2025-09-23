@@ -79,13 +79,13 @@ importers:
         specifier: '*'
         version: 4.1.11
 
-  packages/design-kit:
+  packages/design-kit: {}
+
+  packages/ui-kit:
     dependencies:
       katex:
         specifier: ^0.16.22
         version: 0.16.22
-
-  packages/ui-kit: {}
 
 packages:
 
