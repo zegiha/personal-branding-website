@@ -15,7 +15,8 @@
     "next": "*",
     "react": "*",
     "react-dom": "*",
-    "zod": "*"
+    "zod": "*",
+    "classnames": "*"
   },
   "dependencies": {
     "design-kit": "workspace:*",

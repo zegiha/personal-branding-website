@@ -63,6 +63,9 @@ importers:
       '@lucide/lab':
         specifier: '*'
         version: 0.1.2
+      classnames:
+        specifier: '*'
+        version: 2.5.1
       design-kit:
         specifier: workspace:*
         version: link:../../packages/design-kit
