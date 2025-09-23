@@ -1,0 +1,7 @@
+.lucide {
+  width: 24px;
+  height: 24px;
+  size: 24px;
+  stroke: var(--semantic-label-normal);
+  stroke-width: 1.75;
+}
