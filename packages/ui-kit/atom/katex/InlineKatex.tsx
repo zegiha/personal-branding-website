@@ -1,6 +1,6 @@
 import katex from 'katex';
 
-export function InlineKatex(rawText: string) {
+function renderInlineKatex(rawText: string) {
   return rawText.split(/(\§.*\§)/g).map((v, i) => {
     if (v == '') return;
 
@@ -10,6 +10,7 @@ export function InlineKatex(rawText: string) {
       const html = katex.renderToString(formular, {
         throwOnError: true,
         displayMode: false,
+        output: 'mathml'
       }) as any
 
       if (html == undefined) return <span key={i}>Failed to load katex</span>
@@ -19,4 +20,16 @@ export function InlineKatex(rawText: string) {
       return <span key={i}>{v}</span>
     }
   })
+}
+
+export function InlineKatex({
+  children
+}: {
+  children: string
+}) {
+  return (
+    <span>
+      {renderInlineKatex(children)}
+    </span>
+  )
 }
