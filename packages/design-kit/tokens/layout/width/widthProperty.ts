@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import type { CSSProperties } from "react";
 import type { TypeWidth } from "./types";
 
 export function widthProperty(v: TypeWidth): CSSProperties {

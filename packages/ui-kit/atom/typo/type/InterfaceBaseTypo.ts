@@ -1,12 +1,12 @@
+import type { TypeWidth } from "design-kit";
+import type { ComponentPropsWithoutRef } from "react";
 import type {
-  TypeTypographyVariant,
   TypeTypographySubVariant,
   TypeTypographyTagName,
+  TypeTypographyVariant,
 } from "../type";
-import type { ComponentPropsWithoutRef } from "react";
-import { TypeWidth } from "design-kit";
-import { TypeTypographyColor } from "./TypeTypographyColor";
-import { TypeTypographyFontWeight } from "./TypeTypographyFontWeight";
+import type { TypeTypographyColor } from "./TypeTypographyColor";
+import type { TypeTypographyFontWeight } from "./TypeTypographyFontWeight";
 
 export type InterfaceBaseTypo<V extends TypeTypographyTagName> = {
   variant: TypeTypographyVariant;

@@ -1,6 +1,6 @@
 import cn from "classnames";
 import { dashToCamelCase, firstCharacterToUpperCase } from "../../../helper";
-import { InterfaceFlex } from "../type";
+import type { InterfaceFlex } from "../type";
 import st from "./flex.module.css";
 import { widthModuleCSS } from "design-kit";
 

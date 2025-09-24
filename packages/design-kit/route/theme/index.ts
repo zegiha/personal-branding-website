@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 import { ThemeEnum } from "../../const/ThemeEnum";
 import { cookies } from "next/headers";
 import * as z from "zod";
@@ -21,5 +22,5 @@ export async function POST(req: NextRequest) {
     store.set("theme", `${theme.data.theme}`);
 
     return new NextResponse("Success", { status: 200 });
-  } catch (e) {}
+  } catch {}
 }

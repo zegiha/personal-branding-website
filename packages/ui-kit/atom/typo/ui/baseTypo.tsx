@@ -1,15 +1,15 @@
-import { createElement } from "react";
-import { firstCharacterToUpperCase, dashToCamelCase } from "../../../helper";
-import {
-  getTagNameByVariant,
-  getDefaultFontWeightByTypographyVariant,
-  getDefaultColorByTypographyVariant,
-  getCSSVariableByTypographyColor,
-} from "../helper";
-import { InterfaceBaseTypo, TypeTypographyTagName } from "../type";
-import st from "./baseTypo.module.css";
-import { widthModuleCSS } from "design-kit";
 import cn from "classnames";
+import { widthModuleCSS } from "design-kit";
+import { createElement } from "react";
+import { dashToCamelCase, firstCharacterToUpperCase } from "../../../helper";
+import {
+  getCSSVariableByTypographyColor,
+  getDefaultColorByTypographyVariant,
+  getDefaultFontWeightByTypographyVariant,
+  getTagNameByVariant,
+} from "../helper";
+import type { InterfaceBaseTypo, TypeTypographyTagName } from "../type";
+import st from "./baseTypo.module.css";
 
 export function BaseTypo<V extends TypeTypographyTagName>({
   variant,

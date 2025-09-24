@@ -1,4 +1,4 @@
-import { TypeTypographyVariant } from "../type";
+import type { TypeTypographyVariant } from "../type";
 
 export function getDefaultColorByTypographyVariant(variant: TypeTypographyVariant) {
   if (variant === "display" || variant === "headline") return "strong";

@@ -1,5 +1,5 @@
-import { TypeWidth } from "design-kit";
-import { ComponentPropsWithoutRef } from "react";
+import type { TypeWidth } from "design-kit";
+import type { ComponentPropsWithoutRef } from "react";
 
 export type InterfaceFlex = {
   flexDirection?: "row" | "col";

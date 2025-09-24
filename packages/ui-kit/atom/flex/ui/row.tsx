@@ -1,4 +1,4 @@
-import { InterfaceFlex } from "../type";
+import type { InterfaceFlex } from "../type";
 import { Flex } from "./flex";
 
 export function Row(props: Omit<InterfaceFlex, "flexDirection">) {
