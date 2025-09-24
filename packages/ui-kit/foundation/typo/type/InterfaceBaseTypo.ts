@@ -4,7 +4,7 @@ import type {
   TypeTypographySubVariant,
   TypeTypographyTagName,
   TypeTypographyVariant,
-} from "../type";
+} from "./index";
 import type { TypeTypographyColor } from "./TypeTypographyColor";
 import type { TypeTypographyFontWeight } from "./TypeTypographyFontWeight";
 
