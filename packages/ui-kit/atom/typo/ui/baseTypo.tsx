@@ -1,5 +1,5 @@
 import { createElement } from "react";
-import { firstCharacterToUpperCase } from "../../../helper/firstCharacterToUpperCase";
+import { firstCharacterToUpperCase, dashToCamelCase } from "../../../helper";
 import {
 	getTagNameByVariant,
 	getDefaultFontWeightByTypographyVariant,
@@ -23,17 +23,12 @@ export function BaseTypo<V extends TypeTypographyTagName>({
 	fontWeight,
 	flexShrink,
 	underline,
-	className: propsClassName = "",
 	children,
 	...rest
 }: InterfaceBaseTypo<V>) {
 	const isWidth = width !== undefined && width !== null;
 	const isWidthStatic =
 		width !== "fill-flex" && width !== "fill-width" && width !== "auto" && width !== "fit-content";
-
-	const dashToCamelCase = (v: string) => {
-		return v.replace(/-./g, (str) => str[1].toUpperCase());
-	};
 
 	return createElement(
 		getTagNameByVariant(variant, subVariant),
@@ -50,7 +45,7 @@ export function BaseTypo<V extends TypeTypographyTagName>({
 				textWrap && st[`uiKitTypographyTextWrap${firstCharacterToUpperCase(textWrap)}`],
 				flexShrink === false && st.uiKitTypographyDisableFlexShrink,
 				underline && st.uiKitTypographyUnderline,
-				propsClassName,
+        rest.className
 			),
 			style: {
 				width: isWidth && isWidthStatic ? width : undefined,
@@ -63,6 +58,7 @@ export function BaseTypo<V extends TypeTypographyTagName>({
 						}
 					: {}),
 				color: color ? getCSSVariableByTypographyColor(color) : undefined,
+        ...rest.style
 			},
 		},
 		children,
