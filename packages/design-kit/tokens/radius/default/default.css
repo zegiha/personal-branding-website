@@ -1,7 +1,7 @@
 .default-radius {
-	--radius-small: 6px;
-	--radius-medium: 8px;
-	--radius-large: 16px;
-	--radius-xlarge: 36px;
-	--radius-circular: 9999px;
+  --radius-small: 6px;
+  --radius-medium: 8px;
+  --radius-large: 16px;
+  --radius-xlarge: 36px;
+  --radius-circular: 9999px;
 }

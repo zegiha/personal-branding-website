@@ -1,12 +1,12 @@
 .fillFlex {
-	flex-grow: 1;
+  flex-grow: 1;
 }
 .fillWidth {
-	width: 100%;
+  width: 100%;
 }
 .fitContent {
-	width: fit-content;
+  width: fit-content;
 }
 .auto {
-	width: auto;
+  width: auto;
 }

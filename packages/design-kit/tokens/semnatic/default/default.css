@@ -1,95 +1,95 @@
 .default-light {
-	/* Label */
-	--semantic-label-strong: var(--palette-gray-60);
-	--semantic-label-normal: var(--palette-gray-50);
-	--semantic-label-weak: var(--palette-gray-40);
+  /* Label */
+  --semantic-label-strong: var(--palette-gray-60);
+  --semantic-label-normal: var(--palette-gray-50);
+  --semantic-label-weak: var(--palette-gray-40);
 
-	/* Container */
-	--semantic-container-even: var(--palette-gray-10);
-	--semantic-container-odd: var(--palette-gray-00);
+  /* Container */
+  --semantic-container-even: var(--palette-gray-10);
+  --semantic-container-odd: var(--palette-gray-00);
 
-	/* Fill */
-	--semantic-fill-normal: rgba(var(--palette-gray-30-rgb), 0.16);
-	--semantic-fill-weak: rgba(var(--palette-gray-30-rgb), 0.08);
+  /* Fill */
+  --semantic-fill-normal: rgba(var(--palette-gray-30-rgb), 0.16);
+  --semantic-fill-weak: rgba(var(--palette-gray-30-rgb), 0.08);
 
-	/* Line */
-	--semantic-line-normal: rgba(var(--palette-gray-30-rgb), 0.24);
+  /* Line */
+  --semantic-line-normal: rgba(var(--palette-gray-30-rgb), 0.24);
 
-	/* Black */
-	--semantic-black-static: var(--palette-gray-80);
-	--semantic-black-static-64: rgba(var(--palette-gray-80-rgb), 0.64);
-	--semantic-black-variable: var(--palette-gray-80);
+  /* Black */
+  --semantic-black-static: var(--palette-gray-80);
+  --semantic-black-static-64: rgba(var(--palette-gray-80-rgb), 0.64);
+  --semantic-black-variable: var(--palette-gray-80);
 
-	/* White */
-	--semantic-white-static: var(--palette-gray-00);
-	--semantic-white-variable: var(--palette-gray-00);
-	--semantic-white-variable-00: rgba(var(--palette-gray-00-rgb), 0);
-	--semantic-white-variable-24: rgba(var(--palette-gray-00-rgb), 0.24);
+  /* White */
+  --semantic-white-static: var(--palette-gray-00);
+  --semantic-white-variable: var(--palette-gray-00);
+  --semantic-white-variable-00: rgba(var(--palette-gray-00-rgb), 0);
+  --semantic-white-variable-24: rgba(var(--palette-gray-00-rgb), 0.24);
 
-	/* Interaction */
-	--semantic-interaction-hover: rgba(var(--palette-gray-30-rgb), 0.16);
+  /* Interaction */
+  --semantic-interaction-hover: rgba(var(--palette-gray-30-rgb), 0.16);
 
-	/* Accent */
-	--semantic-accent-gray: var(--palette-gray-80);
-	--semantic-accent-red: var(--palette-red-00);
-	--semantic-accent-pink: var(--palette-pink-00);
-	--semantic-accent-blue: var(--palette-blue-00);
-	--semantic-accent-yellow: var(--palette-yellow-00);
-	--semantic-accent-green: var(--palette-green-00);
+  /* Accent */
+  --semantic-accent-gray: var(--palette-gray-80);
+  --semantic-accent-red: var(--palette-red-00);
+  --semantic-accent-pink: var(--palette-pink-00);
+  --semantic-accent-blue: var(--palette-blue-00);
+  --semantic-accent-yellow: var(--palette-yellow-00);
+  --semantic-accent-green: var(--palette-green-00);
 
-	/* Accent Translucent */
-	--semantic-accent-translucent-gray: rgba(var(--palette-gray-30-rgb), 0.16);
-	--semantic-accent-translucent-red: rgba(var(--palette-red-00-rgb), 0.16);
-	--semantic-accent-translucent-pink: rgba(var(--palette-pink-00-rgb), 0.16);
-	--semantic-accent-translucent-blue: rgba(var(--palette-blue-00-rgb), 0.16);
-	--semantic-accent-translucent-yellow: rgba(var(--palette-yellow-00-rgb), 0.16);
-	--semantic-accent-translucent-green: rgba(var(--palette-green-00-rgb), 0.16);
+  /* Accent Translucent */
+  --semantic-accent-translucent-gray: rgba(var(--palette-gray-30-rgb), 0.16);
+  --semantic-accent-translucent-red: rgba(var(--palette-red-00-rgb), 0.16);
+  --semantic-accent-translucent-pink: rgba(var(--palette-pink-00-rgb), 0.16);
+  --semantic-accent-translucent-blue: rgba(var(--palette-blue-00-rgb), 0.16);
+  --semantic-accent-translucent-yellow: rgba(var(--palette-yellow-00-rgb), 0.16);
+  --semantic-accent-translucent-green: rgba(var(--palette-green-00-rgb), 0.16);
 }
 
 .default-dark {
-	/* Label */
-	--semantic-label-strong: var(--palette-gray-00);
-	--semantic-label-normal: var(--palette-gray-20);
-	--semantic-label-weak: var(--palette-gray-40);
+  /* Label */
+  --semantic-label-strong: var(--palette-gray-00);
+  --semantic-label-normal: var(--palette-gray-20);
+  --semantic-label-weak: var(--palette-gray-40);
 
-	/* Container */
-	--semantic-container-even: var(--palette-gray-70);
-	--semantic-container-odd: var(--palette-gray-80);
+  /* Container */
+  --semantic-container-even: var(--palette-gray-70);
+  --semantic-container-odd: var(--palette-gray-80);
 
-	/* Fill */
-	--semantic-fill-normal: rgba(var(--palette-gray-30-rgb), 0.16);
-	--semantic-fill-weak: rgba(var(--palette-gray-30-rgb), 0.08);
+  /* Fill */
+  --semantic-fill-normal: rgba(var(--palette-gray-30-rgb), 0.16);
+  --semantic-fill-weak: rgba(var(--palette-gray-30-rgb), 0.08);
 
-	/* Line */
-	--semantic-line-normal: rgba(var(--palette-gray-30-rgb), 0.24);
+  /* Line */
+  --semantic-line-normal: rgba(var(--palette-gray-30-rgb), 0.24);
 
-	/* Black */
-	--semantic-black-static: var(--palette-gray-80);
-	--semantic-black-static-64: rgba(var(--palette-gray-80-rgb), 0.64);
-	--semantic-black-variable: var(--palette-gray-00);
+  /* Black */
+  --semantic-black-static: var(--palette-gray-80);
+  --semantic-black-static-64: rgba(var(--palette-gray-80-rgb), 0.64);
+  --semantic-black-variable: var(--palette-gray-00);
 
-	/* White */
-	--semantic-white-static: var(--palette-gray-00);
-	--semantic-white-variable: var(--palette-gray-80);
-	--semantic-white-variable-00: rgba(var(--palette-gray-80-rgb), 0);
-	--semantic-white-variable-24: rgba(var(--palette-gray-80-rgb), 0.24);
+  /* White */
+  --semantic-white-static: var(--palette-gray-00);
+  --semantic-white-variable: var(--palette-gray-80);
+  --semantic-white-variable-00: rgba(var(--palette-gray-80-rgb), 0);
+  --semantic-white-variable-24: rgba(var(--palette-gray-80-rgb), 0.24);
 
-	/* Interaction */
-	--semantic-interaction-hover: rgba(var(--palette-gray-30-rgb), 0.16);
+  /* Interaction */
+  --semantic-interaction-hover: rgba(var(--palette-gray-30-rgb), 0.16);
 
-	/* Accent */
-	--semantic-accent-gray: var(--palette-gray-00);
-	--semantic-accent-red: var(--palette-red-10);
-	--semantic-accent-pink: var(--palette-pink-10);
-	--semantic-accent-blue: var(--palette-blue-10);
-	--semantic-accent-yellow: var(--palette-yellow-10);
-	--semantic-accent-green: var(--palette-green-10);
+  /* Accent */
+  --semantic-accent-gray: var(--palette-gray-00);
+  --semantic-accent-red: var(--palette-red-10);
+  --semantic-accent-pink: var(--palette-pink-10);
+  --semantic-accent-blue: var(--palette-blue-10);
+  --semantic-accent-yellow: var(--palette-yellow-10);
+  --semantic-accent-green: var(--palette-green-10);
 
-	/* Accent Translucent */
-	--semantic-accent-translucent-gray: rgba(var(--palette-gray-30-rgb), 0.16);
-	--semantic-accent-translucent-red: rgba(var(--palette-red-10-rgb), 0.16);
-	--semantic-accent-translucent-pink: rgba(var(--palette-pink-10-rgb), 0.16);
-	--semantic-accent-translucent-blue: rgba(var(--palette-blue-10-rgb), 0.16);
-	--semantic-accent-translucent-yellow: rgba(var(--palette-yellow-10-rgb), 0.16);
-	--semantic-accent-translucent-green: rgba(var(--palette-green-10-rgb), 0.16);
+  /* Accent Translucent */
+  --semantic-accent-translucent-gray: rgba(var(--palette-gray-30-rgb), 0.16);
+  --semantic-accent-translucent-red: rgba(var(--palette-red-10-rgb), 0.16);
+  --semantic-accent-translucent-pink: rgba(var(--palette-pink-10-rgb), 0.16);
+  --semantic-accent-translucent-blue: rgba(var(--palette-blue-10-rgb), 0.16);
+  --semantic-accent-translucent-yellow: rgba(var(--palette-yellow-10-rgb), 0.16);
+  --semantic-accent-translucent-green: rgba(var(--palette-green-10-rgb), 0.16);
 }

@@ -1,1 +1,1 @@
-export type {InterfaceFlex} from './interfaceFlex'
+export type { InterfaceFlex } from "./interfaceFlex";

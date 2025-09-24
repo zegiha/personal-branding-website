@@ -1,1 +1,1 @@
-import './katex.css'
+import "./katex.css";

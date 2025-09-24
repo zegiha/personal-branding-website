@@ -1,155 +1,155 @@
 .default-typography {
-	/* Display Medium */
-	--display-medium-fontSize: 48px;
-	--display-medium-lineHeight-default: 52px;
-	--display-medium-lineHeight-markdown: 82px;
+  /* Display Medium */
+  --display-medium-fontSize: 48px;
+  --display-medium-lineHeight-default: 52px;
+  --display-medium-lineHeight-markdown: 82px;
 
-	/* Headline Large */
-	--headline-large-fontSize: 32px;
-	--headline-large-lineHeight-default: 48px;
-	--headline-large-lineHeight-markdown: 54px;
+  /* Headline Large */
+  --headline-large-fontSize: 32px;
+  --headline-large-lineHeight-default: 48px;
+  --headline-large-lineHeight-markdown: 54px;
 
-	/* Headline Medium */
-	--headline-medium-fontSize: 28px;
-	--headline-medium-lineHeight-default: 42px;
-	--headline-medium-lineHeight-markdown: 48px;
+  /* Headline Medium */
+  --headline-medium-fontSize: 28px;
+  --headline-medium-lineHeight-default: 42px;
+  --headline-medium-lineHeight-markdown: 48px;
 
-	/* Headline Submedium */
-	--headline-submedium-fontSize: 26px;
-	--headline-submedium-lineHeight-default: 40px;
-	--headline-submedium-lineHeight-markdown: 44px;
+  /* Headline Submedium */
+  --headline-submedium-fontSize: 26px;
+  --headline-submedium-lineHeight-default: 40px;
+  --headline-submedium-lineHeight-markdown: 44px;
 
-	/* Headline Small */
-	--headline-small-fontSize: 20px;
-	--headline-small-lineHeight-default: 30px;
-	--headline-small-lineHeight-markdown: 34px;
+  /* Headline Small */
+  --headline-small-fontSize: 20px;
+  --headline-small-lineHeight-default: 30px;
+  --headline-small-lineHeight-markdown: 34px;
 
-	/* Label Large */
-	--label-large-fontSize: 18px;
-	--label-large-lineHeight-default: 28px;
-	--label-large-lineHeight-markdown: 30px;
+  /* Label Large */
+  --label-large-fontSize: 18px;
+  --label-large-lineHeight-default: 28px;
+  --label-large-lineHeight-markdown: 30px;
 
-	/* Label Medium */
-	--label-medium-fontSize: 16px;
-	--label-medium-lineHeight-default: 24px;
-	--label-medium-lineHeight-markdown: 28px;
+  /* Label Medium */
+  --label-medium-fontSize: 16px;
+  --label-medium-lineHeight-default: 24px;
+  --label-medium-lineHeight-markdown: 28px;
 
-	/* Label Small */
-	--label-small-fontSize: 14px;
-	--label-small-lineHeight-default: 22px;
-	--label-small-lineHeight-markdown: 24px;
+  /* Label Small */
+  --label-small-fontSize: 14px;
+  --label-small-lineHeight-default: 22px;
+  --label-small-lineHeight-markdown: 24px;
 
-	/* Caption Medium */
-	--caption-medium-fontSize: 14px;
-	--caption-medium-lineHeight-default: 22px;
-	--caption-medium-lineHeight-markdown: 24px;
+  /* Caption Medium */
+  --caption-medium-fontSize: 14px;
+  --caption-medium-lineHeight-default: 22px;
+  --caption-medium-lineHeight-markdown: 24px;
 
-	/* Caption Small */
-	--caption-small-fontSize: 12px;
-	--caption-small-lineHeight-default: 18px;
-	--caption-small-lineHeight-markdown: 20px;
+  /* Caption Small */
+  --caption-small-fontSize: 12px;
+  --caption-small-lineHeight-default: 18px;
+  --caption-small-lineHeight-markdown: 20px;
 }
 
 /* Display Classes */
 .default-typography .display-medium {
-	font-size: var(--display-medium-fontSize);
-	line-height: var(--display-medium-lineHeight-default);
+  font-size: var(--display-medium-fontSize);
+  line-height: var(--display-medium-lineHeight-default);
 }
 
 .default-typography .display-medium-markdown {
-	font-size: var(--display-medium-fontSize);
-	line-height: var(--display-medium-lineHeight-markdown);
+  font-size: var(--display-medium-fontSize);
+  line-height: var(--display-medium-lineHeight-markdown);
 }
 
 /* Headline Classes */
 .default-typography .headline-large {
-	font-size: var(--headline-large-fontSize);
-	line-height: var(--headline-large-lineHeight-default);
+  font-size: var(--headline-large-fontSize);
+  line-height: var(--headline-large-lineHeight-default);
 }
 
 .default-typography .headline-large-markdown {
-	font-size: var(--headline-large-fontSize);
-	line-height: var(--headline-large-lineHeight-markdown);
+  font-size: var(--headline-large-fontSize);
+  line-height: var(--headline-large-lineHeight-markdown);
 }
 
 .default-typography .headline-medium {
-	font-size: var(--headline-medium-fontSize);
-	line-height: var(--headline-medium-lineHeight-default);
+  font-size: var(--headline-medium-fontSize);
+  line-height: var(--headline-medium-lineHeight-default);
 }
 
 .default-typography .headline-medium-markdown {
-	font-size: var(--headline-medium-fontSize);
-	line-height: var(--headline-medium-lineHeight-markdown);
+  font-size: var(--headline-medium-fontSize);
+  line-height: var(--headline-medium-lineHeight-markdown);
 }
 
 .default-typography .headline-submedium {
-	font-size: var(--headline-submedium-fontSize);
-	line-height: var(--headline-submedium-lineHeight-default);
+  font-size: var(--headline-submedium-fontSize);
+  line-height: var(--headline-submedium-lineHeight-default);
 }
 
 .default-typography .headline-submedium-markdown {
-	font-size: var(--headline-submedium-fontSize);
-	line-height: var(--headline-submedium-lineHeight-markdown);
+  font-size: var(--headline-submedium-fontSize);
+  line-height: var(--headline-submedium-lineHeight-markdown);
 }
 
 .default-typography .headline-small {
-	font-size: var(--headline-small-fontSize);
-	line-height: var(--headline-small-lineHeight-default);
+  font-size: var(--headline-small-fontSize);
+  line-height: var(--headline-small-lineHeight-default);
 }
 
 .default-typography .headline-small-markdown {
-	font-size: var(--headline-small-fontSize);
-	line-height: var(--headline-small-lineHeight-markdown);
+  font-size: var(--headline-small-fontSize);
+  line-height: var(--headline-small-lineHeight-markdown);
 }
 
 /* Label Classes */
 .default-typography .label-large {
-	font-size: var(--label-large-fontSize);
-	line-height: var(--label-large-lineHeight-default);
+  font-size: var(--label-large-fontSize);
+  line-height: var(--label-large-lineHeight-default);
 }
 
 .default-typography .label-large-markdown {
-	font-size: var(--label-large-fontSize);
-	line-height: var(--label-large-lineHeight-markdown);
+  font-size: var(--label-large-fontSize);
+  line-height: var(--label-large-lineHeight-markdown);
 }
 
 .default-typography .label-medium {
-	font-size: var(--label-medium-fontSize);
-	line-height: var(--label-medium-lineHeight-default);
+  font-size: var(--label-medium-fontSize);
+  line-height: var(--label-medium-lineHeight-default);
 }
 
 .default-typography .label-medium-markdown {
-	font-size: var(--label-medium-fontSize);
-	line-height: var(--label-medium-lineHeight-markdown);
+  font-size: var(--label-medium-fontSize);
+  line-height: var(--label-medium-lineHeight-markdown);
 }
 
 .default-typography .label-small {
-	font-size: var(--label-small-fontSize);
-	line-height: var(--label-small-lineHeight-default);
+  font-size: var(--label-small-fontSize);
+  line-height: var(--label-small-lineHeight-default);
 }
 
 .default-typography .label-small-markdown {
-	font-size: var(--label-small-fontSize);
-	line-height: var(--label-small-lineHeight-markdown);
+  font-size: var(--label-small-fontSize);
+  line-height: var(--label-small-lineHeight-markdown);
 }
 
 /* Caption Classes */
 .default-typography .caption-medium {
-	font-size: var(--caption-medium-fontSize);
-	line-height: var(--caption-medium-lineHeight-default);
+  font-size: var(--caption-medium-fontSize);
+  line-height: var(--caption-medium-lineHeight-default);
 }
 
 .default-typography .caption-medium-markdown {
-	font-size: var(--caption-medium-fontSize);
-	line-height: var(--caption-medium-lineHeight-markdown);
+  font-size: var(--caption-medium-fontSize);
+  line-height: var(--caption-medium-lineHeight-markdown);
 }
 
 .default-typography .caption-small {
-	font-size: var(--caption-small-fontSize);
-	line-height: var(--caption-small-lineHeight-default);
+  font-size: var(--caption-small-fontSize);
+  line-height: var(--caption-small-lineHeight-default);
 }
 
 .default-typography .caption-small-markdown {
-	font-size: var(--caption-small-fontSize);
-	line-height: var(--caption-small-lineHeight-markdown);
+  font-size: var(--caption-small-fontSize);
+  line-height: var(--caption-small-lineHeight-markdown);
 }

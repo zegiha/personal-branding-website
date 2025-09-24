@@ -1,13 +1,33 @@
-.uiKitFlexDefault {display: flex;}
+.uiKitFlexDefault {
+  display: flex;
+}
 
-.uiKitFlexFlexDirectionRow {flex-direction: row}
-.uiKitFlexFlexDirectionCol {flex-direction: column}
+.uiKitFlexFlexDirectionRow {
+  flex-direction: row;
+}
+.uiKitFlexFlexDirectionCol {
+  flex-direction: column;
+}
 
-.uiKitFlexJustifyContentStart { justify-content: flex-start; }
-.uiKitFlexJustifyContentCenter { justify-content: center;}
-.uiKitFlexJustifyContentEnd { justify-content: flex-end;}
-.uiKitFlexJustifyContentSpaceBetween { justify-content: space-between;}
+.uiKitFlexJustifyContentStart {
+  justify-content: flex-start;
+}
+.uiKitFlexJustifyContentCenter {
+  justify-content: center;
+}
+.uiKitFlexJustifyContentEnd {
+  justify-content: flex-end;
+}
+.uiKitFlexJustifyContentSpaceBetween {
+  justify-content: space-between;
+}
 
-.uiKitFlexAlignItemsStart { align-items: flex-start; }
-.uiKitFlexAlignItemsCenter { align-items: center;}
-.uiKitFlexAlignItemsEnd { align-items: flex-end;}
+.uiKitFlexAlignItemsStart {
+  align-items: flex-start;
+}
+.uiKitFlexAlignItemsCenter {
+  align-items: center;
+}
+.uiKitFlexAlignItemsEnd {
+  align-items: flex-end;
+}

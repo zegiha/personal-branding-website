@@ -9,7 +9,7 @@
   },
   "include": [
     "**/*.ts",
-    "**/*.tsx",
-//    "./css-module.d.ts"
+    "**/*.tsx"
+    //    "./css-module.d.ts"
   ]
 }
