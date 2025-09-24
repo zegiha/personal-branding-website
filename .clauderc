@@ -1,0 +1,63 @@
+{
+  "project": {
+    "name": "Zegiha Personal Branding Website",
+    "description": "개인 브랜딩 및 포트폴리오 웹사이트 - Next.js 모노레포 기반 MFE 아키텍처",
+    "type": "fullstack-web",
+    "framework": "Next.js",
+    "language": "TypeScript"
+  },
+  "workspace": {
+    "type": "monorepo",
+    "packageManager": "pnpm",
+    "workspaces": [
+      "apps/*",
+      "apps/playgrounds/*",
+      "packages/*"
+    ]
+  },
+  "architecture": {
+    "pattern": "MFE",
+    "apps": {
+      "client": "apps/client - 메인 클라이언트 앱",
+      "admin": "apps/admin - 어드민 관리 앱",
+      "playgrounds": "apps/playgrounds/* - 토이프로젝트들 (iframe 통합)"
+    },
+    "packages": {
+      "design-kit": "디자인 시스템 토큰 및 테마",
+      "ui-kit": "React 컴포넌트 라이브러리"
+    }
+  },
+  "commands": {
+    "dev": {
+      "client": "pnpm client dev",
+      "admin": "pnpm admin dev"
+    },
+    "build": {
+      "client": "pnpm client build",
+      "admin": "pnpm admin build"
+    },
+    "format": "npx @biomejs/biome format --write .",
+    "lint": "npx @biomejs/biome lint --apply .",
+    "check": "npx @biomejs/biome check --apply ."
+  },
+  "conventions": {
+    "formatter": "Biome",
+    "codeStyle": {
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineWidth": 100,
+      "semicolons": "always",
+      "quotes": "double"
+    },
+    "naming": {
+      "components": "PascalCase",
+      "files": "camelCase",
+      "types": "Type/Interface prefix"
+    }
+  },
+  "documentation": {
+    "planning": "서비스 설명문.md - 프로젝트 기획서 및 상세 IA",
+    "technical": "서비스 개발 설명문.md - 기술 스택 및 개발 가이드",
+    "context": "CLAUDE.md - Claude Code를 위한 프로젝트 컨텍스트"
+  }
+}
