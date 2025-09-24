@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import "design-kit"
-import { getThemeFromServer, getThemeModeFromServer } from "design-kit/server";
+import "design-kit";
+import { jetbrainsMono, pretendard } from "design-kit";
+import { getDesignKitClass } from "design-kit/server";
 
 export const metadata: Metadata = {
   title: "Zegiha",
@@ -13,14 +14,14 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const theme = await getThemeFromServer()
-  const themeMode = await getThemeModeFromServer()
+  const designKitClass = await getDesignKitClass();
 
   return (
-    <html lang="ko" className={`${theme}-palette ${theme}-${themeMode}`}>
-      <body>
-        {children}
-      </body>
+    <html
+      lang="ko"
+      className={`${designKitClass} ${pretendard.className} ${jetbrainsMono.className}`}
+    >
+      <body>{children}</body>
     </html>
   );
 }
