@@ -1,1 +1,2 @@
-export { InlineKatex } from './katex/InlineKatex'
+export { InlineKatex } from "./katex/lnlineKatex";
+export { Typo } from "./typo";

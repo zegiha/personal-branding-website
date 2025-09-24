@@ -1,0 +1,34 @@
+.uiKitTypographyColorStrong {
+	color: var(--semantic-label-strong);
+}
+.uiKitTypographyColorNormal {
+	color: var(--semantic-label-normal);
+}
+.uiKitTypographyColorWeak {
+	color: var(--semantic-label-weak);
+}
+
+.uiKitTypographyTextWrapWrap {
+	text-wrap: wrap;
+}
+.uiKitTypographyTextWrapPretty {
+	text-wrap: pretty;
+}
+
+.uiKitTypographyTextAlignStart {
+	text-align: start;
+}
+.uiKitTypographyTextAlignCenter {
+	text-align: center;
+}
+.uiKitTypographyTextAlignEnd {
+	text-align: end;
+}
+
+.uiKitTypographyDisableFlexShrink {
+	flex-shrink: 0;
+}
+
+.uiKitTypographyUnderline {
+	text-decoration: underline;
+}
