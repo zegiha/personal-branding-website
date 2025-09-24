@@ -29,10 +29,15 @@
     "enabled": true,
     "rules": {
       "recommended": true,
-      "complexity": "warn",
+      "complexity": {
+        "noForEach": "off"
+      },
       "correctness": {
         "noUnusedImports": "error",
         "noUnusedVariables": "warn"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off"
       },
       "style": {
         "useConst": "warn",
