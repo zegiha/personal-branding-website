@@ -1,6 +1,6 @@
-import './default/default.css'
-import { radius as defaultRadius } from './default/default'
+import "./default/default.css";
+import { radius as defaultRadius } from "./default/default";
 
 export const radius = {
-  default: defaultRadius,
-}
+	default: defaultRadius,
+};

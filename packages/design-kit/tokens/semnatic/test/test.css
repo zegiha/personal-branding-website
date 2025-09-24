@@ -1,95 +1,95 @@
 .test-light {
-  /* Label */
-  --semantic-label-strong: #9d4edd;
-  --semantic-label-normal: #2dd4bf;
-  --semantic-label-weak: #fb923c;
+	/* Label */
+	--semantic-label-strong: #9d4edd;
+	--semantic-label-normal: #2dd4bf;
+	--semantic-label-weak: #fb923c;
 
-  /* Container */
-  --semantic-container-even: #fdf2f8;
-  --semantic-container-odd: #eff6ff;
+	/* Container */
+	--semantic-container-even: #fdf2f8;
+	--semantic-container-odd: #eff6ff;
 
-  /* Fill */
-  --semantic-fill-normal: rgba(34, 197, 94, 0.20);
-  --semantic-fill-weak: rgba(251, 191, 36, 0.12);
+	/* Fill */
+	--semantic-fill-normal: rgba(34, 197, 94, 0.2);
+	--semantic-fill-weak: rgba(251, 191, 36, 0.12);
 
-  /* Line */
-  --semantic-line-normal: rgba(239, 68, 68, 0.28);
+	/* Line */
+	--semantic-line-normal: rgba(239, 68, 68, 0.28);
 
-  /* Black */
-  --semantic-black-static: #581c87;
-  --semantic-black-static-64: rgba(88, 28, 135, 0.64);
-  --semantic-black-variable: #3730a3;
+	/* Black */
+	--semantic-black-static: #581c87;
+	--semantic-black-static-64: rgba(88, 28, 135, 0.64);
+	--semantic-black-variable: #3730a3;
 
-  /* White */
-  --semantic-white-static: #e0f2fe;
-  --semantic-white-variable: #f7fee7;
-  --semantic-white-variable-00: rgba(236, 254, 255, 0);
-  --semantic-white-variable-24: rgba(243, 232, 255, 0.24);
+	/* White */
+	--semantic-white-static: #e0f2fe;
+	--semantic-white-variable: #f7fee7;
+	--semantic-white-variable-00: rgba(236, 254, 255, 0);
+	--semantic-white-variable-24: rgba(243, 232, 255, 0.24);
 
-  /* Interaction */
-  --semantic-interaction-hover: rgba(255, 127, 80, 0.18);
+	/* Interaction */
+	--semantic-interaction-hover: rgba(255, 127, 80, 0.18);
 
-  /* Accent */
-  --semantic-accent-gray: #6d28d9;
-  --semantic-accent-red: #dc2626;
-  --semantic-accent-pink: #ec4899;
-  --semantic-accent-blue: #06b6d4;
-  --semantic-accent-yellow: #f59e0b;
-  --semantic-accent-green: #10b981;
+	/* Accent */
+	--semantic-accent-gray: #6d28d9;
+	--semantic-accent-red: #dc2626;
+	--semantic-accent-pink: #ec4899;
+	--semantic-accent-blue: #06b6d4;
+	--semantic-accent-yellow: #f59e0b;
+	--semantic-accent-green: #10b981;
 
-  /* Accent Translucent */
-  --semantic-accent-translucent-gray: rgba(100, 116, 139, 0.18);
-  --semantic-accent-translucent-red: rgba(244, 63, 94, 0.22);
-  --semantic-accent-translucent-pink: rgba(217, 70, 239, 0.20);
-  --semantic-accent-translucent-blue: rgba(14, 165, 233, 0.19);
-  --semantic-accent-translucent-yellow: rgba(245, 158, 11, 0.17);
-  --semantic-accent-translucent-green: rgba(5, 150, 105, 0.21);
+	/* Accent Translucent */
+	--semantic-accent-translucent-gray: rgba(100, 116, 139, 0.18);
+	--semantic-accent-translucent-red: rgba(244, 63, 94, 0.22);
+	--semantic-accent-translucent-pink: rgba(217, 70, 239, 0.2);
+	--semantic-accent-translucent-blue: rgba(14, 165, 233, 0.19);
+	--semantic-accent-translucent-yellow: rgba(245, 158, 11, 0.17);
+	--semantic-accent-translucent-green: rgba(5, 150, 105, 0.21);
 }
 
 .test-dark {
-  /* Label */
-  --semantic-label-strong: #00ff41;
-  --semantic-label-normal: #00d4ff;
-  --semantic-label-weak: #ff1493;
+	/* Label */
+	--semantic-label-strong: #00ff41;
+	--semantic-label-normal: #00d4ff;
+	--semantic-label-weak: #ff1493;
 
-  /* Container */
-  --semantic-container-even: #2d1b69;
-  --semantic-container-odd: #0f172a;
+	/* Container */
+	--semantic-container-even: #2d1b69;
+	--semantic-container-odd: #0f172a;
 
-  /* Fill */
-  --semantic-fill-normal: rgba(0, 255, 255, 0.25);
-  --semantic-fill-weak: rgba(255, 165, 0, 0.15);
+	/* Fill */
+	--semantic-fill-normal: rgba(0, 255, 255, 0.25);
+	--semantic-fill-weak: rgba(255, 165, 0, 0.15);
 
-  /* Line */
-  --semantic-line-normal: rgba(255, 0, 127, 0.30);
+	/* Line */
+	--semantic-line-normal: rgba(255, 0, 127, 0.3);
 
-  /* Black */
-  --semantic-black-static: #000000;
-  --semantic-black-static-64: rgba(76, 29, 149, 0.64);
-  --semantic-black-variable: #1e3a8a;
+	/* Black */
+	--semantic-black-static: #000000;
+	--semantic-black-static-64: rgba(76, 29, 149, 0.64);
+	--semantic-black-variable: #1e3a8a;
 
-  /* White */
-  --semantic-white-static: #ffffff;
-  --semantic-white-variable: #1f2937;
-  --semantic-white-variable-00: rgba(59, 130, 246, 0);
-  --semantic-white-variable-24: rgba(34, 197, 94, 0.24);
+	/* White */
+	--semantic-white-static: #ffffff;
+	--semantic-white-variable: #1f2937;
+	--semantic-white-variable-00: rgba(59, 130, 246, 0);
+	--semantic-white-variable-24: rgba(34, 197, 94, 0.24);
 
-  /* Interaction */
-  --semantic-interaction-hover: rgba(255, 20, 147, 0.22);
+	/* Interaction */
+	--semantic-interaction-hover: rgba(255, 20, 147, 0.22);
 
-  /* Accent */
-  --semantic-accent-gray: #e5e7eb;
-  --semantic-accent-red: #ff073a;
-  --semantic-accent-pink: #ff00ff;
-  --semantic-accent-blue: #00bfff;
-  --semantic-accent-yellow: #ffff00;
-  --semantic-accent-green: #39ff14;
+	/* Accent */
+	--semantic-accent-gray: #e5e7eb;
+	--semantic-accent-red: #ff073a;
+	--semantic-accent-pink: #ff00ff;
+	--semantic-accent-blue: #00bfff;
+	--semantic-accent-yellow: #ffff00;
+	--semantic-accent-green: #39ff14;
 
-  /* Accent Translucent */
-  --semantic-accent-translucent-gray: rgba(156, 163, 175, 0.20);
-  --semantic-accent-translucent-red: rgba(255, 7, 58, 0.25);
-  --semantic-accent-translucent-pink: rgba(255, 0, 255, 0.23);
-  --semantic-accent-translucent-blue: rgba(0, 191, 255, 0.24);
-  --semantic-accent-translucent-yellow: rgba(255, 255, 0, 0.21);
-  --semantic-accent-translucent-green: rgba(57, 255, 20, 0.26);
+	/* Accent Translucent */
+	--semantic-accent-translucent-gray: rgba(156, 163, 175, 0.2);
+	--semantic-accent-translucent-red: rgba(255, 7, 58, 0.25);
+	--semantic-accent-translucent-pink: rgba(255, 0, 255, 0.23);
+	--semantic-accent-translucent-blue: rgba(0, 191, 255, 0.24);
+	--semantic-accent-translucent-yellow: rgba(255, 255, 0, 0.21);
+	--semantic-accent-translucent-green: rgba(57, 255, 20, 0.26);
 }

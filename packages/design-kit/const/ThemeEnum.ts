@@ -1,4 +1,4 @@
 export enum ThemeEnum {
-  DEFAULT = 'default',
-  TEST = 'test'
+	DEFAULT = "default",
+	TEST = "test",
 }
