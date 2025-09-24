@@ -7,9 +7,5 @@
     ],
     "jsx": "preserve"
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"
-    //    "./css-module.d.ts"
-  ]
+  "include": ["**/*.ts", "**/*.tsx", "./react-katex.d.ts"]
 }
