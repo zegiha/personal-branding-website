@@ -15,25 +15,30 @@
     "indentWidth": 2,
     "lineWidth": 100,
     "lineEnding": "lf",
-    "bracketSpacing": true,
-    "jsxQuoteStyle": "double",
-    "quoteStyle": "double",
-    "trailingComma": "all"
+    "bracketSpacing": true
   },
   "javascript": {
     "formatter": {
-      "semicolons": "always"
+      "semicolons": "always",
+      "jsxQuoteStyle": "double",
+      "quoteStyle": "double",
+      "trailingCommas": "all"
     }
   },
   "linter": {
     "enabled": true,
     "rules": {
-      "complexity": { "level": "warn" },
-      "noUnusedImports": "error",
-      "noUnusedVariables": "warn",
-      "useConst": "warn",
-      "useEnumInitializers": "warn",
-      "useImportType": "warn"
+      "recommended": true,
+      "complexity": "warn",
+      "correctness": {
+        "noUnusedImports": "error",
+        "noUnusedVariables": "warn"
+      },
+      "style": {
+        "useConst": "warn",
+        "useEnumInitializers": "warn",
+        "useImportType": "warn"
+      }
     },
     "domains": {
       "next": "recommended",
