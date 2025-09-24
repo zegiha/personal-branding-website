@@ -11,7 +11,7 @@ export function getTagNameByVariant(
   switch (variant) {
     case "display":
       return "h1";
-    case "headline":
+    case "headline": {
       switch (subVariant) {
         case "large":
           return "h1";
@@ -19,9 +19,10 @@ export function getTagNameByVariant(
           return "h2";
         case "submedium":
           return "h2";
-        case "small":
+        default:
           return "h3";
       }
+    }
     case "label":
       return "p";
     case "caption":

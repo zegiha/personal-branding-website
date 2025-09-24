@@ -1,7 +1,7 @@
 import katex from "katex";
 
 function renderInlineKatex(rawText: string) {
-  return rawText.split(/(\§.*\§)/g).map((v, i) => {
+  return rawText.split(/(§.*§)/g).map((v, i) => {
     if (v == "") return;
 
     if (v.startsWith("§") && v.endsWith("§")) {

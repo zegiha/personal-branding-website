@@ -7,7 +7,7 @@ export async function changeTheme(theme: ThemeEnum) {
   try {
     if (window != undefined) {
       const html = document.querySelector("html");
-      if (!html) throw new Error("window is not undefined, but html is undefined");
+      if (!html) console.error("window is not undefined, but html is undefined")
 
       const themeMode = getThemeModeFromClient();
 
