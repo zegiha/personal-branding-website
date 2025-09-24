@@ -11,12 +11,12 @@
   },
   "peerDependencies": {
     "@lucide/lab": "*",
+    "classnames": "*",
     "lucide-react": "*",
     "next": "*",
     "react": "*",
     "react-dom": "*",
-    "zod": "*",
-    "classnames": "*"
+    "zod": "*"
   },
   "dependencies": {
     "design-kit": "workspace:*",

@@ -1,1 +1,1 @@
-export { POST } from 'design-kit/route/theme'
+export { POST } from "design-kit/route/theme";
