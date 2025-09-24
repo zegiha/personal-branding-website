@@ -92,6 +92,9 @@ importers:
 
   packages/ui-kit:
     dependencies:
+      design-kit:
+        specifier: workspace:*
+        version: link:../design-kit
       katex:
         specifier: ^0.16.22
         version: 0.16.22

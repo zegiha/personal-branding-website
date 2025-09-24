@@ -12,6 +12,7 @@
   "private": true,
   "packageManager": "pnpm@10.16.1",
   "dependencies": {
-    "katex": "^0.16.22"
+    "katex": "^0.16.22",
+    "design-kit": "workspace:*"
   }
 }
