@@ -6,7 +6,7 @@ export function Icon({
   size = 24,
   color = "normal",
   fill,
-  disableTransition = false,
+  disableTransition = true,
 }: InterfaceIcon) {
   return (
     <div
