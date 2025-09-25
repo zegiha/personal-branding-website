@@ -35,7 +35,7 @@ export function Button({
         ],
       )}
     >
-      <Row alignItems={"center"} gap={8}>
+      <Row className={st.buttonWrapper} alignItems={"center"} gap={8}>
         {leadIcon && <Icon iconKey={leadIcon} color={"inherit"} size={iconSize} />}
         <ButtonLabelProviderBySize size={size} label={label} />
         {trailIcon && <Icon iconKey={trailIcon} color={"inherit"} size={iconSize} />}
