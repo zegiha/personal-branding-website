@@ -8,15 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@lucide/lab':
-        specifier: ^0.1.2
-        version: 0.1.2
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
-      lucide-react:
-        specifier: ^0.544.0
-        version: 0.544.0(react@19.1.0)
       next:
         specifier: 15.5.3
         version: 15.5.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.93.2)
@@ -63,18 +57,12 @@ importers:
 
   apps/client:
     dependencies:
-      '@lucide/lab':
-        specifier: '*'
-        version: 0.1.2
       classnames:
         specifier: '*'
         version: 2.5.1
       design-kit:
         specifier: workspace:*
         version: link:../../packages/design-kit
-      lucide-react:
-        specifier: '*'
-        version: 0.544.0(react@19.1.0)
       next:
         specifier: '*'
         version: 15.5.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(sass@1.93.2)
@@ -290,9 +278,6 @@ packages:
     engines: {node: ^18.17.0 || ^20.3.0 || >=21.0.0}
     cpu: [x64]
     os: [win32]
-
-  '@lucide/lab@0.1.2':
-    resolution: {integrity: sha512-VprF2BJa7ZuTGOhUd5cf8tHJXyL63wdxcGieAiVVoR9hO0YmPsnZO0AGqDiX2/br+/MC6n8BoJcmPilltOXIJA==}
 
   '@next/env@15.5.3':
     resolution: {integrity: sha512-RSEDTRqyihYXygx/OJXwvVupfr9m04+0vH8vyy0HfZ7keRto6VX9BbEk0J2PUk0VGy6YhklJUSrgForov5F9pw==}
@@ -615,11 +600,6 @@ packages:
   loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
-
-  lucide-react@0.544.0:
-    resolution: {integrity: sha512-t5tS44bqd825zAW45UQxpG2CvcC4urOwn2TrwSH8u+MjeE+1NnWl6QqeQ/6NdjMqdOygyiT9p3Ev0p1NJykxjw==}
-    peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   make-dir@2.1.0:
     resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
@@ -1013,8 +993,6 @@ snapshots:
   '@img/sharp-win32-x64@0.34.3':
     optional: true
 
-  '@lucide/lab@0.1.2': {}
-
   '@next/env@15.5.3': {}
 
   '@next/swc-darwin-arm64@15.5.3':
@@ -1294,10 +1272,6 @@ snapshots:
   loose-envify@1.4.0:
     dependencies:
       js-tokens: 4.0.0
-
-  lucide-react@0.544.0(react@19.1.0):
-    dependencies:
-      react: 19.1.0
 
   make-dir@2.1.0:
     dependencies:

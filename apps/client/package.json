@@ -10,9 +10,7 @@
     "format": "biome format --write"
   },
   "peerDependencies": {
-    "@lucide/lab": "*",
     "classnames": "*",
-    "lucide-react": "*",
     "next": "*",
     "react": "*",
     "react-dom": "*",
