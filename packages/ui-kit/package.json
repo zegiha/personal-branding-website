@@ -16,5 +16,8 @@
     "design-kit": "workspace:*",
     "katex": "^0.16.22",
     "react-katex": "^3.1.0"
+  },
+  "peerDependencies": {
+    "material-symbols": "*"
   }
 }
