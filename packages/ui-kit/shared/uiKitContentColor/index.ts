@@ -1,2 +1,2 @@
-export { getCSSVariableByUiKitContentColor } from "./helper/getCSSVariableByUiKitContentColor";
-export type { TypeUiKitContentColor } from "./type/typeUiKitContentColor";
+export { getCSSVariableByUiKitContentColor } from "./helper";
+export type { TypeUiKitContentColor } from "./type";
