@@ -11,4 +11,5 @@ export type TypeUiKitContentColor =
   | "accent-pink"
   | "accent-blue"
   | "accent-yellow"
-  | "accent-green";
+  | "accent-green"
+  | "inherit";
