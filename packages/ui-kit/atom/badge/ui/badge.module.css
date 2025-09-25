@@ -1,0 +1,4 @@
+.badgeDefaultMedium {
+  padding: 4px 8px;
+  border-radius: var(--radius-small);
+}

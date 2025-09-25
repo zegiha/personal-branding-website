@@ -1,0 +1,1 @@
+export { TypeBadgeProps } from "./typeBadgeProps";
