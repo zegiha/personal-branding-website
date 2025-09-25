@@ -1,0 +1,13 @@
+.buttonDefaultStyle {
+  border: none;
+  outline: none;
+  border-radius: var(--radius-medium);
+}
+
+.buttonLarge {
+  padding: 12px 16px;
+}
+
+.buttonMedium {
+  padding: 8px 12px;
+}

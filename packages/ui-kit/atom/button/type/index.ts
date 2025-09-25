@@ -1,0 +1,1 @@
+export { TypeButtonProps } from "./typeButtonProps";
