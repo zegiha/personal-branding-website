@@ -1,0 +1,32 @@
+import { getCSSVariableByUiKitContentColor } from "../../../shared";
+import type { InterfaceIcon } from "../type";
+
+export function Icon({
+  iconKey,
+  size = 24,
+  color = "normal",
+  fill,
+  disableTransition = false,
+}: InterfaceIcon) {
+  return (
+    <div
+      className={"material-symbols-rounded iconIdentifierForUiKitTagUnit"}
+      style={{
+        flex: 0,
+        width: size,
+        height: size,
+        color: color !== "inherit" ? getCSSVariableByUiKitContentColor(color) : "inherit",
+        fontVariationSettings: `"FILL" ${fill ? 1 : 0}`,
+        ...(!disableTransition
+          ? {
+              transitionDuration: "var(--motion-duration-fast)",
+              transitionTimingFunction: "var(--motion-timing-fast)",
+              transitionProperty: "font-variation-settings, color",
+            }
+          : {}),
+      }}
+    >
+      {iconKey}
+    </div>
+  );
+}
