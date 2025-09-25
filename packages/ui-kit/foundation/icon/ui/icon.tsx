@@ -15,6 +15,7 @@ export function Icon({
         flex: 0,
         width: size,
         height: size,
+        fontSize: size,
         color: color !== "inherit" ? getCSSVariableByUiKitContentColor(color) : "inherit",
         fontVariationSettings: `"FILL" ${fill ? 1 : 0}`,
         ...(!disableTransition
