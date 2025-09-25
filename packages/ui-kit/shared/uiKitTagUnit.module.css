@@ -69,7 +69,7 @@
   stroke: var(--semantic-accent-blue);
 }
 .uiKitTagUnitColorTranslucentBlueFill > svg {
-  fill: var(--semantic-accent-blue) !important;
+  fill: var(--semantic-accent-blue);
   stroke: transparent;
 }
 
