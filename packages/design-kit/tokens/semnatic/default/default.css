@@ -27,7 +27,8 @@
   --semantic-white-variable-24: rgba(var(--palette-gray-00-rgb), 0.24);
 
   /* Interaction */
-  --semantic-interaction-hover: rgba(var(--palette-gray-30-rgb), 0.16);
+  --semantic-interaction-hover: rgba(var(--palette-gray-40-rgb), 0.2);
+  --semantic-interaction-active: rgba(var(--palette-gray-40-rgb), 0.28);
 
   /* Accent */
   --semantic-accent-gray: var(--palette-gray-80);
@@ -75,7 +76,8 @@
   --semantic-white-variable-24: rgba(var(--palette-gray-80-rgb), 0.24);
 
   /* Interaction */
-  --semantic-interaction-hover: rgba(var(--palette-gray-30-rgb), 0.16);
+  --semantic-interaction-hover: rgba(var(--palette-gray-50-rgb), 0.2);
+  --semantic-interaction-active: rgba(var(--palette-gray-50-rgb), 0.28);
 
   /* Accent */
   --semantic-accent-gray: var(--palette-gray-00);

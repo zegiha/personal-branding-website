@@ -42,7 +42,8 @@ export const semantic = {
         },
       },
       interaction: {
-        hover: `rgba(${paletteRgb.gray["30"]}, 0.16)`,
+        hover: `rgba(${paletteRgb.gray["40"]}, 0.2)`,
+        active: `rgba(${paletteRgb.gray["40"]}, 0.28)`,
       },
       accent: {
         gray: paletteHex.gray["80"],
@@ -98,7 +99,8 @@ export const semantic = {
         },
       },
       interaction: {
-        hover: `rgba(${paletteRgb.gray["30"]}, 0.16)`,
+        hover: `rgba(${paletteRgb.gray["50"]}, 0.2)`,
+        active: `rgba(${paletteRgb.gray["50"]}, 0.28)`,
       },
       accent: {
         gray: paletteHex.gray["00"],
