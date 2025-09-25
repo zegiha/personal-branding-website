@@ -8,3 +8,5 @@ import widthModuleCSS from "./tokens/layout/width/width.module.css";
 export { widthModuleCSS };
 
 export { widthProperty } from "./tokens/layout/width/widthProperty";
+
+export { duration, timing } from "./tokens/motion";
