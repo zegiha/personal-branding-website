@@ -1,0 +1,25 @@
+.interaction {
+  position: relative;
+}
+
+.interaction::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transition: background-color var(--motion-duration-fast) var(--motion-timing-out);
+}
+
+.interaction:hover::before {
+  background-color: var(--semantic-interaction-hover);
+}
+
+.interaction:active::before {
+  transition-duration: 0s;
+  background-color: var(--semantic-interaction-active);
+}
+
+.disabled {
+  opacity: 0.64;
+  cursor: not-allowed;
+}
