@@ -1,4 +1,4 @@
-export type TypeTypographyColor =
+export type TypeUiKitContentColor =
   | "strong"
   | "normal"
   | "weak"

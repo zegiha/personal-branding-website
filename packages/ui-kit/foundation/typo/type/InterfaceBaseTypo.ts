@@ -1,11 +1,11 @@
 import type { TypeWidth } from "design-kit";
 import type { ComponentPropsWithoutRef } from "react";
+import type { TypeUiKitContentColor } from "../../../shared/uiKitContentColor";
 import type {
   TypeTypographySubVariant,
   TypeTypographyTagName,
   TypeTypographyVariant,
 } from "./index";
-import type { TypeTypographyColor } from "./TypeTypographyColor";
 import type { TypeTypographyFontWeight } from "./TypeTypographyFontWeight";
 
 export type InterfaceBaseTypo<V extends TypeTypographyTagName> = {
@@ -13,7 +13,7 @@ export type InterfaceBaseTypo<V extends TypeTypographyTagName> = {
   subVariant: TypeTypographySubVariant;
   isMarkdown?: boolean;
   width?: TypeWidth;
-  color?: TypeTypographyColor;
+  color?: TypeUiKitContentColor;
   textAlign?: "start" | "center" | "end";
   textWrap?: "wrap" | "pretty";
   textOverflowLine?: number;

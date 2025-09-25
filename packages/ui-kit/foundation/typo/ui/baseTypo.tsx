@@ -2,8 +2,8 @@ import cn from "classnames";
 import { widthModuleCSS } from "design-kit";
 import { createElement } from "react";
 import { dashToCamelCase, firstCharacterToUpperCase } from "../../../helper";
+import { getCSSVariableByUiKitContentColor } from "../../../shared/uiKitContentColor";
 import {
-  getCSSVariableByTypographyColor,
   getDefaultColorByTypographyVariant,
   getDefaultFontWeightByTypographyVariant,
   getTagNameByVariant,
@@ -57,7 +57,7 @@ export function BaseTypo<V extends TypeTypographyTagName>({
               whiteSpace: "nowrap",
             }
           : {}),
-        color: color ? getCSSVariableByTypographyColor(color) : undefined,
+        color: color ? getCSSVariableByUiKitContentColor(color) : undefined,
         ...rest.style,
       },
     },
