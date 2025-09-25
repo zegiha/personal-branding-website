@@ -1,179 +1,96 @@
 .uiKitTagUnitColorTranslucentRed {
   background: var(--semantic-accent-translucent-red);
+  color: var(--semantic-accent-red);
 }
 .uiKitTagUnitColorTranslucentRed > p,
 .uiKitTagUnitColorTranslucentRed > small {
   color: var(--semantic-accent-red);
 }
-.uiKitTagUnitColorTranslucentRedStroke > svg {
-  stroke: var(--semantic-accent-red);
-}
-.uiKitTagUnitColorTranslucentRedFill > svg {
-  fill: var(--semantic-accent-red);
-  stroke: transparent;
-}
-
 .uiKitTagUnitColorTranslucentPink {
   background: var(--semantic-accent-translucent-pink);
+  color: var(--semantic-accent-pink);
 }
 .uiKitTagUnitColorTranslucentPink > p,
 .uiKitTagUnitColorTranslucentPink > small {
   color: var(--semantic-accent-pink);
 }
-.uiKitTagUnitColorTranslucentPinkStroke > svg {
-  stroke: var(--semantic-accent-pink);
-}
-.uiKitTagUnitColorTranslucentPinkFill > svg {
-  fill: var(--semantic-accent-pink);
-  stroke: transparent;
-}
-
 .uiKitTagUnitColorTranslucentYellow {
   background: var(--semantic-accent-translucent-yellow);
+  color: var(--semantic-accent-yellow);
 }
 .uiKitTagUnitColorTranslucentYellow > p,
 .uiKitTagUnitColorTranslucentYellow > small {
   color: var(--semantic-accent-yellow);
 }
-.uiKitTagUnitColorTranslucentYellowStroke > svg {
-  stroke: var(--semantic-accent-yellow);
-}
-.uiKitTagUnitColorTranslucentYellowFill > svg {
-  fill: var(--semantic-accent-yellow);
-  stroke: transparent;
-}
-
 .uiKitTagUnitColorTranslucentGreen {
   background: var(--semantic-accent-translucent-green);
+  color: var(--semantic-accent-green);
 }
 .uiKitTagUnitColorTranslucentGreen > p,
 .uiKitTagUnitColorTranslucentGreen > small {
   color: var(--semantic-accent-green);
 }
-.uiKitTagUnitColorTranslucentGreenStroke > svg {
-  stroke: var(--semantic-accent-green);
-}
-.uiKitTagUnitColorTranslucentGreenFill > svg {
-  fill: var(--semantic-accent-green);
-  stroke: transparent;
-}
-
 .uiKitTagUnitColorTranslucentBlue {
   background: var(--semantic-accent-translucent-blue);
+  color: var(--semantic-accent-blue);
 }
 .uiKitTagUnitColorTranslucentBlue > p,
 .uiKitTagUnitColorTranslucentBlue > small {
   color: var(--semantic-accent-blue);
 }
-.uiKitTagUnitColorTranslucentBlueStroke > svg {
-  stroke: var(--semantic-accent-blue);
-}
-.uiKitTagUnitColorTranslucentBlueFill > svg {
-  fill: var(--semantic-accent-blue);
-  stroke: transparent;
-}
-
 .uiKitTagUnitColorTranslucentGray {
   background: var(--semantic-fill-normal);
+  color: var(--semantic-label-normal);
 }
 .uiKitTagUnitColorTranslucentGray > p,
 .uiKitTagUnitColorTranslucentGray > small {
   color: var(--semantic-label-normal);
 }
-.uiKitTagUnitColorTranslucentGrayStroke > svg {
-  stroke: var(--semantic-label-normal);
-}
-.uiKitTagUnitColorTranslucentGrayFill > svg {
-  fill: var(--semantic-label-normal);
-  stroke: transparent;
-}
-
 .uiKitTagUnitColorRed {
   background: var(--semantic-accent-red);
+  color: var(--semantic-white-static);
 }
 .uiKitTagUnitColorRed > p,
 .uiKitTagUnitColorRed > small {
   color: var(--semantic-white-static);
 }
-.uiKitTagUnitColorRedStroke > svg {
-  stroke: var(--semantic-white-static);
-}
-.uiKitTagUnitColorRedFill > svg {
-  fill: var(--semantic-white-static);
-  stroke: transparent;
-}
-
 .uiKitTagUnitColorPink {
   background: var(--semantic-accent-pink);
+  color: var(--semantic-white-static);
 }
 .uiKitTagUnitColorPink > p,
 .uiKitTagUnitColorPink > small {
   color: var(--semantic-white-static);
 }
-.uiKitTagUnitColorPinkStroke > svg {
-  stroke: var(--semantic-white-static);
-}
-.uiKitTagUnitColorPinkFill > svg {
-  fill: var(--semantic-white-static);
-  stroke: transparent;
-}
-
 .uiKitTagUnitColorYellow {
   background: var(--semantic-accent-yellow);
+  color: var(--semantic-white-static);
 }
 .uiKitTagUnitColorYellow > p,
 .uiKitTagUnitColorYellow > small {
   color: var(--semantic-white-static);
 }
-.uiKitTagUnitColorYellowStroke > svg {
-  stroke: var(--semantic-white-static);
-}
-.uiKitTagUnitColorYellowFill > svg {
-  fill: var(--semantic-white-static);
-  stroke: transparent;
-}
-
 .uiKitTagUnitColorGreen {
   background: var(--semantic-accent-green);
+  color: var(--semantic-white-static);
 }
 .uiKitTagUnitColorGreen > p,
 .uiKitTagUnitColorGreen > small {
   color: var(--semantic-white-static);
 }
-.uiKitTagUnitColorGreenStroke > svg {
-  stroke: var(--semantic-white-static);
-}
-.uiKitTagUnitColorGreenFill > svg {
-  fill: var(--semantic-white-static);
-  stroke: transparent;
-}
-
 .uiKitTagUnitColorBlue {
   background: var(--semantic-accent-blue);
+  color: var(--semantic-white-static);
 }
 .uiKitTagUnitColorBlue > p,
 .uiKitTagUnitColorBlue > small {
   color: var(--semantic-white-static);
 }
-.uiKitTagUnitColorBlueStroke > svg {
-  stroke: var(--semantic-white-static);
-}
-.uiKitTagUnitColorBlueFill > svg {
-  fill: var(--semantic-white-static);
-  stroke: transparent;
-}
-
 .uiKitTagUnitColorGray {
   background: var(--semantic-black-variable);
+  color: var(--semantic-white-variable);
 }
 .uiKitTagUnitColorGray > p,
 .uiKitTagUnitColorGray > small {
   color: var(--semantic-white-variable);
-}
-.uiKitTagUnitColorGrayStroke > svg {
-  stroke: var(--semantic-white-variable);
-}
-.uiKitTagUnitColorGrayFill > svg {
-  fill: var(--semantic-white-variable);
-  stroke: transparent;
 }
