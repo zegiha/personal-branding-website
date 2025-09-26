@@ -1,6 +1,6 @@
 export type { TypeUiKitContentColor } from "./uiKitContentColor";
 export { getCSSVariableByUiKitContentColor } from "./uiKitContentColor";
-export { interactionModuleCSS } from "./uiKitInteraction";
+export { uiKitSolidInteractionModuleCSS } from "./uiKitSolidInteraction";
 export type {
   TypeGetCurrentAndChildStyleReturn,
   TypeUiKitTagUnitColor,

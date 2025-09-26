@@ -1,7 +1,7 @@
 import cn from "classnames";
 import { Icon, Row, Typo } from "../../../foundation";
 import { dashToCamelCase, firstCharacterToUpperCase } from "../../../helper";
-import { interactionModuleCSS, uiKitTagUnitModuleCSS } from "../../../shared";
+import { uiKitSolidInteractionModuleCSS, uiKitTagUnitModuleCSS } from "../../../shared";
 import type { TypeTextButtonProps } from "../type";
 import st from "./textBuutton.module.css";
 
@@ -24,7 +24,9 @@ export function TextButton({
         uiKitTagUnitModuleCSS[
           `uiKitTagUnitColor${firstCharacterToUpperCase(dashToCamelCase(color))}`
         ],
-        disabled ? interactionModuleCSS.disabled : interactionModuleCSS.interaction,
+        disabled
+          ? uiKitSolidInteractionModuleCSS.disabled
+          : uiKitSolidInteractionModuleCSS.interaction,
       )}
     >
       <Row alignItems={"center"} gap={8}>

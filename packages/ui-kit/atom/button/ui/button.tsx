@@ -3,7 +3,7 @@
 import cn from "classnames";
 import { Icon, Row } from "../../../foundation";
 import { dashToCamelCase, firstCharacterToUpperCase } from "../../../helper";
-import { interactionModuleCSS, uiKitTagUnitModuleCSS } from "../../../shared";
+import { uiKitSolidInteractionModuleCSS, uiKitTagUnitModuleCSS } from "../../../shared";
 import { getIconSize } from "../helper";
 import type { TypeButtonProps } from "../type";
 import st from "./button.module.css";
@@ -27,7 +27,9 @@ export function Button({
       onClick={onClick}
       disabled={disabled}
       className={cn(
-        disabled ? interactionModuleCSS.disabled : interactionModuleCSS.interaction,
+        disabled
+          ? uiKitSolidInteractionModuleCSS.disabled
+          : uiKitSolidInteractionModuleCSS.interaction,
         st.buttonDefaultStyle,
         st[`button${firstCharacterToUpperCase(size)}`],
         uiKitTagUnitModuleCSS[
