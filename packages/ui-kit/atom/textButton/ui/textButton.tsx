@@ -1,0 +1,38 @@
+import cn from "classnames";
+import { Icon, Row, Typo } from "../../../foundation";
+import { dashToCamelCase, firstCharacterToUpperCase } from "../../../helper";
+import { interactionModuleCSS, uiKitTagUnitModuleCSS } from "../../../shared";
+import type { TypeTextButtonProps } from "../type";
+import st from "./textBuutton.module.css";
+
+export function TextButton({
+  type,
+  onClick,
+  disabled,
+  color,
+  label,
+  leadIcon,
+  trailIcon,
+}: TypeTextButtonProps) {
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={cn(
+        st.textButtonDefault,
+        uiKitTagUnitModuleCSS[
+          `uiKitTagUnitColor${firstCharacterToUpperCase(dashToCamelCase(color))}`
+        ],
+        interactionModuleCSS.interaction,
+      )}
+    >
+      <Row alignItems={"center"} gap={8}>
+        {leadIcon && <Icon iconKey={leadIcon} color={"inherit"} size={16} />}
+        <Typo.label.medium color={"inherit"}>{label}</Typo.label.medium>
+        {trailIcon && <Icon iconKey={trailIcon} color={"inherit"} size={16} />}
+      </Row>
+      <div className={cn(st.textButtonFakeBackground)} />
+    </button>
+  );
+}
