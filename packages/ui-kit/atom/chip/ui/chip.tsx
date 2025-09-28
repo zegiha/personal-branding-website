@@ -3,7 +3,7 @@
 import cn from "classnames";
 import { Icon, Row, Typo } from "../../../foundation";
 import { dashToCamelCase, firstCharacterToUpperCase } from "../../../helper";
-import { interactionModuleCSS, uiKitTagUnitModuleCSS } from "../../../shared";
+import { uiKitSolidInteractionModuleCSS, uiKitTagUnitModuleCSS } from "../../../shared";
 import type { TypeChipProps } from "../type";
 import st from "./chip.module.css";
 
@@ -23,7 +23,9 @@ export function Chip({
       onClick={toggle}
       className={cn(
         st.chipDefault,
-        disabled ? interactionModuleCSS.disabled : interactionModuleCSS.interaction,
+        disabled
+          ? uiKitSolidInteractionModuleCSS.disabled
+          : uiKitSolidInteractionModuleCSS.interaction,
         active
           ? uiKitTagUnitModuleCSS[
               `uiKitTagUnitColor${firstCharacterToUpperCase(dashToCamelCase(activeColor))}`
