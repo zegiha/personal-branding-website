@@ -57,7 +57,11 @@ export function BaseTypo<V extends TypeTypographyTagName>({
               whiteSpace: "nowrap",
             }
           : {}),
-        color: color ? getCSSVariableByUiKitContentColor(color) : undefined,
+        color: color
+          ? color === "inherit"
+            ? "inherit"
+            : getCSSVariableByUiKitContentColor(color)
+          : undefined,
         ...rest.style,
       },
     },
