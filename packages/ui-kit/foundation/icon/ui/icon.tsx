@@ -21,7 +21,7 @@ export function Icon({
         ...(!disableTransition
           ? {
               transitionDuration: "var(--motion-duration-fast)",
-              transitionTimingFunction: "var(--motion-timing-fast)",
+              transitionTimingFunction: "var(--motion-timing-linear)",
             }
           : {
               transitionDuration: "inherit",
