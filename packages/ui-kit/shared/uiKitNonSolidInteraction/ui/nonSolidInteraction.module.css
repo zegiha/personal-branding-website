@@ -6,7 +6,7 @@
 .interaction::before,
 .fakeBackground {
   position: absolute;
-  inset: -6px;
+  inset: inherit;
   border-radius: inherit;
   transition: var(--motion-duration-fast) var(--motion-timing-ftos);
   transition-property: background-color, opacity;
