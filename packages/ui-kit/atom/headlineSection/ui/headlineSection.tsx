@@ -5,7 +5,7 @@ import st from "./headlineSection.module.css";
 export function HeadlineSection({ headline, children }: { headline: string; children: ReactNode }) {
   return (
     <Col className={st.headlineSectionContainer} width={"fill-width"}>
-      <Col width={"fill-flex"} gap={24}>
+      <Col className={st.headlineSectionWrapper} width={"fill-flex"} gap={24}>
         <Typo.headline.medium>{headline}</Typo.headline.medium>
         {children}
       </Col>
