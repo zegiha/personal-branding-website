@@ -1,5 +1,5 @@
 .uiKitTagUnitColorTranslucentRed {
-  background: var(--semantic-accent-translucent-red);
+  background-color: var(--semantic-accent-translucent-red);
   color: var(--semantic-accent-red);
 }
 .uiKitTagUnitColorTranslucentRed > p,
@@ -7,7 +7,7 @@
   color: var(--semantic-accent-red);
 }
 .uiKitTagUnitColorTranslucentPink {
-  background: var(--semantic-accent-translucent-pink);
+  background-color: var(--semantic-accent-translucent-pink);
   color: var(--semantic-accent-pink);
 }
 .uiKitTagUnitColorTranslucentPink > p,
@@ -15,7 +15,7 @@
   color: var(--semantic-accent-pink);
 }
 .uiKitTagUnitColorTranslucentYellow {
-  background: var(--semantic-accent-translucent-yellow);
+  background-color: var(--semantic-accent-translucent-yellow);
   color: var(--semantic-accent-yellow);
 }
 .uiKitTagUnitColorTranslucentYellow > p,
@@ -23,7 +23,7 @@
   color: var(--semantic-accent-yellow);
 }
 .uiKitTagUnitColorTranslucentGreen {
-  background: var(--semantic-accent-translucent-green);
+  background-color: var(--semantic-accent-translucent-green);
   color: var(--semantic-accent-green);
 }
 .uiKitTagUnitColorTranslucentGreen > p,
@@ -31,7 +31,7 @@
   color: var(--semantic-accent-green);
 }
 .uiKitTagUnitColorTranslucentBlue {
-  background: var(--semantic-accent-translucent-blue);
+  background-color: var(--semantic-accent-translucent-blue);
   color: var(--semantic-accent-blue);
 }
 .uiKitTagUnitColorTranslucentBlue > p,
@@ -39,7 +39,7 @@
   color: var(--semantic-accent-blue);
 }
 .uiKitTagUnitColorTranslucentGray {
-  background: var(--semantic-fill-normal);
+  background-color: var(--semantic-fill-normal);
   color: var(--semantic-label-normal);
 }
 .uiKitTagUnitColorTranslucentGray > p,
@@ -47,7 +47,7 @@
   color: var(--semantic-label-normal);
 }
 .uiKitTagUnitColorRed {
-  background: var(--semantic-accent-red);
+  background-color: var(--semantic-accent-red);
   color: var(--semantic-white-static);
 }
 .uiKitTagUnitColorRed > p,
@@ -55,7 +55,7 @@
   color: var(--semantic-white-static);
 }
 .uiKitTagUnitColorPink {
-  background: var(--semantic-accent-pink);
+  background-color: var(--semantic-accent-pink);
   color: var(--semantic-white-static);
 }
 .uiKitTagUnitColorPink > p,
@@ -63,7 +63,7 @@
   color: var(--semantic-white-static);
 }
 .uiKitTagUnitColorYellow {
-  background: var(--semantic-accent-yellow);
+  background-color: var(--semantic-accent-yellow);
   color: var(--semantic-white-static);
 }
 .uiKitTagUnitColorYellow > p,
@@ -71,7 +71,7 @@
   color: var(--semantic-white-static);
 }
 .uiKitTagUnitColorGreen {
-  background: var(--semantic-accent-green);
+  background-color: var(--semantic-accent-green);
   color: var(--semantic-white-static);
 }
 .uiKitTagUnitColorGreen > p,
@@ -79,7 +79,7 @@
   color: var(--semantic-white-static);
 }
 .uiKitTagUnitColorBlue {
-  background: var(--semantic-accent-blue);
+  background-color: var(--semantic-accent-blue);
   color: var(--semantic-white-static);
 }
 .uiKitTagUnitColorBlue > p,
@@ -87,7 +87,7 @@
   color: var(--semantic-white-static);
 }
 .uiKitTagUnitColorGray {
-  background: var(--semantic-black-variable);
+  background-color: var(--semantic-black-variable);
   color: var(--semantic-white-variable);
 }
 .uiKitTagUnitColorGray > p,
