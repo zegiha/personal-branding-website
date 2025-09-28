@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "design-kit";
+import "ui-kit";
 import { jetbrainsMono, pretendard } from "design-kit";
 import { getDesignKitClass } from "design-kit/server";
 
