@@ -1,0 +1,35 @@
+.iconButtonDefault {
+  flex-shrink: 0;
+  flex-grow: 0;
+  outline: none;
+  border: none;
+  padding: 8px;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconButtonCircular {
+  border-radius: var(--radius-circular);
+}
+
+.iconButtonFill {
+  background-color: var(--semantic-fill-normal);
+}
+
+.iconButtonTransparent {
+  background-color: var(--semantic-fill-normal);
+  background-clip: text;
+  border-radius: var(--radius-medium);
+}
+
+.iconButtonSizeSmall {
+  width: 36px;
+  height: 36px;
+}
+
+.iconButtonSizeMedium {
+  width: 40px;
+  height: 40px;
+}
