@@ -1,5 +1,10 @@
 export type { TypeUiKitContentColor } from "./uiKitContentColor";
 export { getCSSVariableByUiKitContentColor } from "./uiKitContentColor";
 export { interactionModuleCSS } from "./uiKitInteraction";
-export type { TypeGetCurrentAndChildStyleReturn, TypeUiKitTagUnitColor } from "./uiKitTagUnit";
+export type {
+  TypeGetCurrentAndChildStyleReturn,
+  TypeUiKitTagUnitColor,
+  TypeUiKitTagUnitColorOnlyTranslucent,
+  TypeUiKitTagUnitColorWithoutTranslucent,
+} from "./uiKitTagUnit";
 export { getCurrentAndChildStyle, uiKitTagUnitModuleCSS } from "./uiKitTagUnit";
