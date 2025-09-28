@@ -6,3 +6,4 @@ export { HeadlineSectionContainer } from "./headlineSectionContainer";
 export { IconButton } from "./iconButton";
 export { InlineKatex } from "./katex/lnlineKatex";
 export { TextButton } from "./textButton";
+export { TextLinkButton } from "./textLinkButton";

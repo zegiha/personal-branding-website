@@ -1,0 +1,7 @@
+.textLinkButtonDefault {
+  border: none;
+  outline: none;
+  border-radius: var(--radius-medium);
+  inset: -6px;
+  text-decoration: none;
+}
