@@ -37,4 +37,5 @@
 .disabled {
   opacity: 0.64;
   cursor: not-allowed;
+  background-clip: text;
 }
