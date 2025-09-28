@@ -17,7 +17,7 @@ export type TypeIconKey =
   | "keyboard_arrow_down"
   | "star"
   | "edit_square"
-  | "heart"
+  | "favorite"
   | "share"
   | "calendar_month"
   | "content_copy"
