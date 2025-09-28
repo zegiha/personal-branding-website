@@ -1,14 +1,18 @@
 import cn from "classnames";
 import { Icon, Row, Typo } from "../../../foundation";
 import { dashToCamelCase, firstCharacterToUpperCase } from "../../../helper";
-import { uiKitSolidInteractionModuleCSS, uiKitTagUnitModuleCSS } from "../../../shared";
+import {
+  UiKitNonSolidInteractionWrapper,
+  uiKitNonSolidInteractionModuleCSS,
+  uiKitTagUnitModuleCSS,
+} from "../../../shared";
 import type { TypeTextButtonProps } from "../type";
 import st from "./textBuutton.module.css";
 
 export function TextButton({
   type,
   onClick,
-  disabled,
+  disabled = false,
   color,
   label,
   leadIcon,
@@ -25,16 +29,17 @@ export function TextButton({
           `uiKitTagUnitColor${firstCharacterToUpperCase(dashToCamelCase(color))}`
         ],
         disabled
-          ? uiKitSolidInteractionModuleCSS.disabled
-          : uiKitSolidInteractionModuleCSS.interaction,
+          ? uiKitNonSolidInteractionModuleCSS.disabled
+          : uiKitNonSolidInteractionModuleCSS.interaction,
       )}
     >
-      <Row alignItems={"center"} gap={8}>
-        {leadIcon && <Icon iconKey={leadIcon} color={"inherit"} size={16} />}
-        <Typo.label.medium color={"inherit"}>{label}</Typo.label.medium>
-        {trailIcon && <Icon iconKey={trailIcon} color={"inherit"} size={16} />}
-      </Row>
-      {!disabled && <div className={cn(st.textButtonFakeBackground)} />}
+      <UiKitNonSolidInteractionWrapper disabled={disabled}>
+        <Row alignItems={"center"} gap={8}>
+          {leadIcon && <Icon iconKey={leadIcon} color={"inherit"} size={16} />}
+          <Typo.label.medium color={"inherit"}>{label}</Typo.label.medium>
+          {trailIcon && <Icon iconKey={trailIcon} color={"inherit"} size={16} />}
+        </Row>
+      </UiKitNonSolidInteractionWrapper>
     </button>
   );
 }

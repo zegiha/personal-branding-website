@@ -1,34 +1,34 @@
 .textButtonDefault {
-  background-clip: text;
   border: none;
   outline: none;
-}
-
-.textButtonDefault::before,
-.textButtonFakeBackground {
-  position: absolute;
-  inset: -6px;
   border-radius: var(--radius-medium);
-  transition: var(--motion-duration-fast) var(--motion-timing-out);
-  transition-property: background-color, opacity, scale;
-  scale: 0.98;
 }
 
-.textButtonDefault::before {
-  opacity: 0.32;
-}
+/*.textButtonDefault::before,*/
+/*.textButtonFakeBackground {*/
+/*  position: absolute;*/
+/*  inset: -6px;*/
+/*  border-radius: var(--radius-medium);*/
+/*  transition: var(--motion-duration-fast) var(--motion-timing-ftos);*/
+/*  transition-property: background-color, opacity, transform;*/
+/*  transform: scale(0.96);*/
+/*}*/
 
-.textButtonDefault:hover::before,
-.textButtonDefault:active::before {
-  scale: 1;
-}
+/*.textButtonDefault::before {*/
+/*  opacity: 0.32;*/
+/*}*/
 
-.textButtonDefault:active::before {
-  opacity: 0.4;
-}
+/*.textButtonDefault:hover::before,*/
+/*.textButtonDefault:active::before {*/
+/*  transform: scale(1);*/
+/*}*/
 
-.textButtonFakeBackground:hover {
-  background-color: inherit;
-  scale: 1;
-  opacity: 0.4;
-}
+/*.textButtonDefault:active::before {*/
+/*  opacity: 0.4;*/
+/*}*/
+
+/*.textButtonFakeBackground:hover {*/
+/*  transform: scale(1);*/
+/*  background-color: inherit;*/
+/*  opacity: 0.4;*/
+/*}*/
