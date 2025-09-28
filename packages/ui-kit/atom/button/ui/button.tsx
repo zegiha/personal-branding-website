@@ -1,6 +1,7 @@
 "use client";
 
 import cn from "classnames";
+import { widthModuleCSS } from "design-kit";
 import { Icon, Row } from "../../../foundation";
 import { dashToCamelCase, firstCharacterToUpperCase } from "../../../helper";
 import { uiKitSolidInteractionModuleCSS, uiKitTagUnitModuleCSS } from "../../../shared";
@@ -14,12 +15,18 @@ export function Button({
   onClick,
   size,
   color,
+  width,
+  fontWeight,
   label,
   leadIcon,
   trailIcon,
   disabled,
 }: TypeButtonProps) {
   const iconSize = getIconSize(size);
+
+  const isWidth = width !== undefined;
+  const isWidthStatic =
+    width !== "fill-width" && width !== "fill-flex" && width !== "fit-content" && width !== "auto";
 
   return (
     <button
@@ -35,11 +42,15 @@ export function Button({
         uiKitTagUnitModuleCSS[
           `uiKitTagUnitColor${firstCharacterToUpperCase(dashToCamelCase(color))}`
         ],
+        isWidth && !isWidthStatic && widthModuleCSS[dashToCamelCase(width)],
       )}
+      style={{
+        width: isWidth && isWidthStatic ? width : undefined,
+      }}
     >
-      <Row className={st.buttonWrapper} alignItems={"center"} gap={8}>
+      <Row className={st.buttonWrapper} alignItems={"center"} gap={8} width={width}>
         {leadIcon && <Icon iconKey={leadIcon} color={"inherit"} size={iconSize} />}
-        <ButtonLabelProviderBySize size={size} label={label} />
+        <ButtonLabelProviderBySize size={size} label={label} fontWeight={fontWeight} />
         {trailIcon && <Icon iconKey={trailIcon} color={"inherit"} size={iconSize} />}
       </Row>
     </button>
