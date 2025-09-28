@@ -2,7 +2,7 @@ import cn from "classnames";
 import { widthModuleCSS } from "design-kit";
 import { createElement } from "react";
 import { dashToCamelCase, firstCharacterToUpperCase } from "../../../helper";
-import { getCSSVariableByUiKitContentColor } from "../../../shared/uiKitContentColor";
+import { getCSSVariableByUiKitContentColor } from "../../../shared";
 import {
   getDefaultColorByTypographyVariant,
   getDefaultFontWeightByTypographyVariant,
