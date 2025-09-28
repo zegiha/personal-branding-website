@@ -7,7 +7,7 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  transition: background-color var(--motion-duration-fast) var(--motion-timing-out);
+  transition: background-color var(--motion-duration-fast) var(--motion-timing-ftos);
 }
 
 .interaction:hover::before {
