@@ -19,6 +19,7 @@ export function TextButton({
   trailIcon,
   width,
   height,
+  inset,
 }: TypeTextButtonProps) {
   return (
     <button
@@ -35,12 +36,12 @@ export function TextButton({
           : uiKitNonSolidInteractionModuleCSS.interaction,
       )}
       style={{
-        ...(width || height ? { flexShrink: 0, flexGrow: 0, inset: 0 } : undefined),
+        ...(width || height ? { flexShrink: 0, flexGrow: 0 } : undefined),
         width: width,
         height: height,
       }}
     >
-      <UiKitNonSolidInteractionWrapper disabled={disabled}>
+      <UiKitNonSolidInteractionWrapper inset={inset ?? -6} disabled={disabled}>
         <Row justifyContent={"center"} alignItems={"center"} gap={8}>
           {leadIcon && <Icon iconKey={leadIcon} color={"inherit"} size={16} />}
           <Typo.label.medium color={"inherit"}>{label}</Typo.label.medium>

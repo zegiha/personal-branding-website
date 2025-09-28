@@ -10,6 +10,10 @@
   align-items: center;
 }
 
+.iconButtonDefault::before {
+  inset: 0;
+}
+
 .iconButtonCircular {
   border-radius: var(--radius-circular);
 }

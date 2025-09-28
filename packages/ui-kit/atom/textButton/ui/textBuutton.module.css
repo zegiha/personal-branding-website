@@ -2,6 +2,9 @@
   border: none;
   outline: none;
   border-radius: var(--radius-medium);
+}
+
+.textButtonDefault::before {
   inset: -6px;
 }
 

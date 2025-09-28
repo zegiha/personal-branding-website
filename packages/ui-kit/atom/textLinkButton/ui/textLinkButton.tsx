@@ -19,9 +19,10 @@ export function TextLinkButton({
   trailIcon,
   width,
   height,
+  inset,
 }: TypeTextLinkButtonProps) {
   const content = (
-    <UiKitNonSolidInteractionWrapper disabled={disabled}>
+    <UiKitNonSolidInteractionWrapper inset={inset ?? -6} disabled={disabled}>
       <Row justifyContent={"center"} alignItems={"center"} gap={8}>
         {leadIcon && <Icon iconKey={leadIcon} color={"inherit"} size={16} />}
         <Typo.label.medium color={"inherit"}>{label}</Typo.label.medium>

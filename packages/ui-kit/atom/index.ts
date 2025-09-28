@@ -4,6 +4,7 @@ export { Chip } from "./chip";
 export { HeadlineSection } from "./headlineSection";
 export { HeadlineSectionContainer } from "./headlineSectionContainer";
 export { IconButton } from "./iconButton";
+export { IconLinkButton } from "./iconLinkButton";
 export { InlineKatex } from "./katex/lnlineKatex";
 export { TextButton } from "./textButton";
 export { TextLinkButton } from "./textLinkButton";

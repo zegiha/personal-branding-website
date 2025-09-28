@@ -10,4 +10,5 @@ export type TypeTextLinkButtonProps = {
   trailIcon?: TypeIconKey;
   width?: number;
   height?: number;
+  inset?: number;
 };

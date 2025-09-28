@@ -7,4 +7,5 @@ export type TypeIconButtonProps = {
   iconKey: TypeIconKey;
   onClick: () => void;
   disabled?: boolean;
+  inset?: number;
 };

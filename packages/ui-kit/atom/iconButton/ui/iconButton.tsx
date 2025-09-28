@@ -9,7 +9,7 @@ import {
 import type { TypeIconButtonProps } from "../type";
 import st from "./iconButton.module.css";
 
-export function IconButton({ type, color, size, iconKey, onClick, disabled }: TypeIconButtonProps) {
+export function IconButton({ type, color, size, iconKey, onClick, disabled, inset }: TypeIconButtonProps) {
   return (
     <button
       type={type}
@@ -32,7 +32,7 @@ export function IconButton({ type, color, size, iconKey, onClick, disabled }: Ty
       {color === "fill" ? (
         <Icon iconKey={iconKey} size={24} color={"normal"} fill />
       ) : (
-        <UiKitNonSolidInteractionWrapper disabled={disabled}>
+        <UiKitNonSolidInteractionWrapper inset={inset ?? 0} disabled={disabled}>
           <Icon iconKey={iconKey} size={24} color={"normal"} fill />
         </UiKitNonSolidInteractionWrapper>
       )}
