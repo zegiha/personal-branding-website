@@ -22,9 +22,12 @@ export function Icon({
           ? {
               transitionDuration: "var(--motion-duration-fast)",
               transitionTimingFunction: "var(--motion-timing-fast)",
-              transitionProperty: "font-variation-settings, color",
             }
-          : {}),
+          : {
+              transitionDuration: "inherit",
+              transitionTimingFunction: "inherit",
+            }),
+        transitionProperty: "font-variation-settings, color",
       }}
     >
       {iconKey}

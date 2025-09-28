@@ -1,0 +1,21 @@
+.chipDefault {
+  padding: 8px 8px;
+  border-radius: var(--radius-circular);
+  border: none;
+  outline: none;
+  transition-property: background-color, color, font-variation-settings;
+  transition-duration: var(--motion-duration-fast);
+  transition-timing-function: var(--motion-timing-stof);
+  height: 35px;
+}
+
+.chipWrapper {
+  height: 100%;
+  transition-duration: inherit;
+  transition-timing-function: inherit;
+}
+
+.chipDefaultActive {
+  transition-duration: var(--motion-duration-fast);
+  transition-timing-function: var(--motion-timing-ftos);
+}

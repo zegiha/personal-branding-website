@@ -4,10 +4,16 @@
   border-radius: var(--radius-medium);
 }
 
+.buttonWrapper {
+  height: 100%;
+}
+
 .buttonLarge {
   padding: 12px 16px;
+  height: 45px;
 }
 
 .buttonMedium {
   padding: 8px 12px;
+  height: 35px;
 }
