@@ -9,4 +9,6 @@ export type TypeTextButtonProps = {
   label: string;
   leadIcon?: TypeIconKey;
   trailIcon?: TypeIconKey;
+  width?: number;
+  height?: number;
 };
