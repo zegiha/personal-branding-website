@@ -1,6 +1,9 @@
 .container {
+  position: sticky;
+  top: 0;
   padding: 12px 24px;
   height: 64px;
+  z-index: 9999;
 }
 
 .solid {
