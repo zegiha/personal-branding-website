@@ -1,8 +1,8 @@
 import cn from "classnames";
+import { getWidthClass, getWidthStyle } from "design-kit";
 import { dashToCamelCase, firstCharacterToUpperCase } from "../../../helper";
 import type { InterfaceFlex } from "../type";
 import st from "./flex.module.css";
-import { widthModuleCSS } from "design-kit";
 
 export function Flex({
   flexDirection,
@@ -15,10 +15,6 @@ export function Flex({
   width,
   ...rest
 }: InterfaceFlex) {
-  const isWidth = width !== undefined;
-  const isWidthStatic =
-    width !== "fill-flex" && width !== "fill-width" && width !== "fit-content" && width !== "auto";
-
   return (
     <div
       {...rest}
@@ -32,7 +28,7 @@ export function Flex({
           ],
         alignItems &&
           st[`uiKitFlexAlignItems${firstCharacterToUpperCase(dashToCamelCase(alignItems))}`],
-        isWidth && !isWidthStatic && widthModuleCSS[dashToCamelCase(width)],
+        getWidthClass(width),
         rest.className,
       )}
       style={{
@@ -40,11 +36,7 @@ export function Flex({
         flexWrap: wrap ? "wrap" : undefined,
         flexGrow,
         flexShrink,
-        ...(isWidth && isWidthStatic
-          ? {
-              width,
-            }
-          : {}),
+        ...getWidthStyle(width),
         ...rest.style,
       }}
     />

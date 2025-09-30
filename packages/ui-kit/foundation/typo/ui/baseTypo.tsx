@@ -1,7 +1,7 @@
 import cn from "classnames";
-import { widthModuleCSS } from "design-kit";
+import { getWidthClass, getWidthStyle } from "design-kit";
 import { createElement } from "react";
-import { dashToCamelCase, firstCharacterToUpperCase } from "../../../helper";
+import { firstCharacterToUpperCase } from "../../../helper";
 import { getCSSVariableByUiKitContentColor } from "../../../shared";
 import {
   getDefaultColorByTypographyVariant,
@@ -26,10 +26,6 @@ export function BaseTypo<V extends TypeTypographyTagName>({
   children,
   ...rest
 }: InterfaceBaseTypo<V>) {
-  const isWidth = width !== undefined && width !== null;
-  const isWidthStatic =
-    width !== "fill-flex" && width !== "fill-width" && width !== "auto" && width !== "fit-content";
-
   return createElement(
     getTagNameByVariant(variant, subVariant),
     {
@@ -40,7 +36,7 @@ export function BaseTypo<V extends TypeTypographyTagName>({
         st[
           `uiKitTypographyColor${firstCharacterToUpperCase(getDefaultColorByTypographyVariant(variant))}`
         ],
-        isWidth && !isWidthStatic && widthModuleCSS[dashToCamelCase(width)],
+        getWidthClass(width),
         textAlign && st[`uiKitTypographyTextAlign${firstCharacterToUpperCase(textAlign)}`],
         textWrap && st[`uiKitTypographyTextWrap${firstCharacterToUpperCase(textWrap)}`],
         flexShrink === false && st.uiKitTypographyDisableFlexShrink,
@@ -48,7 +44,7 @@ export function BaseTypo<V extends TypeTypographyTagName>({
         rest.className,
       ),
       style: {
-        width: isWidth && isWidthStatic ? width : undefined,
+        ...getWidthStyle(width),
         ...(textOverflowLine
           ? {
               textOverflow: "ellipsis",

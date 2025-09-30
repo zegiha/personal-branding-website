@@ -1,7 +1,7 @@
 "use client";
 
 import cn from "classnames";
-import { widthModuleCSS } from "design-kit";
+import { getWidthClass, getWidthStyle } from "design-kit";
 import { Icon, Row } from "../../../foundation";
 import { dashToCamelCase, firstCharacterToUpperCase } from "../../../helper";
 import { uiKitSolidInteractionModuleCSS, uiKitTagUnitModuleCSS } from "../../../shared";
@@ -24,10 +24,6 @@ export function Button({
 }: TypeButtonProps) {
   const iconSize = getIconSize(size);
 
-  const isWidth = width !== undefined;
-  const isWidthStatic =
-    width !== "fill-width" && width !== "fill-flex" && width !== "fit-content" && width !== "auto";
-
   return (
     <button
       type={type}
@@ -42,10 +38,10 @@ export function Button({
         uiKitTagUnitModuleCSS[
           `uiKitTagUnitColor${firstCharacterToUpperCase(dashToCamelCase(color))}`
         ],
-        isWidth && !isWidthStatic && widthModuleCSS[dashToCamelCase(width)],
+        getWidthClass(width),
       )}
       style={{
-        width: isWidth && isWidthStatic ? width : undefined,
+        ...getWidthStyle(width),
       }}
     >
       <Row className={st.buttonWrapper} alignItems={"center"} gap={8} width={width}>
