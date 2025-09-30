@@ -7,7 +7,7 @@ export function getWidthClass(v: TypeWidth) {
       return widthModuleCSS.fillWidth;
     case "fill-flex":
       return widthModuleCSS.fillFlex;
-    case "fit-width":
+    case "fit-content":
       return widthModuleCSS.fitContent;
     case "auto":
       return widthModuleCSS.auto;
