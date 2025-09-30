@@ -1,0 +1,27 @@
+import * as z from "zod";
+
+export const ZodEnumIconKey = z.enum([
+  "open_in_new",
+  "chevron_left",
+  "chevron_right",
+  "group",
+  "info",
+  "article",
+  "book_2",
+  "visibility",
+  "schedule",
+  "menu",
+  "search",
+  "play_arrow",
+  "pause",
+  "close",
+  "keyboard_arrow_up",
+  "keyboard_arrow_down",
+  "star",
+  "edit_square",
+  "favorite",
+  "share",
+  "calendar_month",
+  "content_copy",
+  "alternate_email",
+]);
