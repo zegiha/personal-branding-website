@@ -14,11 +14,12 @@
     "next": "*",
     "react": "*",
     "react-dom": "*",
-    "zod": "*",
-    "swiper": "*"
+    "swiper": "*",
+    "zod": "*"
   },
   "dependencies": {
     "design-kit": "workspace:*",
+    "sharp": "^0.34.4",
     "ui-kit": "workspace:*"
   }
 }
