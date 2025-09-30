@@ -1,0 +1,49 @@
+.cardContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-large);
+}
+.cardContainer > img {
+  z-index: 1;
+  object-fit: cover;
+}
+
+.notHoverContent,
+.hoverContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 36px;
+  transition: var(--motion-duration-fast) var(--motion-timing-linear);
+}
+
+.notHoverContent {
+  opacity: 1;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(163, 163, 163, 0.16) 0%, rgba(163, 163, 163, 0) 100%);
+}
+
+.cardContainer:hover .notHoverContent {
+  opacity: 0;
+}
+
+.hoverContent {
+  opacity: 0;
+  z-index: 3;
+  inset: 0;
+  background-color: var(--semantic-fill-normal);
+  backdrop-filter: blur(20px);
+}
+
+.cardContainer:hover .hoverContent {
+  opacity: 1;
+}
+
+.staticContent {
+  position: absolute;
+  z-index: 4;
+  padding: 36px;
+}
