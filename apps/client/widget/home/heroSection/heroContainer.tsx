@@ -13,7 +13,7 @@ export default function ({ children }: { children: ReactNode }) {
       swiperProps={{
         modules: [Autoplay],
         loop: true,
-        // autoplay: { delay: 3000, pauseOnMouseEnter: true },
+        autoplay: { delay: 3000, pauseOnMouseEnter: true },
         speed: 640,
       }}
       controllerType={EnumCarouseControllerType.NAVIGATION}
