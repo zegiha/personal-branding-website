@@ -14,7 +14,8 @@
     "next": "*",
     "react": "*",
     "react-dom": "*",
-    "zod": "*"
+    "zod": "*",
+    "swiper": "*"
   },
   "dependencies": {
     "design-kit": "workspace:*",

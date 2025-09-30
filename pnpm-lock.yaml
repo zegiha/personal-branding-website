@@ -23,6 +23,9 @@ importers:
       react-dom:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
+      swiper:
+        specifier: ^12.0.2
+        version: 12.0.2
       zod:
         specifier: ^4.1.11
         version: 4.1.11
@@ -75,6 +78,9 @@ importers:
       react-dom:
         specifier: '*'
         version: 19.1.0(react@19.1.0)
+      swiper:
+        specifier: '*'
+        version: 12.0.2
       ui-kit:
         specifier: workspace:*
         version: link:../../packages/ui-kit
@@ -834,6 +840,10 @@ packages:
     resolution: {integrity: sha512-v3YCf31atbwJQIMtPNX8hcQ+okD4NQaTuKGUWfII8eaqn+3otrbttGL1zSMZAAtiPsBztQnujVBugg/cXFUpyg==}
     hasBin: true
 
+  swiper@12.0.2:
+    resolution: {integrity: sha512-y8F6fDGXmTVVgwqJj6I00l4FdGuhpFJn0U/9Ucn1MwWOw3NdLV8aH88pZOjyhBgU/6PyBlUx+JuAQ5KMWz906Q==}
+    engines: {node: '>= 4.7.0'}
+
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
@@ -1519,6 +1529,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
     optional: true
+
+  swiper@12.0.2: {}
 
   to-regex-range@5.0.1:
     dependencies:
