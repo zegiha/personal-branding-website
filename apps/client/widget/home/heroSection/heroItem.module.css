@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 36px;
+}
+
+.bannerWrapper {
+  position: relative;
+  width: 100%;
+  background-color: red;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-xlarge);
+}
+
+.bannerWrapper > img {
+  object-fit: cover;
+}
+
+.textWrapper {
+  padding: 24px 0;
+}
