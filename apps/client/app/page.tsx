@@ -1,19 +1,13 @@
-'use client'
+import { Col } from "ui-kit/foundation";
+import { Header } from "@/components/header/header";
+import { HeroSection } from "@/widget/home/heroSection/heroSection";
+import st from "./page.module.css";
 
-import { ThemeEnum } from "design-kit/const/ThemeEnum";
-import styles from "./page.module.css";
-import { changeTheme, changeThemeMode, getThemeModeFromClient } from "design-kit/client";
-import { ThemeModeEnum } from "design-kit/const/ThemeModeEnum";
-
-export default function Home() {
+export default async function Home() {
   return (
-    <div className={styles.page}>
-      <button className={styles.button} onClick={() => {changeTheme(ThemeEnum.DEFAULT)}}>
-        change theme
-      </button>
-      <button className={styles.button} onClick={() => {changeThemeMode(getThemeModeFromClient() == ThemeModeEnum.DARK ? ThemeModeEnum.LIGHT : ThemeModeEnum.DARK)}}>
-        change theme mode
-      </button>
-    </div>
+    <Col className={st.loadBackground} width={"fill-width"}>
+      <Header />
+      <HeroSection />
+    </Col>
   );
 }
