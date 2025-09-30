@@ -7,6 +7,6 @@ export type TypeCarouselProps = {
   width?: TypeWidth;
   controllerClassName?: string;
   controllerType: EnumCarouseControllerType;
-  swiperProps: SwiperProps;
+  swiperProps?: SwiperProps;
   children: ReactNode;
 };
