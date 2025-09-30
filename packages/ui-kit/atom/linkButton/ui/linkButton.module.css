@@ -1,0 +1,20 @@
+.linkButtonDefaultStyle {
+  border: none;
+  outline: none;
+  border-radius: var(--radius-medium);
+  text-decoration: none;
+}
+
+.linkButtonWrapper {
+  height: 100%;
+}
+
+.linkButtonLarge {
+  padding: 12px 16px;
+  height: 45px;
+}
+
+.linkButtonMedium {
+  padding: 8px 12px;
+  height: 35px;
+}
