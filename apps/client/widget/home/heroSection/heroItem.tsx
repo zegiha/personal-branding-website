@@ -16,7 +16,7 @@ export async function HeroItem({
   return (
     <div className={st.container}>
       <div className={st.bannerWrapper}>
-        <Image src={bannerUrl} alt={`hero banner`} fill={true} />
+        <Image src={bannerUrl} alt={`hero banner`} fill={true} fetchPriority={"high"} />
       </div>
       <Col className={st.textWrapper} width={"fill-width"} gap={24} justifyContent={"center"}>
         <Col width={"fill-width"} gap={12}>

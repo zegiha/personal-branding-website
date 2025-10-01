@@ -8,7 +8,6 @@
 .bannerWrapper {
   position: relative;
   width: 100%;
-  background-color: red;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: var(--radius-xlarge);
@@ -16,6 +15,7 @@
 
 .bannerWrapper > img {
   object-fit: cover;
+  background-color: var(--semantic-fill-normal);
 }
 
 .textWrapper {

@@ -17,6 +17,7 @@
 .coverWrapper > img {
   object-fit: cover;
   transition: all var(--motion-duration-xfast) var(--motion-timing-linear);
+  background-color: var(--semantic-fill-normal);
 }
 
 .container:hover .coverWrapper > img {
