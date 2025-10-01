@@ -2,6 +2,7 @@ import { HeadlineSectionContainer } from "ui-kit/atom";
 import { Col } from "ui-kit/foundation";
 import { Footer } from "@/components/footer/footer";
 import { Header } from "@/components/header/header";
+import { BlogSection } from "@/widget/home/blogSection/blogSection";
 import { HeroSection } from "@/widget/home/heroSection/heroSection";
 import { SeriesSection } from "@/widget/home/seriesSection/seriesSection";
 import { SubProjectSection } from "@/widget/home/subProjectSection/subProjectSection";
@@ -15,6 +16,7 @@ export default async function Home() {
       <HeadlineSectionContainer>
         <SubProjectSection />
         <SeriesSection />
+        <BlogSection />
       </HeadlineSectionContainer>
       <Footer />
     </Col>
