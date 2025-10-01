@@ -1,1 +1,1 @@
-export { TypeGridProps } from "./typeGridProps";
+export type { TypeGridProps } from "./typeGridProps";

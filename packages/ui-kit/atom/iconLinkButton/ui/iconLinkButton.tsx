@@ -10,14 +10,22 @@ import {
 import type { TypeIconLinkButtonProps } from "../type";
 import st from "./iconLinkButton.module.css";
 
-export function IconLinkButton({ href, color, size, iconKey, disabled, inset }: TypeIconLinkButtonProps) {
-  const content = color === "fill" ? (
-    <Icon iconKey={iconKey} size={24} color={"normal"} fill />
-  ) : (
-    <UiKitNonSolidInteractionWrapper inset={inset ?? 0} disabled={disabled}>
+export function IconLinkButton({
+  href,
+  color,
+  size,
+  iconKey,
+  disabled,
+  inset,
+}: TypeIconLinkButtonProps) {
+  const content =
+    color === "fill" ? (
       <Icon iconKey={iconKey} size={24} color={"normal"} fill />
-    </UiKitNonSolidInteractionWrapper>
-  );
+    ) : (
+      <UiKitNonSolidInteractionWrapper inset={inset ?? 0} disabled={!!disabled}>
+        <Icon iconKey={iconKey} size={24} color={"normal"} fill />
+      </UiKitNonSolidInteractionWrapper>
+    );
 
   const className = cn(
     st.iconLinkButtonDefault,
@@ -34,11 +42,7 @@ export function IconLinkButton({ href, color, size, iconKey, disabled, inset }: 
   );
 
   if (disabled) {
-    return (
-      <span className={className}>
-        {content}
-      </span>
-    );
+    return <span className={className}>{content}</span>;
   }
 
   return (

@@ -1,4 +1,3 @@
-// @ts-expect-error for importing sharp
 import sharp from "sharp"; // import * as sharp from "sharp" 도 가능하지만 default import 권장
 import { ThemeModeEnum } from "../const/ThemeModeEnum";
 

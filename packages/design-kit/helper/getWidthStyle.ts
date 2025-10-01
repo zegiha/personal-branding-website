@@ -7,7 +7,8 @@ export function getWidthStyle(v: TypeWidth): CSSProperties {
     v !== "fill-flex" &&
     v !== "auto" &&
     v !== "fit-content" &&
-    v !== undefined
+    v !== undefined &&
+    v !== null
   )
     return {
       width: v,

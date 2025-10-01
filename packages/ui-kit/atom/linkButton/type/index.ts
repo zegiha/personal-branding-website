@@ -1,1 +1,1 @@
-export { TypeLinkButtonProps } from "./typeLinkButtonProps";
+export type { TypeLinkButtonProps } from "./typeLinkButtonProps";

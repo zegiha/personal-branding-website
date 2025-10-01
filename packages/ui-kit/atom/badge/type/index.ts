@@ -1,1 +1,1 @@
-export { TypeBadgeProps } from "./typeBadgeProps";
+export type { TypeBadgeProps } from "./typeBadgeProps";

@@ -1,5 +1,5 @@
-import type { ReactNode } from "react";
 import type { TypeWidth } from "design-kit";
+import type { ReactNode } from "react";
 
 export type TypeGridProps = {
   width?: TypeWidth;

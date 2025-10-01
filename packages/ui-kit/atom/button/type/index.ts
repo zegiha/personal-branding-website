@@ -1,1 +1,1 @@
-export { TypeButtonProps } from "./typeButtonProps";
+export type { TypeButtonProps } from "./typeButtonProps";
