@@ -1,0 +1,15 @@
+.uiKitGridDefault {
+  display: grid;
+}
+
+.uiKitGridCol2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.uiKitGridCol4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.uiKitGridRow2 {
+  grid-template-rows: repeat(2, 1fr);
+}

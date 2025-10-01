@@ -1,0 +1,1 @@
+export { TypeGridProps } from "./typeGridProps";
