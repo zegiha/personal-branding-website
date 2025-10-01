@@ -13,7 +13,6 @@ export async function SubProjectSection() {
   const validateData = SchemeSubProjectGridItem.safeParse(data);
 
   if (validateData.success) {
-    console.log(chunk2DFrom1D(validateData.data, 4));
     return (
       <HeadlineSection headline={"서브프로젝트"}>
         <SubProjectCarousel>
