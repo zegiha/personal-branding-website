@@ -33,7 +33,7 @@ export async function SubProjectGridItem({
           <Typo.label.medium>{subHeadline}</Typo.label.medium>
           <Row width={"fill-width"} gap={8} wrap>
             {badges.map((v, i) => (
-              <Badge key={i} color={"translucent-gray"} leadIcon={v.icon} label={v.label} />
+              <Badge key={i} color={"translucent-gray"} leadIcon={v.leadIcon} label={v.label} />
             ))}
           </Row>
         </Col>

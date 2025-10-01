@@ -15,7 +15,7 @@ export async function GET(_: NextRequest) {
         },
         {
           label: "10만",
-          icon: "group",
+          leadIcon: "group",
         },
       ],
       linkUrl: "/",
@@ -35,7 +35,7 @@ export async function GET(_: NextRequest) {
         },
         {
           label: "10만",
-          icon: "group",
+          leadIcon: "group",
         },
       ],
       linkUrl: "/",
@@ -55,7 +55,7 @@ export async function GET(_: NextRequest) {
         },
         {
           label: "10만",
-          icon: "group",
+          leadIcon: "group",
         },
       ],
       linkUrl: "/",
@@ -75,7 +75,7 @@ export async function GET(_: NextRequest) {
         },
         {
           label: "10만",
-          icon: "group",
+          leadIcon: "group",
         },
       ],
       linkUrl: "/",
@@ -95,7 +95,7 @@ export async function GET(_: NextRequest) {
         },
         {
           label: "10만",
-          icon: "group",
+          leadIcon: "group",
         },
       ],
       linkUrl: "/",
