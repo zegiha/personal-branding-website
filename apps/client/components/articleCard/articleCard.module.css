@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  text-decoration: none;
+}
+
+.coverWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 7 / 5;
+  border-radius: var(--radius-large);
+  overflow: hidden;
+}
+
+.coverWrapper > img {
+  object-fit: cover;
+  transition: all var(--motion-duration-xfast) var(--motion-timing-linear);
+}
+
+.container:hover .coverWrapper > img {
+  transform: scale(1.028);
+}
+
+.contentContainer {
+  padding: 0 8px;
+}
+
+.container:hover .hoveredUnderline {
+  text-decoration: underline;
+}
