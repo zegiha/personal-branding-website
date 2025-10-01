@@ -4,6 +4,7 @@ import "design-kit";
 import "ui-kit";
 import { jetbrainsMono, pretendard } from "design-kit";
 import { getDesignKitClass } from "design-kit/server";
+import { MaterialSymbolsRounded } from "ui-kit";
 
 export const metadata: Metadata = {
   title: "Zegiha",
@@ -20,7 +21,7 @@ export default async function RootLayout({
   return (
     <html
       lang="ko"
-      className={`${designKitClass} ${pretendard.className} ${jetbrainsMono.className}`}
+      className={`${designKitClass} ${MaterialSymbolsRounded.className} ${pretendard.className} ${jetbrainsMono.className}`}
     >
       <body>{children}</body>
     </html>
