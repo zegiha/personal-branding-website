@@ -28,7 +28,7 @@ export const Typo = {
   label: {
     large: createTypo("label", "large"),
     medium: createTypo("label", "medium"),
-    small: createTypo("label", "submedium"),
+    small: createTypo("label", "small"),
   },
   caption: {
     medium: createTypo("caption", "medium"),
