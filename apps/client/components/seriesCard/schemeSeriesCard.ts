@@ -1,6 +1,6 @@
 import * as z from "zod";
 
-export const SchemeSeriesGridItem = z.object({
+export const SchemeSeriesCard = z.object({
   coverUrl: z.string(),
   name: z.string(),
   description: z.string(),

@@ -1,17 +1,17 @@
 import Image from "next/image";
 import { Badge } from "ui-kit/atom";
 import { Col, Row, Typo } from "ui-kit/foundation";
-import type { TypeSeriesGridItem } from "@/components/seriesGridItem/typeSeriesGridItem";
-import st from "./seriesGridItem.module.css";
+import type { TypeSeriesCard } from "@/components/seriesCard/typeSeriesCard";
+import st from "./seriesCard.module.css";
 
-export function SeriesGridItem({
+export function SeriesCard({
   coverUrl,
   name,
   description,
   linkUrl,
   involvedSeriesNumber,
   involvedArticleNumber,
-}: TypeSeriesGridItem) {
+}: TypeSeriesCard) {
   return (
     <a className={st.container} href={linkUrl}>
       <div className={st.coverWrapper}>
