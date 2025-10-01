@@ -1,4 +1,5 @@
 :root {
   --motion-duration-normal: 500ms;
   --motion-duration-fast: 240ms;
+  --motion-duration-xfast: 120ms;
 }
