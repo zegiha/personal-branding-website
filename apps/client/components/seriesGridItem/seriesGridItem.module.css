@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid var(--semantic-line-normal);
+  border-radius: var(--radius-large);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.coverWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.coverWrapper > img {
+  transition: all var(--motion-duration-xfast) var(--motion-timing-linear);
+  object-fit: cover;
+}
+
+.container:hover .coverWrapper > img {
+  transform: scale(1.028);
+}
+
+.contentContainer {
+  padding: 24px;
+}
+
+.container:hover .hoveredUnderline {
+  text-decoration: underline;
+}
