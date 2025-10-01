@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Badge } from "ui-kit/atom";
 import { Col, Row, Typo } from "ui-kit/foundation";
-import type { TypeSeriesCard } from "@/components/seriesCard/typeSeriesCard";
+import type { TypeSeriesCardProps } from "@/components/seriesCard/typeSeriesCardProps";
 import st from "./seriesCard.module.css";
 
 export function SeriesCard({
@@ -11,7 +11,7 @@ export function SeriesCard({
   linkUrl,
   involvedSeriesNumber,
   involvedArticleNumber,
-}: TypeSeriesCard) {
+}: TypeSeriesCardProps) {
   return (
     <a className={st.container} href={linkUrl}>
       <div className={st.coverWrapper}>
