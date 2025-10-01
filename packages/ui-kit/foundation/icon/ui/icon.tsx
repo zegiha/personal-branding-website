@@ -10,7 +10,7 @@ export function Icon({
 }: InterfaceIcon) {
   return (
     <div
-      className={"material-symbols-rounded iconIdentifierForUiKitTagUnit"}
+      className={"material-symbols-rounded"}
       style={{
         flex: 0,
         width: size,
