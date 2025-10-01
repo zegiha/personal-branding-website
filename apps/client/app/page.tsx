@@ -1,7 +1,9 @@
 import { HeadlineSectionContainer } from "ui-kit/atom";
 import { Col } from "ui-kit/foundation";
+import { Footer } from "@/components/footer/footer";
 import { Header } from "@/components/header/header";
 import { HeroSection } from "@/widget/home/heroSection/heroSection";
+import { SeriesSection } from "@/widget/home/seriesSection/seriesSection";
 import { SubProjectSection } from "@/widget/home/subProjectSection/subProjectSection";
 import st from "./page.module.css";
 
@@ -12,7 +14,9 @@ export default async function Home() {
       <HeroSection />
       <HeadlineSectionContainer>
         <SubProjectSection />
+        <SeriesSection />
       </HeadlineSectionContainer>
+      <Footer />
     </Col>
   );
 }
