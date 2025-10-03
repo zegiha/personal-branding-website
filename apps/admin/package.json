@@ -10,8 +10,14 @@
     "format": "biome format --write"
   },
   "peerDependencies": {
+    "next": "*",
     "react": "*",
     "react-dom": "*",
-    "next": "*"
+    "zod": "*"
+  },
+  "dependencies": {
+    "@notionhq/client": "^5.1.0",
+    "design-kit": "workspace:*",
+    "ui-kit": "workspace:*"
   }
 }
