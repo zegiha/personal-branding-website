@@ -66,6 +66,9 @@ importers:
       react-dom:
         specifier: '*'
         version: 19.1.0(react@19.1.0)
+      sharp:
+        specifier: ^0.34.4
+        version: 0.34.4
       ui-kit:
         specifier: workspace:*
         version: link:../../packages/ui-kit
