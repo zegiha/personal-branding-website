@@ -16,9 +16,7 @@ export function ArticleBulletedList({
           className={cn("ul-item", st.listMarker)}
           isMarkdown={true}
         ></Typo.label.medium>
-        <Typo.label.medium isMarkdown={true}>
-          {renderRichText(richText)}
-        </Typo.label.medium>
+        <Typo.label.medium isMarkdown={true}>{renderRichText(richText)}</Typo.label.medium>
       </Row>
       {children && (
         <Col gap={0} className={st.childrenIndent}>

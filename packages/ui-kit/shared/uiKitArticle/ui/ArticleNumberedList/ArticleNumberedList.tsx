@@ -14,9 +14,7 @@ export function ArticleNumberedList({
     <li className={st.listItem}>
       <Row className={st.listContent} gap={0}>
         <Typo.label.medium className={`ol-item ${st.markerSize}`} isMarkdown={true} />
-        <Typo.label.medium isMarkdown={true}>
-          {renderRichText(richText)}
-        </Typo.label.medium>
+        <Typo.label.medium isMarkdown={true}>{renderRichText(richText)}</Typo.label.medium>
       </Row>
       {children && (
         <Col gap={0} className={st.childrenIndent}>

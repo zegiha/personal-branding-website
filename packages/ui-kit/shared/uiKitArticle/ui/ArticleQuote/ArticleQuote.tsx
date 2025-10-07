@@ -14,9 +14,7 @@ export function ArticleQuote({
         <Row gap={8} alignItems="start">
           <Typo.label.medium className={st.quoteIcon}>💬</Typo.label.medium>
           <Col gap={0}>
-            <Typo.label.medium isMarkdown={true}>
-              {renderRichText(richText)}
-            </Typo.label.medium>
+            <Typo.label.medium isMarkdown={true}>{renderRichText(richText)}</Typo.label.medium>
             {children && <Col className={st.childrenIndent}>{children}</Col>}
           </Col>
         </Row>

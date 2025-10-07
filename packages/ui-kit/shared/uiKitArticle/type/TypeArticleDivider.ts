@@ -1,3 +1,3 @@
 export type TypeArticleDivider = {
-  type: "divider"
-}
+  type: "divider";
+};
