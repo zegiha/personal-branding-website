@@ -24,4 +24,5 @@ export const ZodEnumIconKey = z.enum([
   "calendar_month",
   "content_copy",
   "alternate_email",
+  "check",
 ]);
