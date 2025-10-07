@@ -1,0 +1,10 @@
+.container {
+  padding: 20px 12px;
+}
+
+.equationBlock {
+  background-color: var(--semantic-container-even);
+  border-radius: var(--radius-large);
+  padding: 24px;
+  width: 100%;
+}

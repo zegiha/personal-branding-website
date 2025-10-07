@@ -1,0 +1,22 @@
+.listItem {
+  list-style-type: none;
+}
+
+.listContent {
+  padding: 6px;
+}
+
+.listMarker {
+  width: 24px;
+  height: 27px;
+  background-color: red;
+  flex-shrink: 0;
+}
+
+.childrenIndent {
+  padding-left: 24px;
+}
+
+.markerSize {
+  min-width: 24px;
+}

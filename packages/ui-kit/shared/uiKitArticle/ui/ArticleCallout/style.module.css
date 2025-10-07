@@ -1,0 +1,15 @@
+.container {
+  padding: 20px 12px;
+}
+
+.calloutBlock {
+  background-color: var(--semantic-container-even);
+  border-radius: var(--radius-large);
+  padding: 24px;
+}
+
+.emoji {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+}

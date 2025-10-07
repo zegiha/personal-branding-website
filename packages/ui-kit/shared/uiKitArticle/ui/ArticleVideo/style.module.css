@@ -1,0 +1,12 @@
+.container {
+  padding: 20px 12px 12px;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-color: var(--semantic-container-even);
+  border: 1px solid var(--semantic-line-normal);
+  border-radius: var(--radius-large);
+}

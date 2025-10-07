@@ -1,0 +1,1 @@
+export { ArticleEquation } from "./ArticleEquation";

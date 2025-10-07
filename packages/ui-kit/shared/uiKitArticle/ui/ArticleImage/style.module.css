@@ -1,0 +1,12 @@
+.container {
+  padding: 20px 12px 12px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  background-color: var(--semantic-fill-weak);
+  border: 1px solid var(--semantic-line-normal);
+  border-radius: var(--radius-large);
+  object-fit: cover;
+}

@@ -1,0 +1,15 @@
+.listItem {
+  list-style-type: none;
+}
+
+.listContent {
+  padding: 6px;
+}
+
+.listMarker {
+  min-width: 24px;
+}
+
+.childrenIndent {
+  padding-left: 24px;
+}

@@ -1,6 +1,7 @@
 import type { TypeArticleBulletedList } from "./TypeArticleBulletedList";
 import type { TypeArticleCallout } from "./TypeArticleCallout";
 import type { TypeArticleCode } from "./TypeArticleCode";
+import type { TypeArticleDivider } from "./TypeArticleDivider";
 import type { TypeArticleEquation } from "./TypeArticleEquation";
 import type { TypeArticleHeadline1 } from "./TypeArticleHeadline1";
 import type { TypeArticleHeadline2 } from "./TypeArticleHeadline2";
@@ -23,4 +24,5 @@ export type TypeArticleContent =
   | TypeArticleImage
   | TypeArticleVideo
   | TypeArticleQuote
-  | TypeArticleEquation;
+  | TypeArticleEquation
+  | TypeArticleDivider;

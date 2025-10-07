@@ -1,0 +1,26 @@
+.container {
+  padding: 12px;
+}
+
+.codeBlock {
+  background-color: var(--semantic-container-even);
+  border-radius: var(--radius-large);
+  padding: 24px;
+  position: relative;
+}
+
+.copyButton {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  transition: opacity var(--motion-duration-xfast) var(--motion-timing-linear);
+  opacity: 0;
+}
+.container:hover .copyButton {
+  opacity: 1;
+}
+
+.codeContent {
+  margin: 0;
+  white-space: pre-wrap;
+}
