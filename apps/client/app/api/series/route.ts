@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
+export async function GET(_: NextRequest) {
   const dummy = {
     coverUrl: "https://i.pinimg.com/736x/07/0f/80/070f80bb12382c4af30191135deb72d3.jpg",
     name: "Minji",

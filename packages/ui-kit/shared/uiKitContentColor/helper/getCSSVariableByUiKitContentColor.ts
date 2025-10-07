@@ -1,4 +1,4 @@
-import type { TypeUiKitContentColor } from "../type/typeUiKitContentColor";
+import type { TypeUiKitContentColor } from "../type";
 
 export function getCSSVariableByUiKitContentColor(v: TypeUiKitContentColor) {
   if (v === "strong" || v === "normal" || v === "weak") return `var(--semantic-label-${v})`;

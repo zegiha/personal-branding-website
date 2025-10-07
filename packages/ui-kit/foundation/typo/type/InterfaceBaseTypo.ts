@@ -1,6 +1,6 @@
 import type { TypeWidth } from "design-kit";
 import type { ComponentPropsWithoutRef } from "react";
-import type { TypeUiKitContentColor } from "../../../shared/uiKitContentColor";
+import type { TypeUiKitContentColor } from "../../../shared";
 import type {
   TypeTypographySubVariant,
   TypeTypographyTagName,
