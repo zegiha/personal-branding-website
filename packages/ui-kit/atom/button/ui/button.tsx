@@ -21,6 +21,7 @@ export function Button({
   leadIcon,
   trailIcon,
   disabled,
+  className,
 }: TypeButtonProps) {
   const iconSize = getIconSize(size);
 
@@ -39,12 +40,18 @@ export function Button({
           `uiKitTagUnitColor${firstCharacterToUpperCase(dashToCamelCase(color))}`
         ],
         getWidthClass(width),
+        className,
       )}
       style={{
         ...getWidthStyle(width),
       }}
     >
-      <Row className={st.buttonWrapper} alignItems={"center"} gap={8} width={width}>
+      <Row
+        className={st.buttonWrapper}
+        alignItems={"center"}
+        gap={size !== "small" ? 8 : 4}
+        width={width}
+      >
         {leadIcon && <Icon iconKey={leadIcon} color={"inherit"} size={iconSize} />}
         <ButtonLabelProviderBySize size={size} label={label} fontWeight={fontWeight} />
         {trailIcon && <Icon iconKey={trailIcon} color={"inherit"} size={iconSize} />}

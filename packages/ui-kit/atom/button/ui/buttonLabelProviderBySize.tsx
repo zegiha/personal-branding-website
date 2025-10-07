@@ -7,6 +7,12 @@ export default function ButtonLabelProviderBySize({
   fontWeight,
 }: Pick<TypeButtonProps, "size" | "label" | "fontWeight">) {
   switch (size) {
+    case "small":
+      return (
+        <Typo.label.small fontWeight={fontWeight} color={"inherit"}>
+          {label}
+        </Typo.label.small>
+      );
     case "medium":
       return (
         <Typo.label.medium fontWeight={fontWeight} color={"inherit"}>
