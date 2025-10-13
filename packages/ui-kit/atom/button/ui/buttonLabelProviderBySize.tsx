@@ -9,19 +9,19 @@ export default function ButtonLabelProviderBySize({
   switch (size) {
     case "small":
       return (
-        <Typo.label.small fontWeight={fontWeight} color={"inherit"}>
+        <Typo.label.small fontWeight={fontWeight} color={"inherit"} textAlign={"center"}>
           {label}
         </Typo.label.small>
       );
     case "medium":
       return (
-        <Typo.label.medium fontWeight={fontWeight} color={"inherit"}>
+        <Typo.label.medium fontWeight={fontWeight} color={"inherit"} textAlign={"center"}>
           {label}
         </Typo.label.medium>
       );
     case "large":
       return (
-        <Typo.label.large fontWeight={fontWeight} color={"inherit"}>
+        <Typo.label.large fontWeight={fontWeight} color={"inherit"} textAlign={"center"}>
           {label}
         </Typo.label.large>
       );

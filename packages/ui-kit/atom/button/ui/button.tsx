@@ -48,6 +48,7 @@ export function Button({
     >
       <Row
         className={st.buttonWrapper}
+        justifyContent={"center"}
         alignItems={"center"}
         gap={size !== "small" ? 8 : 4}
         width={width}
