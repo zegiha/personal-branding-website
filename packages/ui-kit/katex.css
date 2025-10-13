@@ -1,1 +1,4 @@
 @import "katex/dist/katex.min.css";
+.katex {
+  white-space: wrap !important;
+}
