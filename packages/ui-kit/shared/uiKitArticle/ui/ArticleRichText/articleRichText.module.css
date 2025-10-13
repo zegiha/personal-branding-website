@@ -1,3 +1,4 @@
 .link {
   color: var(--semantic-label-weak);
+  text-decoration: underline;
 }
