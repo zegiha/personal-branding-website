@@ -10,7 +10,18 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.zegiha.work",
+        port: "",
+        pathname: "/**",
+      },
     ],
+  },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "100mb",
+    },
   },
 };
 
