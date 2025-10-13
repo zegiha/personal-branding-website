@@ -10,14 +10,18 @@
     "format": "biome format --write"
   },
   "peerDependencies": {
+    "@aws-sdk/client-s3": "*",
+    "@notionhq/client": "*",
     "next": "*",
     "react": "*",
     "react-dom": "*",
-    "zod": "*"
+    "zod": "*",
+    "prisma": "*"
   },
   "dependencies": {
-    "@notionhq/client": "^5.1.0",
+    "@prisma/client": "^6.17.1",
     "design-kit": "workspace:*",
+    "image-size": "^2.0.2",
     "sharp": "^0.34.4",
     "ui-kit": "workspace:*"
   }

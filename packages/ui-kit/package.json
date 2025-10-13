@@ -19,6 +19,7 @@
   },
   "peerDependencies": {
     "material-symbols": "*",
-    "zod": "*"
+    "zod": "*",
+    "@notionhq/client": "*"
   }
 }
