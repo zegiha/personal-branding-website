@@ -4,10 +4,10 @@ export type TypeArticleRichText =
   | {
       type: "text";
       style: TypeArticleRichTextStyle;
-      content?: string;
+      content: string;
       link?: string;
     }
   | {
       type: "equation";
-      content?: string;
+      content: string;
     };
