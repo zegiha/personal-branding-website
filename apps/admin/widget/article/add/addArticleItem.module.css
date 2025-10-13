@@ -1,0 +1,11 @@
+.pageItem {
+  position: relative;
+  padding: 8px;
+  border-radius: var(--radius-medium);
+  background-color: var(--semantic-fill-normal);
+}
+
+.fakeBackground {
+  position: absolute;
+  inset: 0;
+}
