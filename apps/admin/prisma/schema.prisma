@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Article {
+  uuid          String   @id @default(uuid()) // 고유 식별자
+  coverImageUrl String // 커버 이미지
+  title         String // 제목
+  subTitle      String // 부제목 (없을 수도 있음)
+  content       Json // 본문 (리치 텍스트 등)
+  createdAt     DateTime @default(now()) // 생성 날짜
+  updatedAt     DateTime @updatedAt // 수정 날짜
+  liked         Int      @default(0) // 좋아요 수
+  shared        Int      @default(0) // 공유 수
+  viewCount     Int      @default(0) // 조회 수
+  readingMinute Int // 예상 독서 시간 (분 단위)
+
+  // 관계 (N:M)
+  tags ArticleTag[] // Tag와의 다대다 관계
+}
+
+model Tag {
+  id       String       @id @default(cuid())
+  name     String       @unique
+  articles ArticleTag[]
+}
+
+model ArticleTag {
+  articleId String
+  tagId     String
+
+  article Article @relation(fields: [articleId], references: [uuid])
+  tag     Tag     @relation(fields: [tagId], references: [id])
+
+  @@id([articleId, tagId]) // 복합 PK로 중복 방지
+}
