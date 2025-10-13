@@ -30,12 +30,12 @@
   --palette-red-10-rgb: 255, 41, 41;
 
   /* Pink Colors - Hex */
-  --palette-pink-00: #f02648;
-  --palette-pink-10: #ff294d;
+  --palette-pink-00: #f54479;
+  --palette-pink-10: #ff477e;
 
   /* Pink Colors - RGB */
-  --palette-pink-00-rgb: 240, 38, 72;
-  --palette-pink-10-rgb: 255, 41, 77;
+  --palette-pink-00-rgb: 245, 68, 121;
+  --palette-pink-10-rgb: 255, 71, 126;
 
   /* Blue Colors - Hex */
   --palette-blue-00: #2289f0;
