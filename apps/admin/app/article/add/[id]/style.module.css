@@ -1,0 +1,36 @@
+.inputContainer {
+  padding: 10px 12px;
+  background-color: var(--semantic-fill-normal);
+  border: 1px solid var(--semantic-line-normal);
+  border-radius: var(--radius-medium);
+  height: 44px;
+}
+
+.input {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: var(--semantic-label-normal);
+}
+
+.input::placeholder {
+  color: var(--semantic-label-weak);
+}
+
+.input,
+.input::placeholder {
+  font-size: var(--label-medium-fontSize);
+  font-weight: 500;
+  line-height: var(--label-medium-lineHeight-default);
+}
+
+.inputSection {
+  padding: 32px 24px;
+}
+
+.inputSectionWrapper {
+  max-width: 360px;
+}
