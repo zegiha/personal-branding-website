@@ -1,21 +1,17 @@
 import type { TypeOlNumberingType, TypeUlNumberingType } from "../type";
+import { getNextOlNumberingType } from "./getNextOlNumberingType";
+import { getNextUlNumberingType } from "./getNextUlNumberingType";
+import { getOlNumbering } from "./getOlNumbering";
+import { getUlNumbering } from "./getUlNumbering";
 
 export function numbering({
   target,
-  olNumberingType,
-  ulNumberingType,
-  getOlNumbering,
-  getNextOlNumberingType,
-  getUlNumbering,
-  getNextUlNumberingType,
+  olNumberingType = "arabic",
+  ulNumberingType = "black_circle",
 }: {
   target: NodeListOf<ChildNode>;
-  olNumberingType: TypeOlNumberingType;
-  ulNumberingType: TypeUlNumberingType;
-  getOlNumbering: (n: number, v: TypeOlNumberingType) => string;
-  getNextOlNumberingType: (v: TypeOlNumberingType) => TypeOlNumberingType;
-  getUlNumbering: (n: number, v: TypeUlNumberingType) => string;
-  getNextUlNumberingType: (v: TypeUlNumberingType) => TypeUlNumberingType;
+  olNumberingType?: TypeOlNumberingType;
+  ulNumberingType?: TypeUlNumberingType;
 }): void {
   target.forEach((node) => {
     if (!(node instanceof Element)) return;
@@ -39,10 +35,6 @@ export function numbering({
               target: child.childNodes,
               olNumberingType: getNextOlNumberingType(olNumberingType),
               ulNumberingType,
-              getOlNumbering,
-              getNextOlNumberingType,
-              getUlNumbering,
-              getNextUlNumberingType,
             });
           }
         }
@@ -64,10 +56,6 @@ export function numbering({
               target: child.childNodes,
               olNumberingType,
               ulNumberingType: getNextUlNumberingType(ulNumberingType),
-              getOlNumbering,
-              getNextOlNumberingType,
-              getUlNumbering,
-              getNextUlNumberingType,
             });
           }
         }
@@ -79,10 +67,6 @@ export function numbering({
           target: node.childNodes,
           olNumberingType,
           ulNumberingType,
-          getOlNumbering,
-          getNextOlNumberingType,
-          getUlNumbering,
-          getNextUlNumberingType,
         });
       }
     }
