@@ -1,0 +1,27 @@
+.container {
+  margin-top: var(--article-margin-top-xnormal);
+  margin-bottom: var(--article-margin-bottom-strong);
+}
+
+.container:hover .copyButton {
+  opacity: 1;
+}
+
+.codeBlock {
+  background-color: var(--article-box-background-color);
+  border-radius: var(--article-radius);
+  padding: var(--article-block-padding);
+  position: relative;
+}
+
+.copyButton {
+  position: absolute;
+  top: var(--article-block-padding);
+  right: var(--article-block-padding);
+  opacity: 0;
+}
+
+.codeContent {
+  margin: 0;
+  white-space: pre-wrap;
+}

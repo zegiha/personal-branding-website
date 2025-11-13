@@ -1,0 +1,30 @@
+{
+  "name": "client-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "biome check",
+    "format": "biome format --write"
+  },
+  "dependencies": {
+    "@linaria/core": "^6.3.0",
+    "@linaria/react": "^6.3.0",
+    "next": "16.0.1",
+    "next-with-linaria": "^1.3.0",
+    "notion-article-kit": "workspace:*",
+    "notion-article-kit-copy": "workspace:*",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "sdu-kit": "workspace:*"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}

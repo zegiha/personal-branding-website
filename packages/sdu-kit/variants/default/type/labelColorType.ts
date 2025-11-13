@@ -1,0 +1,13 @@
+export type LabelColorType = 
+ | 'strong'
+ | 'normal'
+ | 'weak'
+ | 'whiteStatic'
+ | 'whiteVariable'
+ | 'blackStatic'
+ | 'blackVariable'
+ | 'red'
+ | 'pink'
+ | 'blue'
+ | 'yellow'
+ | 'green'

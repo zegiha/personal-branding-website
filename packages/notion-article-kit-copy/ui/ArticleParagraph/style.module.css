@@ -1,0 +1,8 @@
+.paragraph {
+  margin-top: var(--article-margin-top-normal);
+  margin-bottom: var(--article-margin-bottom-normal);
+}
+
+.childrenIndent {
+  padding-left: var(--article-indent-nested);
+}

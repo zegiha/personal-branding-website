@@ -1,0 +1,4 @@
+.link {
+  color: var(--article-typo-color-link);
+  text-decoration: underline;
+}

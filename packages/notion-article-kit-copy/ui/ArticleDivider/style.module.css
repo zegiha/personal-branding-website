@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  margin-top: var(--article-margin-top-xxstrong);
+  margin-bottom: var(--article-margin-bottom-strong);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--article-line);
+}

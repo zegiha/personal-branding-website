@@ -1,0 +1,69 @@
+/* Base typography styles */
+.baseTypo {
+  margin: 0;
+  padding: 0;
+}
+
+/* Headline variants */
+.headlineLarge {
+  composes: baseTypo;
+  font-size: var(--article-typo-headline-large-font-size);
+  line-height: var(--article-typo-headline-large-line-height);
+  font-weight: var(--article-typo-font-weight-bold);
+}
+
+.headlineMedium {
+  composes: baseTypo;
+  font-size: var(--article-typo-headline-medium-font-size);
+  line-height: var(--article-typo-headline-medium-line-height);
+  font-weight: var(--article-typo-font-weight-bold);
+}
+
+.headlineSmall {
+  composes: baseTypo;
+  font-size: var(--article-typo-headline-small-font-size);
+  line-height: var(--article-typo-headline-small-line-height);
+  font-weight: var(--article-typo-font-weight-bold);
+}
+
+/* Label variants */
+.labelMedium {
+  composes: baseTypo;
+  font-size: var(--article-typo-label-medium-font-size);
+  line-height: var(--article-typo-label-medium-line-height);
+  font-weight: var(--article-typo-font-weight-medium);
+}
+
+/* Caption variants */
+.captionMedium {
+  composes: baseTypo;
+  font-size: var(--article-typo-caption-medium-font-size);
+  line-height: var(--article-typo-caption-medium-line-height);
+  font-weight: var(--article-typo-font-weight-regular);
+}
+
+/* Color modifiers */
+.colorStrong {
+  color: var(--article-typo-color-strong);
+}
+
+.colorNormal {
+  color: var(--article-typo-color-normal);
+}
+
+.colorWeak {
+  color: var(--article-typo-color-weak);
+}
+
+/* Font weight modifiers */
+.fontWeightRegular {
+  font-weight: var(--article-typo-font-weight-regular);
+}
+
+.fontWeightMedium {
+  font-weight: var(--article-typo-font-weight-medium);
+}
+
+.fontWeightBold {
+  font-weight: var(--article-typo-font-weight-bold);
+}

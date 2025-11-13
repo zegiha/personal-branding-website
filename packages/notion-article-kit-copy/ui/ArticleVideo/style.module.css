@@ -1,0 +1,21 @@
+.container {
+  margin-top: var(--article-margin-top-xstrong);
+  margin-bottom: var(--article-margin-bottom-strong);
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-color: var(--article-box-background-color);
+  border: 1px solid var(--article-line);
+  border-radius: var(--article-radius);
+}
+
+.iframe {
+  width: 100%;
+  aspect-ratio: var(--article-media-aspect-ratio);
+  background-color: var(--article-box-background-color);
+  border: 1px solid var(--article-line);
+  border-radius: var(--article-radius);
+}

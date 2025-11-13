@@ -1,0 +1,18 @@
+.button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background-color: var(--article-box-button-background-color);
+  padding: 6px;
+  border-radius: 6px;
+  transition: all 0.12s ease-in-out;
+  height: 29px;
+}
+
+.button:hover:not(:disabled) {
+  background-color: var(--article-box-button-background-color-hover);
+}

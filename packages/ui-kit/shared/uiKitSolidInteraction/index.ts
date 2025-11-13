@@ -1,1 +1,0 @@
-export { uiKitSolidInteractionModuleCSS } from "./ui";
