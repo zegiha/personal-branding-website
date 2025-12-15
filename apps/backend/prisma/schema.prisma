@@ -1,0 +1,156 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Article {
+  id        String   @id @default(uuid())
+  title     String @unique
+  description String
+  content   Json
+  cover_image_url String
+  like_count Int      @default(0)
+  view_count Int      @default(0)
+  share_count Int      @default(0)
+  read_time Int
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  action ArticleAction? @relation(fields: [action_id], references: [id])
+  action_id String?
+
+  tags ArticleTag[]
+
+  series ArticleOnSeries[]
+
+  subproject Subproject? @relation(fields: [subproject_id], references: [id])
+  subproject_id String?
+
+  playground Playground?
+}
+
+enum ArticleActionType {
+  NEW_WINDOW
+  LINK
+}
+
+model ArticleAction {
+  id        String   @id @default(uuid())
+  type ArticleActionType
+  url String
+  label String
+  image_url String?
+
+  article Article[]
+}
+
+model Tag {
+  id        String   @id @default(uuid())
+  content String @unique
+  
+  articles ArticleTag[]
+}
+
+model ArticleTag {
+  article Article @relation(fields: [article_id], references: [id])
+  article_id String
+  tag Tag @relation(fields: [tag_id], references: [id])
+  tag_id String
+  @@id([article_id, tag_id])
+}
+
+model Series {
+  id        String   @id @default(uuid())
+  name String @unique
+  description String
+  image_url String
+
+  topic SeriesTopic[]
+
+  nest_series Series[] @relation("SeriesHierarchy")
+
+  parent_series Series? @relation("SeriesHierarchy", fields: [parent_series_id], references: [id])
+  parent_series_id String?
+
+  articles ArticleOnSeries[]
+  subproject Subproject? @relation(fields: [subproject_id], references: [id])
+  subproject_id String?
+}
+
+model SeriesTopic {
+  name String @id
+  series Series[]
+}
+
+model ArticleOnSeries {
+  article Article @relation(fields: [article_id], references: [id])
+  article_id String
+  series Series @relation(fields: [series_id], references: [id])
+  series_id String
+  @@id([article_id, series_id])
+}
+
+model Subproject {
+  id String @id @default(uuid())
+  name String
+  cover_video_url String
+  project_url String
+  service_description String
+  recommend_description String
+  feature_description String
+  platform_description String
+
+  reviews SubprojectReview[]
+
+  management_log Article[]
+  series Series[]
+}
+
+model SubprojectReview {
+  id String @id @default(uuid())
+  subproject Subproject @relation(fields: [subproject_id], references: [id])
+  subproject_id String
+  score Int
+  title String
+  content String
+}
+
+model Playground {
+  id String @id @default(uuid())
+  name String
+  description String
+  url String
+  like_count Int @default(0)
+  share_count Int @default(0)
+  
+  article Article? @relation(fields: [article_id], references: [id])
+  article_id String? @unique
+}
+
+enum HeroOpenType {
+  NEW_WINDOW
+  LINK
+}
+
+model Hero {
+  id String @id @default(uuid())
+  title String
+  description String
+  image_url String
+  open_type HeroOpenType
+  url String
+  button_text String
+  icon_key String
+}
