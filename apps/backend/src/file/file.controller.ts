@@ -1,6 +1,18 @@
-import { Controller, Post, UseInterceptors, UploadedFiles, Body } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  UseInterceptors,
+  UploadedFiles,
+  Body,
+} from '@nestjs/common';
 import { AnyFilesInterceptor } from '@nestjs/platform-express';
-import { ApiBody, ApiConsumes, ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBody,
+  ApiConsumes,
+  ApiOkResponse,
+  ApiOperation,
+  ApiTags,
+} from '@nestjs/swagger';
 import { FileService } from './file.service';
 import { UploadImageUrlDto } from './dto/uploadImageUrl.dto';
 import { ImageResponseDto } from './dto/response/image.response.dto';
@@ -12,7 +24,8 @@ export class FileController {
 
   @ApiOperation({
     summary: '폼데이터 이미지 업로드',
-    description: '멀티파트 폼데이터로 이미지를 업로드하여 CDN URL을 반환합니다.',
+    description:
+      '멀티파트 폼데이터로 이미지를 업로드하여 CDN URL을 반환합니다.',
   })
   @ApiConsumes('multipart/form-data')
   @ApiBody({
@@ -38,7 +51,9 @@ export class FileController {
   })
   @Post('upload/image/form-data')
   @UseInterceptors(AnyFilesInterceptor())
-  async uploadImageFormData(@UploadedFiles() files: Express.Multer.File[]): Promise<ImageResponseDto[]> {
+  async uploadImageFormData(
+    @UploadedFiles() files: Express.Multer.File[],
+  ): Promise<ImageResponseDto[]> {
     return this.fileService.uploadImageFormData(files);
   }
 
@@ -52,7 +67,9 @@ export class FileController {
     isArray: true,
   })
   @Post('upload/image/url')
-  async uploadImageUrl(@Body() dto: UploadImageUrlDto): Promise<ImageResponseDto[]> {
+  async uploadImageUrl(
+    @Body() dto: UploadImageUrlDto,
+  ): Promise<ImageResponseDto[]> {
     return this.fileService.uploadImageUrl(dto);
   }
 }

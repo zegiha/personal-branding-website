@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Delete, Body, Query, Param } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Delete,
+  Body,
+  Query,
+  Param,
+} from '@nestjs/common';
 import {
   ApiCreatedResponse,
   ApiExtraModels,
@@ -43,7 +51,9 @@ export class HeroController {
     },
   })
   @Get()
-  async getHeroes(@Query() dto: GetHeroesDto): Promise<PaginationEntity<HeroResponseDto>> {
+  async getHeroes(
+    @Query() dto: GetHeroesDto,
+  ): Promise<PaginationEntity<HeroResponseDto>> {
     return this.heroService.getHeroes(dto);
   }
 
@@ -90,7 +100,9 @@ export class HeroController {
     type: DeleteHeroResponseDto,
   })
   @Delete(':id')
-  async deleteHero(@Param() params: HeroIdParamDto): Promise<DeleteHeroResponseDto> {
+  async deleteHero(
+    @Param() params: HeroIdParamDto,
+  ): Promise<DeleteHeroResponseDto> {
     return this.heroService.deleteHero(params.id);
   }
 }

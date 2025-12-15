@@ -15,10 +15,10 @@ import { ConfigService } from '@nestjs/config';
           auth: config.get<string>('NOTION_API_TOKEN') ?? '',
         });
       },
-      inject: [ConfigService]
+      inject: [ConfigService],
     },
-    NotionService
+    NotionService,
   ],
-  exports: [NotionService]
+  exports: [NotionService],
 })
 export class NotionModule {}

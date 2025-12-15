@@ -11,7 +11,8 @@ import { S3Client } from '@aws-sdk/client-s3';
       useFactory: (config: ConfigService) => {
         const endpoint = config.get<string>('R2_ENDPOINT') ?? '';
         const accessKeyId = config.get<string>('R2_ACCESS_KEY') ?? '';
-        const secretAccessKey = config.get<string>('R2_PRIVATE_ACCESS_KEY') ?? '';
+        const secretAccessKey =
+          config.get<string>('R2_PRIVATE_ACCESS_KEY') ?? '';
 
         return new S3Client({
           region: 'auto',
@@ -19,9 +20,9 @@ import { S3Client } from '@aws-sdk/client-s3';
           credentials: { accessKeyId, secretAccessKey },
         });
       },
-      inject: [ConfigService]
-    }
+      inject: [ConfigService],
+    },
   ],
-  exports: [R2_CLIENT]
+  exports: [R2_CLIENT],
 })
 export class R2Module {}

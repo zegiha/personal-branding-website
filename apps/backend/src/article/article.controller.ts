@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Body, Query, Param, Patch, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Query,
+  Param,
+  Patch,
+  Delete,
+} from '@nestjs/common';
 import {
   ApiCreatedResponse,
   ApiExtraModels,
@@ -34,7 +43,8 @@ export class ArticleController {
 
   @ApiOperation({
     summary: '아티클 목록 조회',
-    description: '태그와 정렬 조건을 기반으로 페이지네이션된 아티클 목록을 반환합니다.',
+    description:
+      '태그와 정렬 조건을 기반으로 페이지네이션된 아티클 목록을 반환합니다.',
   })
   @ApiOkResponse({
     description: '페이지네이션된 아티클 목록',
@@ -53,7 +63,9 @@ export class ArticleController {
     },
   })
   @Get()
-  async getArticles(@Query() dto: GetArticlesDto): Promise<PaginationEntity<ArticleSummaryResponseDto>> {
+  async getArticles(
+    @Query() dto: GetArticlesDto,
+  ): Promise<PaginationEntity<ArticleSummaryResponseDto>> {
     return this.articleService.getArticles(dto);
   }
 
@@ -66,7 +78,9 @@ export class ArticleController {
     type: ArticleResponseDto,
   })
   @Post()
-  async createArticle(@Body() dto: CreateArticleDto): Promise<ArticleResponseDto> {
+  async createArticle(
+    @Body() dto: CreateArticleDto,
+  ): Promise<ArticleResponseDto> {
     return this.articleService.createArticle(dto);
   }
 
@@ -84,7 +98,9 @@ export class ArticleController {
     isArray: true,
   })
   @Get('search/:title')
-  async searchByTitle(@Param() params: ArticleTitleParamDto): Promise<ArticleSummaryResponseDto[]> {
+  async searchByTitle(
+    @Param() params: ArticleTitleParamDto,
+  ): Promise<ArticleSummaryResponseDto[]> {
     return this.articleService.searchByTitle(params.title);
   }
 
@@ -101,7 +117,9 @@ export class ArticleController {
     type: ArticleResponseDto,
   })
   @Get(':title')
-  async getArticleByTitle(@Param() params: ArticleTitleParamDto): Promise<ArticleResponseDto> {
+  async getArticleByTitle(
+    @Param() params: ArticleTitleParamDto,
+  ): Promise<ArticleResponseDto> {
     return this.articleService.getArticleByTitle(params.title);
   }
 
@@ -138,7 +156,9 @@ export class ArticleController {
     type: DeleteArticleResponseDto,
   })
   @Delete(':id')
-  async deleteArticle(@Param() params: ArticleIdParamDto): Promise<DeleteArticleResponseDto> {
+  async deleteArticle(
+    @Param() params: ArticleIdParamDto,
+  ): Promise<DeleteArticleResponseDto> {
     return this.articleService.deleteArticle(params.id);
   }
 
@@ -155,7 +175,9 @@ export class ArticleController {
     type: ArticleCountResponseDto,
   })
   @Post(':id/view')
-  async addView(@Param() params: ArticleIdParamDto): Promise<ArticleCountResponseDto> {
+  async addView(
+    @Param() params: ArticleIdParamDto,
+  ): Promise<ArticleCountResponseDto> {
     return this.articleService.addView(params.id);
   }
 
@@ -172,7 +194,9 @@ export class ArticleController {
     type: ArticleCountResponseDto,
   })
   @Post(':id/share')
-  async addShare(@Param() params: ArticleIdParamDto): Promise<ArticleCountResponseDto> {
+  async addShare(
+    @Param() params: ArticleIdParamDto,
+  ): Promise<ArticleCountResponseDto> {
     return this.articleService.addShare(params.id);
   }
 
@@ -189,7 +213,9 @@ export class ArticleController {
     type: ArticleCountResponseDto,
   })
   @Post(':id/like')
-  async addLike(@Param() params: ArticleIdParamDto): Promise<ArticleCountResponseDto> {
+  async addLike(
+    @Param() params: ArticleIdParamDto,
+  ): Promise<ArticleCountResponseDto> {
     return this.articleService.addLike(params.id);
   }
 }

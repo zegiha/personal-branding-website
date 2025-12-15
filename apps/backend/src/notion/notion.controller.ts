@@ -1,5 +1,10 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { ApiOkResponse, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
+import {
+  ApiOkResponse,
+  ApiOperation,
+  ApiParam,
+  ApiTags,
+} from '@nestjs/swagger';
 import { NotionService } from './notion.service';
 import { NotionDatabaseResponseDto } from './dto/response/notionDatabase.response.dto';
 import { NotionPageResponseDto } from './dto/response/notionPage.response.dto';
@@ -42,7 +47,10 @@ export class NotionController {
     isArray: true,
   })
   @Get('page/:path/:id')
-  async getPage(@Param('path') path: string, @Param('id') id: string): Promise<NotionPageResponseDto[]> {
+  async getPage(
+    @Param('path') path: string,
+    @Param('id') id: string,
+  ): Promise<NotionPageResponseDto[]> {
     return this.notionService.getPage(id, path);
   }
 
