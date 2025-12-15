@@ -1,0 +1,11 @@
+export type TextColorType = 
+| 'normal'
+| 'strong'
+| 'weak'
+| 'red'
+| 'pink'
+| 'blue'
+| 'yellow'
+| 'green'
+| 'whiteVariable'
+| 'whiteStatic'

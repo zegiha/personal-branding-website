@@ -3,23 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write"
-  },
-  "peerDependencies": {
-    "classnames": "*",
-    "next": "*",
-    "react": "*",
-    "react-dom": "*",
-    "swiper": "*",
-    "zod": "*"
+    "format": "biome format --write",
+    "analyze": "cross-env ANALYZE=true next build --webpack"
   },
   "dependencies": {
-    "design-kit": "workspace:*",
-    "sharp": "^0.34.4",
-    "ui-kit": "workspace:*"
+    "@tanstack/react-query": "^5.90.12",
+    "axios": "^1.13.2",
+    "next": "16.0.8",
+    "notion-article-kit": "workspace:*",
+    "plaiceholder": "^3.0.0",
+    "sharp": "^0.34.5",
+    "swiper": "^12.0.3"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^16.0.10",
+    "@types/node": "^20",
+    "@vanilla-extract/next-plugin": "^2.4.16",
+    "babel-plugin-react-compiler": "1.0.0",
+    "cross-env": "^10.1.0",
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "react": ">=19.2.0",
+    "react-dom": ">=19.2.0"
   }
 }

@@ -1,1 +1,0 @@
-export { getCSSVariableByUiKitContentColor } from "./getCSSVariableByUiKitContentColor";

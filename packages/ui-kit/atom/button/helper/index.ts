@@ -1,1 +1,0 @@
-export { getIconSize } from "./getIconSize";

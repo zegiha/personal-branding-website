@@ -1,30 +1,76 @@
+import {Text, Badge, Skeleton} from "@/components"
+import {
+  container,
+  coverImageWrap,
+  coverImage as coverImageStyle,
+  contentWrap,
+  badgeWrap,
+} from './style.css'
+import Link from "next/link"
+import type {ArticleSummary, BlurImageEntity} from "@/types"
+import {breakPoint} from "@/theme/tokens";
 import Image from "next/image";
-import { Badge } from "ui-kit/atom";
-import { Col, Row, Typo } from "ui-kit/foundation";
-import type { TypeArticleCardProps } from "@/components/articleCard/typeArticleCardProps";
-import st from "./articleCard.module.css";
 
 export function ArticleCard({
-  coverUrl,
-  headline,
-  readingTime,
+  title,
+  coverImageUrl,
+  readTime,
   viewCount,
-  linkUrl,
-}: TypeArticleCardProps) {
+  blurDataUrl,
+  isPriority = false,
+}: Omit<BlurImageEntity<ArticleSummary>, 'id' | 'description' | 'updatedAt'> & {
+  isPriority?: boolean;
+}) {
   return (
-    <a className={st.container} href={linkUrl}>
-      <div className={st.coverWrapper}>
-        <Image src={coverUrl} alt={"article card cover image"} fill />
+    <Link href={`/article/${title}`} className={container}>
+      <span className={coverImageWrap}>
+        <Image
+          className={coverImageStyle}
+          src={coverImageUrl}
+          alt={title}
+          fill
+          sizes={`320px, ${breakPoint.subMedium} 340px, ${breakPoint.small} 520px`}
+          priority={isPriority}
+          fetchPriority={isPriority ? 'high' : 'auto'}
+          loading={isPriority ? undefined : 'lazy'}
+          placeholder={'blur'}
+          blurDataURL={blurDataUrl}
+        />
+      </span>
+      <div className={contentWrap}>
+        <Text type='label' size='large' color='normal'>{title}</Text>
+        <div className={badgeWrap}>
+          <Badge
+            size="medium"
+            color="gray"
+            translucent
+            label={`${readTime}분`}
+            leadIcon="time"
+          />
+          <Badge
+            size="medium"
+            color="gray"
+            translucent
+            label={viewCount.toLocaleString()}
+            leadIcon="visible"
+          />
+        </div>
       </div>
-      <Col className={st.contentContainer} width={"fill-width"} gap={8}>
-        <Typo.label.large className={st.hoveredUnderline} width={"fill-width"} color={"strong"}>
-          {headline}
-        </Typo.label.large>
-        <Row width={"fill-width"} gap={8} wrap>
-          <Badge color={"translucent-gray"} leadIcon={"schedule"} label={`${readingTime} 분`} />
-          <Badge color={"translucent-gray"} leadIcon={"visibility"} label={`${viewCount}`} />
-        </Row>
-      </Col>
-    </a>
-  );
+    </Link>
+  )
+}
+
+export function ArticleCardSkeleton() {
+  return (
+    <div className={container}>
+      <Skeleton className={coverImageWrap} radius={'medium'}/>
+      <div className={contentWrap}>
+        <Skeleton width={'80%'} height={24} radius={'small'} />
+        <div className={badgeWrap}>
+          <Skeleton width={70} height={25} radius={'small'}/>
+          <Skeleton width={50} height={25} radius={'small'}/>
+        </div>
+      </div>
+    </div>
+  )
 }
