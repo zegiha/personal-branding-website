@@ -1,1 +1,1 @@
-export { ArticleRichText } from "./ArticleRichText";
+export { ArticleRichText } from './ArticleRichText';

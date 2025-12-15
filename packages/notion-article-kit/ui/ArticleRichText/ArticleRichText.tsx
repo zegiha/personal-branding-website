@@ -1,18 +1,10 @@
 import type { CSSProperties } from "react";
-import { styled } from "@linaria/react";
 import type { TypeArticleRichText } from "../../type";
 import { Fragment } from "react";
-// import st from "./articleRichText.module.css";
-
-// Linaria Styled Components
-const StyledLink = styled.a`
-  color: var(--article-typo-color-link);
-  text-decoration: underline;
-`;
+import * as st from "./style.css";
 
 export function ArticleRichText({ style, content, link }: TypeArticleRichText & { type: "text" }) {
   if (!style && !link) return <>{content ?? ""}</>;
-
 
   const cssStyle: CSSProperties = {
     fontWeight: style?.bold ? 700 : undefined,
@@ -20,7 +12,7 @@ export function ArticleRichText({ style, content, link }: TypeArticleRichText & 
     textDecoration: style?.underline
       ? "underline"
       : style?.strikethrough
-        ? "strikethrough"
+        ? "line-through"
         : undefined,
     color: style?.color ? style?.color : undefined,
     backgroundColor: style?.backgroundColor ? style?.backgroundColor : undefined,
@@ -28,9 +20,9 @@ export function ArticleRichText({ style, content, link }: TypeArticleRichText & 
 
   if (link)
     return (
-      <StyledLink className="article-rich-text-link" href={link} style={cssStyle}>
+      <a className={`article-rich-text-link ${st.link}`} href={link} style={cssStyle}>
         <EnteredText content={content} />
-      </StyledLink>
+      </a>
     );
   else return <span className="article-rich-text" style={cssStyle}><EnteredText content={content} /></span>;
 }
@@ -38,14 +30,3 @@ export function ArticleRichText({ style, content, link }: TypeArticleRichText & 
 function EnteredText({ content }: { content: string }) {
   return <>{content.split("\n").map((line, i) => <Fragment key={i}>{line}<br /></Fragment>)}</>
 }
-
-/* ============================================
- * Previous CSS Modules Implementation
- * ============================================
- *
- * .link {
- *   color: var(--semantic-label-weak);
- *   text-decoration: underline;
- * }
- *
- * ============================================ */

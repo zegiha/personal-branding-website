@@ -1,1 +1,0 @@
-export { uiMap } from './uiMap';

@@ -1,1 +1,0 @@
-export { ArticleCode } from "./ArticleCode";

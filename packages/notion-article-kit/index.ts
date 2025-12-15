@@ -13,6 +13,7 @@ export type {
   TypeArticleCallout,
   TypeArticleCode,
   TypeArticleContent,
+  TypeArticleDivider,
   TypeArticleEquation,
   TypeArticleHeadline1,
   TypeArticleHeadline2,
@@ -28,6 +29,7 @@ export type {
 } from "./type";
 export {
   ArticleBulletedList,
+  ArticleButton,
   ArticleCallout,
   ArticleCode,
   ArticleDivider,
@@ -41,7 +43,10 @@ export {
   ArticleQuote,
   ArticleRichText,
   ArticleRichTextEquation,
+  ArticleTypo,
   ArticleVideo,
   RenderArticleContent,
+  RenderRichText,
+  ArticleCodeTheme,
 } from "./ui";
-export { articleTokens } from "./tokens/article-tokens";
+export { articleTokens, articleDefaultLightTheme, articleDefaultDarkTheme } from "./tokens";

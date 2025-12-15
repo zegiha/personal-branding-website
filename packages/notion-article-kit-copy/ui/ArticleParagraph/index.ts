@@ -1,1 +1,0 @@
-export { ArticleParagraph } from "./ArticleParagraph";

@@ -1,1 +1,1 @@
-export { ArticleEquation } from "./ArticleEquation";
+export { ArticleEquation } from './ArticleEquation';

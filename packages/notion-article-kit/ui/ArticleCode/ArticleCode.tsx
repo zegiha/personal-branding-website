@@ -1,51 +1,41 @@
 'use client'
 
-import { useState } from "react";
-import { Col } from "sdu-kit";
-import { styled } from "@linaria/react";
+import {useContext, useState} from "react";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import type { TypeArticleCode } from "../../type";
 import { ArticleButton } from "../ArticleButton";
 import { ArticleTypo } from "../ArticleTypo";
-// import st from "./style.module.css";
+import * as st from "./style.css";
+import {ArticleCodeThemeContext} from "../ArticleCodeTheme";
 
-// Linaria Styled Components
-const StyledContainer = styled(Col)`
-  margin-top: var(--article-margin-top-xnormal);
-  margin-bottom: var(--article-margin-bottom-strong);
-
-  &:hover .copyButton {
-    opacity: 1;
-  }
-`;
-
-const StyledCodeBlock = styled.div`
-  background-color: var(--article-box-background-color);
-  border-radius: var(--article-radius);
-  padding: var(--article-block-padding);
-  position: relative;
-`;
-
-const StyledCopyButton = styled(ArticleButton)`
-  position: absolute;
-  top: var(--article-block-padding);
-  right: var(--article-block-padding);
-  opacity: 0;
-`;
-
-const StyledCodeContent = styled(ArticleTypo.label.medium)`
-  margin: 0;
-  white-space: pre-wrap;
-`;
+const languageMap = {
+  "c": "c",
+  "c++": "cpp",
+  "html": "html",
+  "css": "css",
+  "scss": "scss",
+  "js": "javascript",
+  "ts": "typescript",
+  "jsx": "jsx",
+  "tsx": "tsx",
+  "docker": "dockerfile",
+  "python": "python",
+  "sql": "sql",
+  "json": "json",
+} as const;
 
 export function ArticleCode({ language, text }: TypeArticleCode) {
+  const theme = useContext(ArticleCodeThemeContext)
   const [isCopied, setIsCopied] = useState<boolean>(false);
+  const syntaxLang = languageMap[language] || language;
 
   return (
-    <StyledContainer>
-      <StyledCodeBlock className="article-code">
-        <ArticleTypo.caption.medium $color={"weak"}>{language}</ArticleTypo.caption.medium>
-        <StyledCopyButton
-          className="copyButton"
+    <div className={st.container}>
+      <div className={`article-code ${st.codeBlock}`}>
+        <ArticleTypo.caption.medium color="weak">{language}</ArticleTypo.caption.medium>
+        <ArticleButton
+          className={`copyButton ${st.copyButton}`}
           type="button"
           onClick={async () => {
             try {
@@ -61,41 +51,27 @@ export function ArticleCode({ language, text }: TypeArticleCode) {
           label={isCopied ? "copied" : "copy"}
           leadIcon={isCopied ? "check" : "content_copy"}
         />
-        <StyledCodeContent>{text}</StyledCodeContent>
-      </StyledCodeBlock>
-    </StyledContainer>
+        <SyntaxHighlighter
+          language={syntaxLang}
+          style={theme === 'light' ? oneLight : oneDark}
+          customStyle={{
+            margin: 0,
+            padding: 0,
+            background: 'transparent',
+            fontFamily: "'JetBrains Mono', 'Consolas', 'Monaco', monospace",
+          }}
+          codeTagProps={{
+            style: {
+              fontFamily: "'JetBrains Mono', 'Consolas', 'Monaco', monospace",
+              background: 'transparent',
+              textShadow: 'none',
+            }
+          }}
+          className={st.codeContent}
+        >
+          {text}
+        </SyntaxHighlighter>
+      </div>
+    </div>
   );
 }
-
-/* ============================================
- * Previous CSS Modules Implementation
- * ============================================
- *
- * .container {
- *   padding: 12px;
- * }
- *
- * .codeBlock {
- *   background-color: var(--semantic-container-even);
- *   border-radius: var(--article-radius);
- *   padding: 24px;
- *   position: relative;
- * }
- *
- * .copyButton {
- *   position: absolute;
- *   top: 24px;
- *   right: 24px;
- *   transition: opacity var(--motion-duration-xfast) var(--motion-timing-linear);
- *   opacity: 0;
- * }
- * .container:hover .copyButton {
- *   opacity: 1;
- * }
- *
- * .codeContent {
- *   margin: 0;
- *   white-space: pre-wrap;
- * }
- *
- * ============================================ */

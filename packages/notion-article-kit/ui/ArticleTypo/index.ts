@@ -1,1 +1,1 @@
-export { ArticleTypo } from "./ArticleTypo";
+export { ArticleTypo } from './ArticleTypo';

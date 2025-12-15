@@ -1,30 +1,12 @@
-import { styled } from "@linaria/react";
-import { RenderRichText } from "../RenderRichText";
 import type { TypeArticleHeadline1 } from "../../type";
 import { ArticleTypo } from "../ArticleTypo";
-// import st from "./style.module.css";
-
-// Linaria Styled Components
-const StyledHeadline = styled(ArticleTypo.headline.large)`
-  margin-top: var(--article-margin-top-xxstrong);
-  margin-bottom: var(--article-margin-bottom-strong);
-`;
+import { RenderRichText } from "../RenderRichText";
+import * as st from "./style.css";
 
 export function ArticleHeadline1({ richText }: TypeArticleHeadline1) {
   return (
-    <StyledHeadline className="article-headline1" $color="strong">
+    <ArticleTypo.headline.large className={`article-headline1 ${st.headline}`} color="strong">
       <RenderRichText richText={richText} />
-    </StyledHeadline>
+    </ArticleTypo.headline.large>
   );
 }
-
-/* ============================================
- * Previous CSS Modules Implementation
- * ============================================
- *
- * .headline {
- *   padding-top: 24px;
- *   padding-bottom: 12px;
- * }
- *
- * ============================================ */

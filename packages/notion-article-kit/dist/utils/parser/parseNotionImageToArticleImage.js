@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.parseNotionImageToArticleImage = parseNotionImageToArticleImage;
 const parseNotionRichTextToArticleRichText_1 = require("./parseNotionRichTextToArticleRichText");
 function parseNotionImageToArticleImage(notion) {
-    const url = notion.image.type === "external"
+    let url = notion.image.type === "external"
         ? notion.image.external.url
         : notion.image.file.url;
     const captionRichText = notion.image.caption

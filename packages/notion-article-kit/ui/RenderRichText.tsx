@@ -1,5 +1,5 @@
 import type { TypeArticleRichText } from "../type";
-import { ArticleRichText, ArticleRichTextEquation } from ".";
+import { ArticleRichText, ArticleRichTextEquation } from "./index";
 
 export function RenderRichText({richText}: {richText: Array<TypeArticleRichText>}) {
   return <>{richText.map((v, i) => {

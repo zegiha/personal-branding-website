@@ -1,64 +1,95 @@
-import { styled } from "@linaria/react";
+import { ComponentPropsWithoutRef } from "react";
+import * as st from "./style.css";
 
 type ArticleTypoColor = "strong" | "normal" | "weak";
 type ArticleTypoFontWeight = "regular" | "medium" | "bold";
 
-type StyledTypoProps = {
-  $color?: ArticleTypoColor;
-  $fontWeight?: ArticleTypoFontWeight;
+type TypoProps = {
+  color?: ArticleTypoColor;
+  fontWeight?: ArticleTypoFontWeight;
+  children?: React.ReactNode;
+  className?: string;
 };
 
-// Headline components
-const HeadlineLarge = styled.h1<StyledTypoProps>`
-  font-size: var(--article-typo-headline-large-font-size);
-  line-height: var(--article-typo-headline-large-line-height);
-  font-weight: var(--article-typo-font-weight-bold);
-  color: ${({$color}) => $color ? `var(--article-typo-color-${$color})` : "var(--article-typo-color-strong)"};
+function HeadlineLarge({
+  color,
+  fontWeight,
+  className = '',
+  ...props
+}: TypoProps & Omit<ComponentPropsWithoutRef<'h1'>, 'color'>) {
+  const classes = [
+    st.headlineLarge,
+    color && st.colorVariant[color],
+    fontWeight && st.fontWeightVariant[fontWeight],
+    className,
+  ].filter(Boolean).join(' ');
 
-  ${({ $fontWeight }) =>
-    $fontWeight ? `font-weight: var(--article-typo-font-weight-${$fontWeight});` : ""}
-`;
+  return <h1 className={classes} {...props} />;
+}
 
-const HeadlineMedium = styled.h2<StyledTypoProps>`
-  font-size: var(--article-typo-headline-medium-font-size);
-  line-height: var(--article-typo-headline-medium-line-height);
-  font-weight: var(--article-typo-font-weight-bold);
-  color: ${({$color}) => $color ? `var(--article-typo-color-${$color})` : "var(--article-typo-color-strong)"};
+function HeadlineMedium({
+  color,
+  fontWeight,
+  className = '',
+  ...props
+}: TypoProps & Omit<ComponentPropsWithoutRef<'h2'>, 'color'>) {
+  const classes = [
+    st.headlineMedium,
+    color && st.colorVariant[color],
+    fontWeight && st.fontWeightVariant[fontWeight],
+    className,
+  ].filter(Boolean).join(' ');
 
-  ${({ $fontWeight }) =>
-    $fontWeight ? `font-weight: var(--article-typo-font-weight-${$fontWeight});` : ""}
-`;
+  return <h2 className={classes} {...props} />;
+}
 
-const HeadlineSmall = styled.h4<StyledTypoProps>`
-  font-size: var(--article-typo-headline-small-font-size);
-  line-height: var(--article-typo-headline-small-line-height);
-  font-weight: var(--article-typo-font-weight-bold);
-  color: ${({$color}) => $color ? `var(--article-typo-color-${$color})` : "var(--article-typo-color-weak)"};
+function HeadlineSmall({
+  color,
+  fontWeight,
+  className = '',
+  ...props
+}: TypoProps & Omit<ComponentPropsWithoutRef<'h4'>, 'color'>) {
+  const classes = [
+    st.headlineSmall,
+    color && st.colorVariant[color],
+    fontWeight && st.fontWeightVariant[fontWeight],
+    className,
+  ].filter(Boolean).join(' ');
 
-  ${({ $fontWeight }) =>
-    $fontWeight ? `font-weight: var(--article-typo-font-weight-${$fontWeight});` : ""}
-`;
+  return <h4 className={classes} {...props} />;
+}
 
-const LabelMedium = styled.p<StyledTypoProps>`
-  font-size: var(--article-typo-label-medium-font-size);
-  line-height: var(--article-typo-label-medium-line-height);
-  font-weight: var(--article-typo-font-weight-medium);
-  color: ${({$color}) => $color ? `var(--article-typo-color-${$color})` : "var(--article-typo-color-normal)"};
+function LabelMedium({
+  color,
+  fontWeight,
+  className = '',
+  ...props
+}: TypoProps & Omit<ComponentPropsWithoutRef<'p'>, 'color'>) {
+  const classes = [
+    st.labelMedium,
+    color && st.colorVariant[color],
+    fontWeight && st.fontWeightVariant[fontWeight],
+    className,
+  ].filter(Boolean).join(' ');
 
-  ${({ $fontWeight }) =>
-    $fontWeight ? `font-weight: var(--article-typo-font-weight-${$fontWeight});` : ""}
-`;
+  return <p className={classes} {...props} />;
+}
 
-// Caption components
-const CaptionMedium = styled.p<StyledTypoProps>`
-  font-size: var(--article-typo-caption-medium-font-size);
-  line-height: var(--article-typo-caption-medium-line-height);
-  font-weight: var(--article-typo-font-weight-regular);
-  color: ${({$color}) => $color ? `var(--article-typo-color-${$color})` : "var(--article-typo-color-weak)"};
+function CaptionMedium({
+  color,
+  fontWeight,
+  className = '',
+  ...props
+}: TypoProps & Omit<ComponentPropsWithoutRef<'p'>, 'color'>) {
+  const classes = [
+    st.captionMedium,
+    color && st.colorVariant[color],
+    fontWeight && st.fontWeightVariant[fontWeight],
+    className,
+  ].filter(Boolean).join(' ');
 
-  ${({ $fontWeight }) =>
-    $fontWeight ? `font-weight: var(--article-typo-font-weight-${$fontWeight});` : ""}
-`;
+  return <p className={classes} {...props} />;
+}
 
 export const ArticleTypo = {
   headline: {

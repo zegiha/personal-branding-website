@@ -1,1 +1,1 @@
-export { ArticleRichTextEquation } from "./ArticleRichTextEquation";
+export { ArticleRichTextEquation } from './ArticleRichTextEquation';

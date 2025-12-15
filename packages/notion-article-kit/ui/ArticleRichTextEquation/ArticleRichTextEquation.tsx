@@ -1,16 +1,25 @@
-// import { InlineKatex } from "sdu-kit";
+'use client'
+
+import { useEffect, useRef } from 'react';
+import katex from 'katex';
+import 'katex/dist/katex.min.css';
 import type { TypeArticleRichText } from "../../type";
 
 export function ArticleRichTextEquation({ content }: TypeArticleRichText & { type: "equation" }) {
-  // return <InlineKatex>{`§${content}§`}</InlineKatex>;
-  return <span className="article-rich-text-equation">{`§${content}§`}</span>;
-}
+  const spanRef = useRef<HTMLSpanElement>(null);
 
-/* ============================================
- * Previous Implementation (No CSS Changes)
- * ============================================
- *
- * This component had no CSS styling, only import
- * path was updated from ../../../../atom to sdu-kit
- *
- * ============================================ */
+  useEffect(() => {
+    if (spanRef.current) {
+      try {
+        katex.render(content, spanRef.current, {
+          displayMode: false,
+          throwOnError: false,
+        });
+      } catch (error) {
+        console.error('KaTeX rendering error:', error);
+      }
+    }
+  }, [content]);
+
+  return <span ref={spanRef} className="article-rich-text-equation" />;
+}

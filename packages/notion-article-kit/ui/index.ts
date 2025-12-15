@@ -1,4 +1,5 @@
 export { ArticleBulletedList } from "./ArticleBulletedList";
+export { ArticleButton } from "./ArticleButton";
 export { ArticleCallout } from "./ArticleCallout";
 export { ArticleCode } from "./ArticleCode";
 export { ArticleDivider } from "./ArticleDivider";
@@ -12,8 +13,8 @@ export { ArticleParagraph } from "./ArticleParagraph";
 export { ArticleQuote } from "./ArticleQuote";
 export { ArticleRichText } from "./ArticleRichText";
 export { ArticleRichTextEquation } from "./ArticleRichTextEquation";
-export { ArticleVideo } from "./ArticleVideo";
 export { ArticleTypo } from "./ArticleTypo";
-export { ArticleButton } from "./ArticleButton";
+export { ArticleVideo } from "./ArticleVideo";
 export { RenderArticleContent } from "./RenderArticleContent";
 export { RenderRichText } from "./RenderRichText";
+export { ArticleCodeTheme } from "./ArticleCodeTheme";

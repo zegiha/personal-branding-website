@@ -1,20 +1,8 @@
-import { Col } from "sdu-kit";
-import { styled } from "@linaria/react";
 import { RenderRichText } from "../RenderRichText";
 import type { TypeArticleContent, TypeArticleParagraph } from "../../type";
 import { ArticleTypo } from "../ArticleTypo";
 import { RenderArticleContent } from "../RenderArticleContent";
-// import st from "./style.module.css";
-
-// Linaria Styled Components
-const StyledParagraph = styled(ArticleTypo.label.medium)`
-  margin-top: var(--article-margin-top-normal);
-  margin-bottom: var(--article-margin-bottom-normal);
-`;
-
-const StyledChildrenIndent = styled(Col)`
-  padding-left: var(--article-indent-nested);
-`;
+import * as st from "./style.css";
 
 export function ArticleParagraph({
   richText,
@@ -22,24 +10,14 @@ export function ArticleParagraph({
 }: Omit<TypeArticleParagraph, "type" | "children"> & { children?: Array<TypeArticleContent | undefined> }) {
   return (
     <>
-      <StyledParagraph className="article-paragraph">
+      <ArticleTypo.label.medium className={`article-paragraph ${st.paragraph}`}>
         <RenderRichText richText={richText} />
-      </StyledParagraph>
-      {!!children && <StyledChildrenIndent><RenderArticleContent contents={children} /></StyledChildrenIndent>}
+      </ArticleTypo.label.medium>
+      {!!children && (
+        <div className={st.childrenIndent}>
+          <RenderArticleContent contents={children} />
+        </div>
+      )}
     </>
   );
 }
-
-/* ============================================
- * Previous CSS Modules Implementation
- * ============================================
- *
- * .paragraph {
- *   padding: 6px;
- * }
- *
- * .childrenIndent {
- *   padding-left: 24px;
- * }
- *
- * ============================================ */

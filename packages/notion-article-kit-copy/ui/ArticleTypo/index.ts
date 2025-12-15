@@ -1,1 +1,0 @@
-export { ArticleTypo } from "./ArticleTypo";

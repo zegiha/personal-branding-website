@@ -1,1 +1,1 @@
-export { ArticleDivider } from "./ArticleDivider";
+export { ArticleDivider } from './ArticleDivider';

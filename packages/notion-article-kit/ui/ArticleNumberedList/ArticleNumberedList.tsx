@@ -1,31 +1,8 @@
-
-import { Col, Row } from "sdu-kit";
-import { styled } from "@linaria/react";
 import { RenderRichText } from "../RenderRichText";
 import type { TypeArticleContent, TypeArticleNumberedList } from "../../type";
 import { ArticleTypo } from "../ArticleTypo";
 import { RenderArticleContent } from "../RenderArticleContent";
-// import st from "./style.module.css";
-
-// Linaria Styled Components
-const StyledListItem = styled.li`
-  list-style-type: none;
-`;
-
-const StyledListContent = styled(Row)`
-  margin-top: var(--article-margin-top-normal);
-  margin-bottom: var(--article-margin-bottom-normal);
-`;
-
-const StyledMarkerSize = styled(ArticleTypo.label.medium)`
-  min-width: var(--article-list-marker-width);
-  max-height: var(--article-list-marker-height);
-  min-height: var(--article-list-marker-height);
-`;
-
-const StyledChildrenIndent = styled(Col)`
-  padding-left: var(--article-margin-nested);
-`;
+import * as st from "./style.css";
 
 export function ArticleNumberedList({
   richText,
@@ -35,48 +12,19 @@ export function ArticleNumberedList({
 }) {
   return (
     <ol className="article-numbered-list">
-      <StyledListItem>
-        <StyledListContent gap={0}>
-          <StyledMarkerSize className="ol-item"  />
-          <ArticleTypo.label.medium >
+      <li className={st.listItem}>
+        <div className={st.listContent}>
+          <ArticleTypo.label.medium className={`ol-item ${st.markerSize}`} />
+          <ArticleTypo.label.medium>
             <RenderRichText richText={richText} />
           </ArticleTypo.label.medium>
-        </StyledListContent>
+        </div>
         {!!children && (
-          <StyledChildrenIndent gap={0}>
+          <div className={st.childrenIndent}>
             <RenderArticleContent contents={children} />
-          </StyledChildrenIndent>
+          </div>
         )}
-      </StyledListItem>
+      </li>
     </ol>
   );
 }
-
-/* ============================================
- * Previous CSS Modules Implementation
- * ============================================
- *
- * .listItem {
- *   list-style-type: none;
- * }
- *
- * .listContent {
- *   padding: 6px;
- * }
- *
- * .listMarker {
- *   width: 24px;
- *   height: 27px;
- *   background-color: red;  // DEBUG - should be removed
- *   flex-shrink: 0;
- * }
- *
- * .childrenIndent {
- *   padding-left: 24px;
- * }
- *
- * .markerSize {
- *   min-width: 24px;
- * }
- *
- * ============================================ */

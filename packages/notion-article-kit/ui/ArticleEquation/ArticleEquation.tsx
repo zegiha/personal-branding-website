@@ -1,45 +1,30 @@
-// import { BlockMath } from "react-katex";
-import { Col, Row } from "sdu-kit";
-import { styled } from "@linaria/react";
+'use client'
+
+import { useEffect, useRef } from 'react';
+import katex from 'katex';
+import 'katex/dist/katex.min.css';
 import type { TypeArticleEquation } from "../../type";
-// import st from "./style.module.css";
-
-// Linaria Styled Components
-const StyledContainer = styled(Col)`
-  margin-top: var(--article-margin-top-xstrong);
-  margin-bottom: var(--article-margin-bottom-strong);
-`;
-
-const StyledEquationBlock = styled(Row)`
-  background-color: var(--article-box-background-color);
-  border-radius: var(--article-radius);
-  padding: var(--article-block-padding);
-  width: 100%;
-`;
+import * as st from "./style.css";
 
 export function ArticleEquation({ text }: TypeArticleEquation) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      try {
+        katex.render(text, containerRef.current, {
+          displayMode: true,
+          throwOnError: false,
+        });
+      } catch (error) {
+        console.error('KaTeX rendering error:', error);
+      }
+    }
+  }, [text]);
+
   return (
-    <StyledContainer className="article-equation" gap={20} alignItems="center">
-      <StyledEquationBlock justifyContent={"center"}>
-        {/* <BlockMath math={text} /> */}
-      </StyledEquationBlock>
-    </StyledContainer>
+    <div className={`article-equation ${st.container}`}>
+      <div ref={containerRef} className={st.equationBlock} />
+    </div>
   );
 }
-
-/* ============================================
- * Previous CSS Modules Implementation
- * ============================================
- *
- * .container {
- *   padding: 20px 12px;
- * }
- *
- * .equationBlock {
- *   background-color: var(--semantic-container-even);
- *   border-radius: var(--article-radius);
- *   padding: 24px;
- *   width: 100%;
- * }
- *
- * ============================================ */

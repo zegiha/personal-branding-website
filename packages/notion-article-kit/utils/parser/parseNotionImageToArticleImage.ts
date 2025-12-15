@@ -5,7 +5,7 @@ import { parseNotionRichTextToArticleRichText } from "./parseNotionRichTextToArt
 export function parseNotionImageToArticleImage(
   notion: ImageBlockObjectResponse,
 ): TypeArticleImage {
-  const url =
+  let url =
     notion.image.type === "external"
       ? notion.image.external.url
       : notion.image.file.url;

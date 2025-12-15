@@ -1,1 +1,0 @@
-export { getLabelColor } from './getLabelColor';
