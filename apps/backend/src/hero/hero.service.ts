@@ -1,4 +1,9 @@
-import { Injectable, NotFoundException, InternalServerErrorException, BadRequestException } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  InternalServerErrorException,
+  BadRequestException,
+} from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateHeroDto } from './dto/createHero.dto';
 import { GetHeroesDto } from './dto/getHeroes.dto';
@@ -26,7 +31,9 @@ export class HeroService {
         },
       });
 
-      return plainToInstance(HeroResponseDto, hero, { excludeExtraneousValues: true });
+      return plainToInstance(HeroResponseDto, hero, {
+        excludeExtraneousValues: true,
+      });
     } catch (error) {
       if (error instanceof Prisma.PrismaClientKnownRequestError) {
         switch (error.code) {
@@ -35,7 +42,9 @@ export class HeroService {
           case 'P2003':
             throw new NotFoundException('Related entity not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
@@ -44,7 +53,10 @@ export class HeroService {
     }
   }
 
-  async getHeroes({ limit = 10, page = 1 }: GetHeroesDto): Promise<PaginationEntity<HeroResponseDto>> {
+  async getHeroes({
+    limit = 10,
+    page = 1,
+  }: GetHeroesDto): Promise<PaginationEntity<HeroResponseDto>> {
     try {
       const [heroes, count] = await Promise.all([
         this.prisma.hero.findMany({
@@ -60,7 +72,9 @@ export class HeroService {
           totalPage: Math.ceil(count / limit),
           totalData: count,
           data: heroes.map((hero) =>
-            plainToInstance(HeroResponseDto, hero, { excludeExtraneousValues: true })
+            plainToInstance(HeroResponseDto, hero, {
+              excludeExtraneousValues: true,
+            }),
           ),
         },
         { excludeExtraneousValues: true },
@@ -85,14 +99,18 @@ export class HeroService {
         throw new NotFoundException(`Hero not found: ${id}`);
       }
 
-      return plainToInstance(HeroResponseDto, hero, { excludeExtraneousValues: true });
+      return plainToInstance(HeroResponseDto, hero, {
+        excludeExtraneousValues: true,
+      });
     } catch (error) {
       if (error instanceof Prisma.PrismaClientKnownRequestError) {
         switch (error.code) {
           case 'P2025':
             throw new NotFoundException('Hero not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
@@ -125,7 +143,9 @@ export class HeroService {
           case 'P2025':
             throw new NotFoundException(`Hero not found: ${id}`);
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 

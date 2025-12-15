@@ -13,4 +13,3 @@ export class NotionBlockEntity {
     Object.assign(this, partial);
   }
 }
-

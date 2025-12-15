@@ -1,4 +1,9 @@
-import { BadRequestException, Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  InternalServerErrorException,
+  NotFoundException,
+} from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateSeriesDto } from './dto/createSeries.dto';
 import { GetSeriesDto } from './dto/getSeries.dto';
@@ -33,15 +38,21 @@ export class SeriesService {
           name: dto.name,
           description: dto.description,
           image_url: dto.image_url,
-          subproject: dto.subproject_id ? { connect: { id: dto.subproject_id } } : {},
-          parent_series: dto.parent_series_id ? { connect: { id: dto.parent_series_id } } : {},
+          subproject: dto.subproject_id
+            ? { connect: { id: dto.subproject_id } }
+            : {},
+          parent_series: dto.parent_series_id
+            ? { connect: { id: dto.parent_series_id } }
+            : {},
           topic: dto.topics
             ? {
                 connect: dto.topics.map((name) => ({ name })),
               }
             : {},
           articles: {
-            create: dto.article_ids?.map((article_id) => ({ article: { connect: { id: article_id } } })),
+            create: dto.article_ids?.map((article_id) => ({
+              article: { connect: { id: article_id } },
+            })),
           },
         },
         include: {
@@ -71,7 +82,9 @@ export class SeriesService {
           ...series,
           subproject_id: series.subproject?.id,
           article_ids: series.articles.map((article) => article.article_id),
-          nest_series_ids: series.nest_series.map((nest_series) => nest_series.id),
+          nest_series_ids: series.nest_series.map(
+            (nest_series) => nest_series.id,
+          ),
           parent_series_id: series.parent_series?.id,
         },
         { excludeExtraneousValues: true },
@@ -87,7 +100,9 @@ export class SeriesService {
             throw new NotFoundException('Record not found');
           default: {
             console.error('Unexpected error in createSeries:', error);
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
           }
         }
       }
@@ -97,7 +112,10 @@ export class SeriesService {
     }
   }
 
-  async addArticle(seriesId: string, dto: AddArticleToSeriesDto): Promise<SeriesResponseDto> {
+  async addArticle(
+    seriesId: string,
+    dto: AddArticleToSeriesDto,
+  ): Promise<SeriesResponseDto> {
     try {
       // 시리즈와 아티클 존재 여부 확인
       const [series, article] = await Promise.all([
@@ -141,8 +159,12 @@ export class SeriesService {
         {
           ...updatedSeries,
           subproject_id: updatedSeries.subproject?.id,
-          article_ids: updatedSeries.articles.map((article) => article.article_id),
-          nest_series_ids: updatedSeries.nest_series.map((nest_series) => nest_series.id),
+          article_ids: updatedSeries.articles.map(
+            (article) => article.article_id,
+          ),
+          nest_series_ids: updatedSeries.nest_series.map(
+            (nest_series) => nest_series.id,
+          ),
           parent_series_id: updatedSeries.parent_series?.id,
         },
         { excludeExtraneousValues: true },
@@ -151,17 +173,24 @@ export class SeriesService {
       if (error instanceof Prisma.PrismaClientKnownRequestError) {
         switch (error.code) {
           case 'P2002':
-            throw new BadRequestException('Article already exists in this series');
+            throw new BadRequestException(
+              'Article already exists in this series',
+            );
           case 'P2003':
             throw new NotFoundException('Related entity not found');
           case 'P2025':
             throw new NotFoundException('Record not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
-      if (error instanceof NotFoundException || error instanceof BadRequestException) {
+      if (
+        error instanceof NotFoundException ||
+        error instanceof BadRequestException
+      ) {
         throw error;
       }
 
@@ -170,7 +199,10 @@ export class SeriesService {
     }
   }
 
-  async addSeries(seriesId: string, dto: AddSeriesToSeriesDto): Promise<SeriesResponseDto> {
+  async addSeries(
+    seriesId: string,
+    dto: AddSeriesToSeriesDto,
+  ): Promise<SeriesResponseDto> {
     try {
       // 시리즈 존재 여부 확인
       const [parentSeries, childSeries] = await Promise.all([
@@ -190,7 +222,9 @@ export class SeriesService {
         throw new BadRequestException('Cannot add series to itself');
       }
       if (childSeries.parent_series_id === seriesId) {
-        throw new BadRequestException('This series is already a child of the parent series');
+        throw new BadRequestException(
+          'This series is already a child of the parent series',
+        );
       }
 
       // 하위 시리즈 연결
@@ -224,8 +258,12 @@ export class SeriesService {
         {
           ...updatedSeries,
           subproject_id: updatedSeries.subproject?.id,
-          article_ids: updatedSeries.articles.map((article) => article.article_id),
-          nest_series_ids: updatedSeries.nest_series.map((nest_series) => nest_series.id),
+          article_ids: updatedSeries.articles.map(
+            (article) => article.article_id,
+          ),
+          nest_series_ids: updatedSeries.nest_series.map(
+            (nest_series) => nest_series.id,
+          ),
           parent_series_id: updatedSeries.parent_series?.id,
         },
         { excludeExtraneousValues: true },
@@ -240,11 +278,16 @@ export class SeriesService {
           case 'P2025':
             throw new NotFoundException('Record not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
-      if (error instanceof NotFoundException || error instanceof BadRequestException) {
+      if (
+        error instanceof NotFoundException ||
+        error instanceof BadRequestException
+      ) {
         throw error;
       }
 
@@ -253,7 +296,10 @@ export class SeriesService {
     }
   }
 
-  async removeArticleById(seriesId: string, articleId: string): Promise<SeriesResponseDto> {
+  async removeArticleById(
+    seriesId: string,
+    articleId: string,
+  ): Promise<SeriesResponseDto> {
     try {
       // ArticleOnSeries 레코드 삭제
       await this.prisma.articleOnSeries.delete({
@@ -286,8 +332,12 @@ export class SeriesService {
         {
           ...updatedSeries,
           subproject_id: updatedSeries.subproject?.id,
-          article_ids: updatedSeries.articles.map((article) => article.article_id),
-          nest_series_ids: updatedSeries.nest_series.map((nest_series) => nest_series.id),
+          article_ids: updatedSeries.articles.map(
+            (article) => article.article_id,
+          ),
+          nest_series_ids: updatedSeries.nest_series.map(
+            (nest_series) => nest_series.id,
+          ),
           parent_series_id: updatedSeries.parent_series?.id,
         },
         { excludeExtraneousValues: true },
@@ -298,7 +348,9 @@ export class SeriesService {
           case 'P2025':
             throw new NotFoundException('Article not found in this series');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
@@ -307,11 +359,16 @@ export class SeriesService {
       }
 
       console.error('Unexpected error in removeArticleById:', error);
-      throw new InternalServerErrorException('Failed to remove article from series');
+      throw new InternalServerErrorException(
+        'Failed to remove article from series',
+      );
     }
   }
 
-  async removeSeriesById(seriesId: string, childSeriesId: string): Promise<SeriesResponseDto> {
+  async removeSeriesById(
+    seriesId: string,
+    childSeriesId: string,
+  ): Promise<SeriesResponseDto> {
     try {
       // 하위 시리즈의 parent_series_id를 null로 설정
       await this.prisma.series.update({
@@ -344,8 +401,12 @@ export class SeriesService {
         {
           ...updatedSeries,
           subproject_id: updatedSeries.subproject?.id,
-          article_ids: updatedSeries.articles.map((article) => article.article_id),
-          nest_series_ids: updatedSeries.nest_series.map((nest_series) => nest_series.id),
+          article_ids: updatedSeries.articles.map(
+            (article) => article.article_id,
+          ),
+          nest_series_ids: updatedSeries.nest_series.map(
+            (nest_series) => nest_series.id,
+          ),
           parent_series_id: updatedSeries.parent_series?.id,
         },
         { excludeExtraneousValues: true },
@@ -356,7 +417,9 @@ export class SeriesService {
           case 'P2025':
             throw new NotFoundException('Child series not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
@@ -365,7 +428,9 @@ export class SeriesService {
       }
 
       console.error('Unexpected error in removeSeriesById:', error);
-      throw new InternalServerErrorException('Failed to remove series from series');
+      throw new InternalServerErrorException(
+        'Failed to remove series from series',
+      );
     }
   }
 
@@ -387,7 +452,12 @@ export class SeriesService {
 
     // 자기 자신의 아티클 점수 합산
     let score = series.articles.reduce((sum, { article }) => {
-      return sum + (article.like_count * 4) + (article.share_count * 4) + (article.view_count * 2);
+      return (
+        sum +
+        article.like_count * 4 +
+        article.share_count * 4 +
+        article.view_count * 2
+      );
     }, 0);
 
     // 재귀적으로 하위 시리즈의 점수 합산
@@ -398,7 +468,12 @@ export class SeriesService {
     return score;
   }
 
-  async getSeries({ limit = 10, page = 1, topic, sort = 'latest' }: GetSeriesDto): Promise<PaginationEntity<SeriesResponseDto>> {
+  async getSeries({
+    limit = 10,
+    page = 1,
+    topic,
+    sort = 'latest',
+  }: GetSeriesDto): Promise<PaginationEntity<SeriesResponseDto>> {
     try {
       // Build where clause for topic filtering
       const where: Prisma.SeriesWhereInput = topic
@@ -433,14 +508,19 @@ export class SeriesService {
           allSeries.map(async (series) => ({
             series,
             popularityScore: await this.calculateSeriesPopularity(series.id),
-          }))
+          })),
         );
 
         // Popularity 점수로 정렬
-        const sortedSeries = seriesWithScores.sort((a, b) => b.popularityScore - a.popularityScore);
+        const sortedSeries = seriesWithScores.sort(
+          (a, b) => b.popularityScore - a.popularityScore,
+        );
 
         // 페이지네이션 적용
-        const paginatedSeries = sortedSeries.slice((page - 1) * limit, page * limit);
+        const paginatedSeries = sortedSeries.slice(
+          (page - 1) * limit,
+          page * limit,
+        );
         const count = sortedSeries.length;
 
         return plainToInstance(
@@ -454,12 +534,16 @@ export class SeriesService {
                 {
                   ...series,
                   subproject_id: series.subproject?.id,
-                  article_ids: series.articles.map((article) => article.article_id),
-                  nest_series_ids: series.nest_series.map((nest_series) => nest_series.id),
+                  article_ids: series.articles.map(
+                    (article) => article.article_id,
+                  ),
+                  nest_series_ids: series.nest_series.map(
+                    (nest_series) => nest_series.id,
+                  ),
                   parent_series_id: series.parent_series?.id,
                 },
                 { excludeExtraneousValues: true },
-              )
+              ),
             ),
           },
           { excludeExtraneousValues: true },
@@ -494,10 +578,15 @@ export class SeriesService {
         });
 
         // Latest 날짜로 정렬
-        const sortedSeries = seriesWithLatestDate.sort((a, b) => b.latestDate.getTime() - a.latestDate.getTime());
+        const sortedSeries = seriesWithLatestDate.sort(
+          (a, b) => b.latestDate.getTime() - a.latestDate.getTime(),
+        );
 
         // 페이지네이션 적용
-        const paginatedSeries = sortedSeries.slice((page - 1) * limit, page * limit);
+        const paginatedSeries = sortedSeries.slice(
+          (page - 1) * limit,
+          page * limit,
+        );
         const count = sortedSeries.length;
 
         return plainToInstance(
@@ -511,12 +600,16 @@ export class SeriesService {
                 {
                   ...series,
                   subproject_id: series.subproject?.id,
-                  article_ids: series.articles.map((article) => article.article_id),
-                  nest_series_ids: series.nest_series.map((nest_series) => nest_series.id),
+                  article_ids: series.articles.map(
+                    (article) => article.article_id,
+                  ),
+                  nest_series_ids: series.nest_series.map(
+                    (nest_series) => nest_series.id,
+                  ),
                   parent_series_id: series.parent_series?.id,
                 },
                 { excludeExtraneousValues: true },
-              )
+              ),
             ),
           },
           { excludeExtraneousValues: true },
@@ -532,7 +625,9 @@ export class SeriesService {
           case 'P2025':
             throw new NotFoundException('Record not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
@@ -564,7 +659,9 @@ export class SeriesService {
           ...series,
           subproject_id: series.subproject?.id,
           article_ids: series.articles.map((article) => article.article_id),
-          nest_series_ids: series.nest_series.map((nest_series) => nest_series.id),
+          nest_series_ids: series.nest_series.map(
+            (nest_series) => nest_series.id,
+          ),
           parent_series_id: series.parent_series?.id,
         },
         { excludeExtraneousValues: true },
@@ -575,7 +672,9 @@ export class SeriesService {
           case 'P2025':
             throw new NotFoundException('Series not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
@@ -624,11 +723,13 @@ export class SeriesService {
             ...series,
             subproject_id: series.subproject?.id,
             article_ids: series.articles.map((article) => article.article_id),
-            nest_series_ids: series.nest_series.map((nest_series) => nest_series.id),
+            nest_series_ids: series.nest_series.map(
+              (nest_series) => nest_series.id,
+            ),
             parent_series_id: series.parent_series?.id,
           },
           { excludeExtraneousValues: true },
-        )
+        ),
       );
     } catch (error) {
       if (error instanceof Prisma.PrismaClientKnownRequestError) {
@@ -636,7 +737,9 @@ export class SeriesService {
           case 'P2025':
             throw new NotFoundException('Article not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
@@ -645,7 +748,9 @@ export class SeriesService {
       }
 
       console.error('Unexpected error in getSeriesByArticleTitle:', error);
-      throw new InternalServerErrorException('Failed to get series by article title');
+      throw new InternalServerErrorException(
+        'Failed to get series by article title',
+      );
     }
   }
 }

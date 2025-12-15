@@ -4,6 +4,6 @@ import { PlaygroundService } from './playground.service';
 
 @Module({
   controllers: [PlaygroundController],
-  providers: [PlaygroundService]
+  providers: [PlaygroundService],
 })
 export class PlaygroundModule {}

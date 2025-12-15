@@ -1,4 +1,9 @@
-import { Injectable, BadRequestException, NotFoundException, InternalServerErrorException } from '@nestjs/common';
+import {
+  Injectable,
+  BadRequestException,
+  NotFoundException,
+  InternalServerErrorException,
+} from '@nestjs/common';
 import { Prisma } from '../../generated/prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateArticleDto } from './dto/createArticle.dto';
@@ -12,7 +17,10 @@ import { plainToInstance } from 'class-transformer';
 import { PaginationEntity } from 'src/common/entity/pagination.entity';
 import { parseNotionBlockWithChildMap } from 'notion-article-kit/server';
 import { FileService } from 'src/file/file.service';
-import { extractNotionImageUrls, replaceImageUrls } from './helpers/image-url.helper';
+import {
+  extractNotionImageUrls,
+  replaceImageUrls,
+} from './helpers/image-url.helper';
 
 @Injectable()
 export class ArticleService {
@@ -21,7 +29,12 @@ export class ArticleService {
     private readonly fileService: FileService,
   ) {}
 
-  async getArticles({ limit = 10, page = 1, tag, sort = 'latest' }: GetArticlesDto): Promise<PaginationEntity<ArticleSummaryResponseDto>> {
+  async getArticles({
+    limit = 10,
+    page = 1,
+    tag,
+    sort = 'latest',
+  }: GetArticlesDto): Promise<PaginationEntity<ArticleSummaryResponseDto>> {
     try {
       // Build where clause for tag filtering
       const where: Prisma.ArticleWhereInput = tag
@@ -57,12 +70,18 @@ export class ArticleService {
         const sortedArticles = allArticles
           .map((article) => ({
             ...article,
-            popularityScore: (article.like_count * 4) + (article.share_count * 4) + (article.view_count * 2),
+            popularityScore:
+              article.like_count * 4 +
+              article.share_count * 4 +
+              article.view_count * 2,
           }))
           .sort((a, b) => b.popularityScore - a.popularityScore);
 
         // Apply pagination manually
-        const paginatedArticles = sortedArticles.slice((page - 1) * limit, page * limit);
+        const paginatedArticles = sortedArticles.slice(
+          (page - 1) * limit,
+          page * limit,
+        );
         const count = sortedArticles.length;
 
         return plainToInstance(
@@ -71,11 +90,17 @@ export class ArticleService {
             totalPage: Math.ceil(count / limit),
             totalData: count,
             currentPage: page,
-            data: paginatedArticles.map((article) => plainToInstance(ArticleSummaryResponseDto, {
-              ...article,
-              tags: article.tags.map((t) => t.tag.content),
-              content: JSON.stringify(article.content),
-            }, { excludeExtraneousValues: true }))
+            data: paginatedArticles.map((article) =>
+              plainToInstance(
+                ArticleSummaryResponseDto,
+                {
+                  ...article,
+                  tags: article.tags.map((t) => t.tag.content),
+                  content: JSON.stringify(article.content),
+                },
+                { excludeExtraneousValues: true },
+              ),
+            ),
           },
           { excludeExtraneousValues: true },
         );
@@ -97,7 +122,7 @@ export class ArticleService {
               },
             },
           }),
-          this.prisma.article.count({ where })
+          this.prisma.article.count({ where }),
         ]);
 
         return plainToInstance(
@@ -106,11 +131,17 @@ export class ArticleService {
             totalPage: Math.ceil(count / limit),
             totalData: count,
             currentPage: page,
-            data: articles.map((article) => plainToInstance(ArticleSummaryResponseDto, {
-              ...article,
-              tags: article.tags.map((t) => t.tag.content),
-              content: JSON.stringify(article.content),
-            }, { excludeExtraneousValues: true }))
+            data: articles.map((article) =>
+              plainToInstance(
+                ArticleSummaryResponseDto,
+                {
+                  ...article,
+                  tags: article.tags.map((t) => t.tag.content),
+                  content: JSON.stringify(article.content),
+                },
+                { excludeExtraneousValues: true },
+              ),
+            ),
           },
           { excludeExtraneousValues: true },
         );
@@ -127,7 +158,9 @@ export class ArticleService {
           case 'P2025':
             throw new NotFoundException('Record not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
@@ -144,7 +177,9 @@ export class ArticleService {
         parsedContent = parseNotionBlockWithChildMap(dto.block, dto.childMap);
       } catch (error) {
         console.error('Failed to parse Notion block:', error);
-        throw new BadRequestException('Invalid Notion block format or structure');
+        throw new BadRequestException(
+          'Invalid Notion block format or structure',
+        );
       }
 
       // Notion file 타입 이미지 URL 추출 및 R2 업로드
@@ -152,12 +187,18 @@ export class ArticleService {
       if (notionImageUrls.length > 0) {
         try {
           const uploadedImages = await this.fileService.uploadImageUrl({
-            urls: notionImageUrls
+            urls: notionImageUrls,
           });
-          parsedContent = replaceImageUrls(parsedContent, uploadedImages, notionImageUrls);
+          parsedContent = replaceImageUrls(
+            parsedContent,
+            uploadedImages,
+            notionImageUrls,
+          );
         } catch (error) {
           console.error('Failed to upload Notion images to R2:', error);
-          throw new InternalServerErrorException('Failed to process article images');
+          throw new InternalServerErrorException(
+            'Failed to process article images',
+          );
         }
       }
 
@@ -236,13 +277,18 @@ export class ArticleService {
             throw new NotFoundException('Record not found');
           default: {
             console.error('Unexpected error in createArticle:', error);
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
           }
         }
       }
 
       // 이미 NestJS 예외인 경우 그대로 던지기
-      if (error instanceof BadRequestException || error instanceof NotFoundException) {
+      if (
+        error instanceof BadRequestException ||
+        error instanceof NotFoundException
+      ) {
         throw error;
       }
 
@@ -288,7 +334,9 @@ export class ArticleService {
           case 'P2025':
             throw new NotFoundException('Record not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
@@ -337,7 +385,9 @@ export class ArticleService {
           case 'P2025':
             throw new NotFoundException('Record not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
@@ -386,7 +436,9 @@ export class ArticleService {
           case 'P2025':
             throw new NotFoundException('Record not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
@@ -436,7 +488,9 @@ export class ArticleService {
           case 'P2025':
             throw new NotFoundException('Record not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
@@ -449,7 +503,10 @@ export class ArticleService {
     }
   }
 
-  async updateArticle(id: string, dto: UpdateArticleDto): Promise<ArticleResponseDto> {
+  async updateArticle(
+    id: string,
+    dto: UpdateArticleDto,
+  ): Promise<ArticleResponseDto> {
     try {
       const article = await this.prisma.article.findUnique({
         where: { id },
@@ -463,7 +520,9 @@ export class ArticleService {
         parsedContent = parseNotionBlockWithChildMap(dto.block, dto.childMap);
       } catch (error) {
         console.error('Failed to parse Notion block:', error);
-        throw new BadRequestException('Invalid Notion block format or structure');
+        throw new BadRequestException(
+          'Invalid Notion block format or structure',
+        );
       }
 
       // Notion file 타입 이미지 URL 추출 및 R2 업로드
@@ -471,12 +530,18 @@ export class ArticleService {
       if (notionImageUrls.length > 0) {
         try {
           const uploadedImages = await this.fileService.uploadImageUrl({
-            urls: notionImageUrls
+            urls: notionImageUrls,
           });
-          parsedContent = replaceImageUrls(parsedContent, uploadedImages, notionImageUrls);
+          parsedContent = replaceImageUrls(
+            parsedContent,
+            uploadedImages,
+            notionImageUrls,
+          );
         } catch (error) {
           console.error('Failed to upload Notion images to R2:', error);
-          throw new InternalServerErrorException('Failed to process article images');
+          throw new InternalServerErrorException(
+            'Failed to process article images',
+          );
         }
       }
 
@@ -547,11 +612,16 @@ export class ArticleService {
           case 'P2025':
             throw new NotFoundException('Record not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
-      if (error instanceof BadRequestException || error instanceof NotFoundException) {
+      if (
+        error instanceof BadRequestException ||
+        error instanceof NotFoundException
+      ) {
         throw error;
       }
 
@@ -598,12 +668,16 @@ export class ArticleService {
           case 'P2025':
             throw new NotFoundException('Record not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 
       console.error('Unexpected error in searchByTitle:', error);
-      throw new InternalServerErrorException('Failed to search articles by title');
+      throw new InternalServerErrorException(
+        'Failed to search articles by title',
+      );
     }
   }
 
@@ -650,7 +724,9 @@ export class ArticleService {
           case 'P2025':
             throw new NotFoundException('Record not found');
           default:
-            throw new InternalServerErrorException(`Database error: ${error.code}`);
+            throw new InternalServerErrorException(
+              `Database error: ${error.code}`,
+            );
         }
       }
 

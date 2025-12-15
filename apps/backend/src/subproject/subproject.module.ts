@@ -4,6 +4,6 @@ import { SubprojectService } from './subproject.service';
 
 @Module({
   controllers: [SubprojectController],
-  providers: [SubprojectService]
+  providers: [SubprojectService],
 })
 export class SubprojectModule {}

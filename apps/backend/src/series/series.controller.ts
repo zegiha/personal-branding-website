@@ -1,4 +1,13 @@
-import { Controller, Post, Body, Get, Query, Param, Delete, Patch } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Get,
+  Query,
+  Param,
+  Delete,
+  Patch,
+} from '@nestjs/common';
 import {
   ApiCreatedResponse,
   ApiExtraModels,
@@ -27,7 +36,8 @@ export class SeriesController {
 
   @ApiOperation({
     summary: '시리즈 목록 조회',
-    description: '토픽 및 정렬 조건을 바탕으로 시리즈 목록을 페이지네이션하여 제공합니다.',
+    description:
+      '토픽 및 정렬 조건을 바탕으로 시리즈 목록을 페이지네이션하여 제공합니다.',
   })
   @ApiOkResponse({
     description: '시리즈 목록',
@@ -46,7 +56,9 @@ export class SeriesController {
     },
   })
   @Get()
-  async getSeries(@Query() dto: GetSeriesDto): Promise<PaginationEntity<SeriesResponseDto>> {
+  async getSeries(
+    @Query() dto: GetSeriesDto,
+  ): Promise<PaginationEntity<SeriesResponseDto>> {
     return this.seriesService.getSeries(dto);
   }
 
@@ -76,7 +88,9 @@ export class SeriesController {
     type: SeriesResponseDto,
   })
   @Get('by-name/:name')
-  async getSeriesByName(@Param() params: SeriesNameParamDto): Promise<SeriesResponseDto> {
+  async getSeriesByName(
+    @Param() params: SeriesNameParamDto,
+  ): Promise<SeriesResponseDto> {
     return this.seriesService.getSeriesByName(params.name);
   }
 
@@ -94,7 +108,9 @@ export class SeriesController {
     isArray: true,
   })
   @Get('by-article-title/:title')
-  async getSeriesByArticleTitle(@Param() params: ArticleTitleParamForSeriesDto): Promise<SeriesResponseDto[]> {
+  async getSeriesByArticleTitle(
+    @Param() params: ArticleTitleParamForSeriesDto,
+  ): Promise<SeriesResponseDto[]> {
     return this.seriesService.getSeriesByArticleTitle(params.title);
   }
 

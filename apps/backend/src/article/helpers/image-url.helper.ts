@@ -6,7 +6,9 @@ import type { ImageResponseDto } from '../../file/dto/response/image.response.dt
  * @param contents 파싱된 아티클 컨텐츠 배열
  * @returns Notion file URL 배열
  */
-export function extractNotionImageUrls(contents: TypeArticleContent[]): string[] {
+export function extractNotionImageUrls(
+  contents: TypeArticleContent[],
+): string[] {
   const urls: string[] = [];
 
   for (const content of contents) {
@@ -65,7 +67,11 @@ export function replaceImageUrls(
     if ('children' in content && Array.isArray(content.children)) {
       return {
         ...content,
-        children: replaceImageUrls(content.children, uploadedImages, notionUrls),
+        children: replaceImageUrls(
+          content.children,
+          uploadedImages,
+          notionUrls,
+        ),
       };
     }
 

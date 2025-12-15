@@ -1,4 +1,12 @@
-import { IsString, IsNotEmpty, IsOptional, IsArray, IsUrl, IsNumber, IsObject } from 'class-validator';
+import {
+  IsString,
+  IsNotEmpty,
+  IsOptional,
+  IsArray,
+  IsUrl,
+  IsNumber,
+  IsObject,
+} from 'class-validator';
 import { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
