@@ -49,17 +49,27 @@ export class AuthController {
     const { accessToken, refreshToken } =
       await this.authService.login(authRequestDto);
 
+    const isProduction = this.configService.get<boolean>('SSL');
+    const adminDomain = this.configService.get<string>('ADMIN_DOMAIN');
+    // Extract root domain from ADMIN_DOMAIN (e.g., https://admin.zegiha.work -> .zegiha.work)
+    const cookieDomain = adminDomain
+      ? '.' +
+        new URL(adminDomain).hostname.split('.').slice(-2).join('.')
+      : undefined;
+
     res.cookie('accessToken', accessToken, {
       httpOnly: true,
-      secure: this.configService.get<boolean>('SSL'),
-      sameSite: 'lax',
+      secure: isProduction,
+      sameSite: isProduction ? 'none' : 'lax',
       maxAge: 24 * 60 * 60 * 1000,
+      ...(cookieDomain && { domain: cookieDomain }),
     });
     res.cookie('refreshToken', refreshToken, {
       httpOnly: true,
-      secure: this.configService.get<boolean>('SSL'),
-      sameSite: 'lax',
+      secure: isProduction,
+      sameSite: isProduction ? 'none' : 'lax',
       maxAge: 7 * 7 * 24 * 60 * 60 * 1000,
+      ...(cookieDomain && { domain: cookieDomain }),
     });
 
     return res.json({

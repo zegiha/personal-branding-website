@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { ConfigService } from '@nestjs/config';
 import cookieParser from 'cookie-parser';
 import { AppModule } from './app.module';
 
@@ -32,12 +33,16 @@ async function bootstrap() {
     },
   });
 
+  const configService = app.get(ConfigService);
+  const adminDomain = configService.get<string>('ADMIN_DOMAIN');
+  const clientDomain = configService.get<string>('CLIENT_DOMAIN');
+
   app.enableCors({
     origin: [
       'http://localhost:3000',
-      'https://zegiha.work',
       'http://localhost:5173',
-      'https://admin.zegiha.work',
+      ...(clientDomain ? [clientDomain] : []),
+      ...(adminDomain ? [adminDomain] : []),
     ],
     credentials: true,
   });
