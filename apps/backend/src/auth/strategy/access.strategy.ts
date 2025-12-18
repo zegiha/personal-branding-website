@@ -10,6 +10,12 @@ export class AccessStrategy extends PassportStrategy(Strategy, 'access') {
     private readonly configService: ConfigService,
     private readonly prismaService: PrismaService,
   ) {
+    const secret = configService.get<string>('ACCESS_TOKEN_SECRET');
+    if (!secret) {
+      throw new Error(
+        'ACCESS_TOKEN_SECRET must be defined in environment variables',
+      );
+    }
     super({
       jwtFromRequest: ExtractJwt.fromExtractors([
         (req) => {
@@ -18,8 +24,7 @@ export class AccessStrategy extends PassportStrategy(Strategy, 'access') {
           return cookies?.accessToken || null;
         },
       ]),
-      secretOrKey:
-        configService.get<string>('ACCESS_TOKEN_SECRET') || 'fallbackSecret',
+      secretOrKey: secret,
     });
   }
   async validate(payload: { sub: string }) {

@@ -10,6 +10,10 @@ export class RefreshStrategy extends PassportStrategy(Strategy, 'refresh') {
     private readonly configService: ConfigService,
     private readonly prismaService: PrismaService,
   ) {
+    const secret = configService.get<string>('REFRESH_TOKEN_SECRET');
+    if (!secret) {
+      throw new Error('REFRESH_TOKEN_SECRET must be defined in environment variables');
+    }
     super({
       jwtFromRequest: ExtractJwt.fromExtractors([
         (req) => {
@@ -18,8 +22,7 @@ export class RefreshStrategy extends PassportStrategy(Strategy, 'refresh') {
           return cookies?.refreshToken || null;
         },
       ]),
-      secretOrKey:
-        configService.get<string>('REFRESH_TOKEN_SECRET') || 'fallbackSecret',
+      secretOrKey: secret,
     });
   }
   async validate(payload: { sub: string }) {
