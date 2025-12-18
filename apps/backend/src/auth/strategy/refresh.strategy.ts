@@ -12,7 +12,9 @@ export class RefreshStrategy extends PassportStrategy(Strategy, 'refresh') {
   ) {
     const secret = configService.get<string>('REFRESH_TOKEN_SECRET');
     if (!secret) {
-      throw new Error('REFRESH_TOKEN_SECRET must be defined in environment variables');
+      throw new Error(
+        'REFRESH_TOKEN_SECRET must be defined in environment variables',
+      );
     }
     super({
       jwtFromRequest: ExtractJwt.fromExtractors([
