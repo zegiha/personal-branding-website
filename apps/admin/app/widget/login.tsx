@@ -18,8 +18,17 @@ export function Login() {
         email: v.id,
         password: v.password,
       });
-      navigate("/");
-    } catch {
+
+      if (res.status === 200 && res.data.accessToken) {
+        // 쿠키가 설정될 시간을 주기 위해 약간의 지연
+        setTimeout(() => {
+          navigate("/", { replace: true });
+        }, 100);
+      } else {
+        alert("로그인 실패: 토큰을 받지 못했습니다.");
+      }
+    } catch (error) {
+      console.error("로그인 에러:", error);
       alert("로그인 실패");
     }
   };

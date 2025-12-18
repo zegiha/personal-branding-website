@@ -49,16 +49,19 @@ export class AuthController {
     const { accessToken, refreshToken } =
       await this.authService.login(authRequestDto);
 
-    res.cookie('accessToken', accessToken, {
+    const isProduction =
+      this.configService.get<string>('NODE_ENV') === 'production';
+    const cookieOptions = {
       httpOnly: true,
-      secure: this.configService.get<boolean>('SSL'),
-      sameSite: 'lax',
+      secure: isProduction,
+      sameSite: (isProduction ? 'none' : 'lax') as 'none' | 'lax',
       maxAge: 24 * 60 * 60 * 1000,
-    });
+      ...(isProduction && { domain: '.zegiha.work' }),
+    };
+
+    res.cookie('accessToken', accessToken, cookieOptions);
     res.cookie('refreshToken', refreshToken, {
-      httpOnly: true,
-      secure: this.configService.get<boolean>('SSL'),
-      sameSite: 'lax',
+      ...cookieOptions,
       maxAge: 7 * 7 * 24 * 60 * 60 * 1000,
     });
 
@@ -92,10 +95,22 @@ export class AuthController {
     status: 401,
     description: 'Refresh Token이 유효하지 않거나 만료되었습니다.',
   })
-  async refresh(@Req() req: Request) {
+  async refresh(@Req() req: Request, @Res() res: Response) {
     const refreshToken = (req.cookies as { refreshToken: string }).refreshToken;
     const accessToken = await this.authService.refresh(refreshToken);
-    return { accessToken };
+
+    const isProduction =
+      this.configService.get<string>('NODE_ENV') === 'production';
+    const cookieOptions = {
+      httpOnly: true,
+      secure: isProduction,
+      sameSite: (isProduction ? 'none' : 'lax') as 'none' | 'lax',
+      maxAge: 24 * 60 * 60 * 1000,
+      ...(isProduction && { domain: '.zegiha.work' }),
+    };
+
+    res.cookie('accessToken', accessToken, cookieOptions);
+    return res.json({ accessToken });
   }
 
   @UseGuards(AccessGuard)
