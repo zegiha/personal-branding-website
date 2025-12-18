@@ -21,6 +21,10 @@ import {
   extractNotionImageUrls,
   replaceImageUrls,
 } from './helpers/image-url.helper';
+import {
+  extractFileVideoUrls,
+  replaceVideoUrls,
+} from './helpers/video-url.helper';
 
 @Injectable()
 export class ArticleService {
@@ -198,6 +202,25 @@ export class ArticleService {
           console.error('Failed to upload Notion images to R2:', error);
           throw new InternalServerErrorException(
             'Failed to process article images',
+          );
+        }
+      }
+
+      // file 타입 비디오 URL 추출 및 R2 업로드
+      const fileVideoUrls = extractFileVideoUrls(parsedContent);
+      if (fileVideoUrls.length > 0) {
+        try {
+          const uploadedVideos =
+            await this.fileService.uploadVideoUrl(fileVideoUrls);
+          parsedContent = replaceVideoUrls(
+            parsedContent,
+            uploadedVideos,
+            fileVideoUrls,
+          );
+        } catch (error) {
+          console.error('Failed to upload videos to R2:', error);
+          throw new InternalServerErrorException(
+            'Failed to process article videos',
           );
         }
       }
@@ -541,6 +564,25 @@ export class ArticleService {
           console.error('Failed to upload Notion images to R2:', error);
           throw new InternalServerErrorException(
             'Failed to process article images',
+          );
+        }
+      }
+
+      // file 타입 비디오 URL 추출 및 R2 업로드
+      const fileVideoUrls = extractFileVideoUrls(parsedContent);
+      if (fileVideoUrls.length > 0) {
+        try {
+          const uploadedVideos =
+            await this.fileService.uploadVideoUrl(fileVideoUrls);
+          parsedContent = replaceVideoUrls(
+            parsedContent,
+            uploadedVideos,
+            fileVideoUrls,
+          );
+        } catch (error) {
+          console.error('Failed to upload videos to R2:', error);
+          throw new InternalServerErrorException(
+            'Failed to process article videos',
           );
         }
       }

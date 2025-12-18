@@ -17,6 +17,9 @@ export function extractNotionImageUrls(
       // Notion file URL은 'https://prod-files-secure.s3' 형식으로 시작
       if (content.url.startsWith('https://prod-files-secure.s3')) {
         urls.push(content.url);
+      } else {
+        // 외부 URL인 경우에도 다운로드 가능하면 R2에 업로드
+        urls.push(content.url);
       }
     }
 

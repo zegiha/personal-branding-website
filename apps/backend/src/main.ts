@@ -1,10 +1,13 @@
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import cookieParser from 'cookie-parser';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  app.use(cookieParser());
 
   app.useGlobalPipes(
     new ValidationPipe({
@@ -30,7 +33,11 @@ async function bootstrap() {
   });
 
   app.enableCors({
-    origin: ['http://localhost:3000', 'https://zegiha.work'],
+    origin: [
+      'http://localhost:3000',
+      'https://zegiha.work',
+      'http://localhost:5173',
+    ],
     credentials: true,
   });
 

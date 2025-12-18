@@ -160,4 +160,52 @@ export class FileService {
       );
     }
   }
+
+  async uploadVideoUrl(urls: string[]): Promise<string[]> {
+    try {
+      console.log('[VIDEO URLS] : ', urls);
+      const responses = await Promise.all(urls.map((url) => fetch(url)));
+      const buffers = await Promise.all(
+        responses.map((response) =>
+          response.arrayBuffer().then((buffer) => Buffer.from(buffer)),
+        ),
+      );
+
+      // UUID를 사용해 파일명 생성 (Content-Type에서 확장자 추출)
+      const fileNames = responses.map((response) => {
+        const contentType = response.headers.get('content-type') || '';
+        let ext = contentType.split('/')[1]?.split(';')[0] || 'mp4';
+        // video/quicktime → mov
+        if (ext === 'quicktime') ext = 'mov';
+        return `${randomUUID()}.${ext}`;
+      });
+
+      const uploadedUrls = await Promise.all(
+        buffers.map(async (buffer, i) => {
+          const fileName = fileNames[i];
+
+          await this.r2Client.send(
+            new PutObjectCommand({
+              Bucket: this.configService.get<string>('R2_BUCKET_NAME') ?? '',
+              Key: fileName,
+              Body: buffer,
+              ContentType: responses[i].headers.get('content-type') ?? '',
+            }),
+          );
+
+          return `${this.configService.get<string>('R2_PUBLIC_ENDPOINT')}/${fileName}`;
+        }),
+      );
+
+      return uploadedUrls;
+    } catch (error) {
+      if (error instanceof HttpException) {
+        throw error;
+      }
+      throw new InternalServerErrorException(
+        'Failed to upload video',
+        error.message,
+      );
+    }
+  }
 }

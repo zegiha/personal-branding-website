@@ -11,6 +11,7 @@ import { FileModule } from './file/file.module';
 import { R2Module } from './r2/r2.module';
 import { ConfigModule } from '@nestjs/config';
 import { HeroModule } from './hero/hero.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { HeroModule } from './hero/hero.module';
     FileModule,
     R2Module,
     HeroModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

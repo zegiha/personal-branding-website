@@ -6,6 +6,7 @@ const Pretendard = 'Pretendard';
 globalStyle('*', {
   boxSizing: 'border-box',
   fontFamily: Pretendard,
+  fontFeatureSettings: '"ss15"',
 })
 
 globalStyle('*', {
