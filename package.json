@@ -11,7 +11,10 @@
     "admin": "pnpm -F admin",
     "backend": "pnpm -F backend",
     "sdu-kit": "pnpm -F sdu-kit",
-    "notion-article-kit": "pnpm -F notion-article-kit"
+    "notion-article-kit": "pnpm -F notion-article-kit",
+    "build": "pnpm client build && pnpm admin build && pnpm backend build",
+    "start:prod-test": "pnpm client start && pnpm admin start && pnpm backend start:prod",
+    "restart:pm2": "pm2 delete client admin backend || true && pnpm build && pm2 start ecosystem.config.js && pm2 save"
   },
   "keywords": [],
   "author": "",
