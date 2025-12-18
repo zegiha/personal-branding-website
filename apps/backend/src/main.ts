@@ -37,6 +37,7 @@ async function bootstrap() {
       'http://localhost:3000',
       'https://zegiha.work',
       'http://localhost:5173',
+      'https://admin.zegiha.work',
     ],
     credentials: true,
   });
