@@ -1,14 +1,14 @@
-import {Text, Badge, Skeleton} from "@/components"
+import { Text, Badge, Skeleton } from "@/components";
 import {
   container,
   coverImageWrap,
   coverImage as coverImageStyle,
   contentWrap,
   badgeWrap,
-} from './style.css'
-import Link from "next/link"
-import type {ArticleSummary, BlurImageEntity} from "@/types"
-import {breakPoint} from "@/theme/tokens";
+} from "./style.css";
+import Link from "next/link";
+import type { ArticleSummary, BlurImageEntity } from "@/types";
+import { breakPoint } from "@/theme/tokens";
 import Image from "next/image";
 
 export function ArticleCard({
@@ -16,9 +16,8 @@ export function ArticleCard({
   coverImageUrl,
   readTime,
   viewCount,
-  blurDataUrl,
   isPriority = false,
-}: Omit<BlurImageEntity<ArticleSummary>, 'id' | 'description' | 'updatedAt'> & {
+}: Omit<ArticleSummary, "id" | "description" | "updatedAt"> & {
   isPriority?: boolean;
 }) {
   return (
@@ -31,14 +30,15 @@ export function ArticleCard({
           fill
           sizes={`320px, ${breakPoint.subMedium} 340px, ${breakPoint.small} 520px`}
           priority={isPriority}
-          fetchPriority={isPriority ? 'high' : 'auto'}
-          loading={isPriority ? undefined : 'lazy'}
-          placeholder={'blur'}
-          blurDataURL={blurDataUrl}
+          fetchPriority={isPriority ? "high" : "auto"}
+          loading={isPriority ? undefined : "lazy"}
+          // placeholder={"blur"}
         />
       </span>
       <div className={contentWrap}>
-        <Text type='label' size='large' color='normal'>{title}</Text>
+        <Text type="label" size="large" color="normal">
+          {title}
+        </Text>
         <div className={badgeWrap}>
           <Badge
             size="medium"
@@ -57,20 +57,20 @@ export function ArticleCard({
         </div>
       </div>
     </Link>
-  )
+  );
 }
 
 export function ArticleCardSkeleton() {
   return (
     <div className={container}>
-      <Skeleton className={coverImageWrap} radius={'medium'}/>
+      <Skeleton className={coverImageWrap} radius={"medium"} />
       <div className={contentWrap}>
-        <Skeleton width={'80%'} height={24} radius={'small'} />
+        <Skeleton width={"80%"} height={24} radius={"small"} />
         <div className={badgeWrap}>
-          <Skeleton width={70} height={25} radius={'small'}/>
-          <Skeleton width={50} height={25} radius={'small'}/>
+          <Skeleton width={70} height={25} radius={"small"} />
+          <Skeleton width={50} height={25} radius={"small"} />
         </div>
       </div>
     </div>
-  )
+  );
 }

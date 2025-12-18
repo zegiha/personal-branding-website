@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
-import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
+import { createVanillaExtractPlugin } from "@vanilla-extract/next-plugin";
 
 const withVanillaExtract = createVanillaExtractPlugin();
-import withBundleAnalyzer from '@next/bundle-analyzer'
+import withBundleAnalyzer from "@next/bundle-analyzer";
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -10,8 +10,8 @@ const nextConfig: NextConfig = {
   webpack(config: any) {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule: any) =>
-      rule.test?.test?.('.svg'),
-    )
+      rule.test?.test?.(".svg")
+    );
 
     config.module.rules.push(
       // Reapply the existing rule, but only for svg imports ending in ?url
@@ -25,20 +25,20 @@ const nextConfig: NextConfig = {
         test: /\.svg$/i,
         issuer: fileLoaderRule.issuer,
         resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
-        use: ['@svgr/webpack'],
-      },
-    )
+        use: ["@svgr/webpack"],
+      }
+    );
 
     // Modify the file loader rule to ignore *.svg, since we have it handled now.
-    fileLoaderRule.exclude = /\.svg$/i
+    fileLoaderRule.exclude = /\.svg$/i;
 
-    return config
+    return config;
   },
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'cdn.zegiha.work',
+        protocol: "https",
+        hostname: "cdn.zegiha.work",
       },
       {
         protocol: "https",
@@ -49,5 +49,5 @@ const nextConfig: NextConfig = {
 };
 
 export default withBundleAnalyzer({
-  enabled: process.env.ANALYZE === 'true',
+  enabled: process.env.ANALYZE === "true",
 })(withVanillaExtract(nextConfig));

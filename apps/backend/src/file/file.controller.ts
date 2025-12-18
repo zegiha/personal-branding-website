@@ -4,6 +4,7 @@ import {
   UseInterceptors,
   UploadedFiles,
   Body,
+  UseGuards,
 } from '@nestjs/common';
 import { AnyFilesInterceptor } from '@nestjs/platform-express';
 import {
@@ -13,6 +14,7 @@ import {
   ApiOperation,
   ApiTags,
 } from '@nestjs/swagger';
+import { AccessGuard } from 'src/auth/guard/access.guard';
 import { FileService } from './file.service';
 import { UploadImageUrlDto } from './dto/uploadImageUrl.dto';
 import { ImageResponseDto } from './dto/response/image.response.dto';
@@ -49,6 +51,7 @@ export class FileController {
     type: ImageResponseDto,
     isArray: true,
   })
+  @UseGuards(AccessGuard)
   @Post('upload/image/form-data')
   @UseInterceptors(AnyFilesInterceptor())
   async uploadImageFormData(
@@ -66,6 +69,7 @@ export class FileController {
     type: ImageResponseDto,
     isArray: true,
   })
+  @UseGuards(AccessGuard)
   @Post('upload/image/url')
   async uploadImageUrl(
     @Body() dto: UploadImageUrlDto,

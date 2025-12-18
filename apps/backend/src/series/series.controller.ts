@@ -7,6 +7,7 @@ import {
   Param,
   Delete,
   Patch,
+  UseGuards,
 } from '@nestjs/common';
 import {
   ApiCreatedResponse,
@@ -17,6 +18,7 @@ import {
   ApiTags,
   getSchemaPath,
 } from '@nestjs/swagger';
+import { AccessGuard } from 'src/auth/guard/access.guard';
 import { SeriesService } from './series.service';
 import { CreateSeriesDto } from './dto/createSeries.dto';
 import { GetSeriesDto } from './dto/getSeries.dto';
@@ -70,6 +72,7 @@ export class SeriesController {
     description: '생성된 시리즈 정보',
     type: SeriesResponseDto,
   })
+  @UseGuards(AccessGuard)
   @Post()
   async createSeries(@Body() dto: CreateSeriesDto): Promise<SeriesResponseDto> {
     return this.seriesService.createSeries(dto);
@@ -126,6 +129,7 @@ export class SeriesController {
     description: '수정된 시리즈 정보',
     type: SeriesResponseDto,
   })
+  @UseGuards(AccessGuard)
   @Patch(':id/article')
   async addArticle(
     @Param() params: SeriesIdParamDto,
@@ -146,6 +150,7 @@ export class SeriesController {
     description: '수정된 시리즈 정보',
     type: SeriesResponseDto,
   })
+  @UseGuards(AccessGuard)
   @Patch(':id/series')
   async addSeries(
     @Param() params: SeriesIdParamDto,
@@ -170,6 +175,7 @@ export class SeriesController {
     description: '수정된 시리즈 정보',
     type: SeriesResponseDto,
   })
+  @UseGuards(AccessGuard)
   @Delete(':id/article/:articleId')
   async removeArticleById(
     @Param('id') id: string,
@@ -194,6 +200,7 @@ export class SeriesController {
     description: '수정된 시리즈 정보',
     type: SeriesResponseDto,
   })
+  @UseGuards(AccessGuard)
   @Delete(':id/series/:seriesId')
   async removeSeriesById(
     @Param('id') id: string,

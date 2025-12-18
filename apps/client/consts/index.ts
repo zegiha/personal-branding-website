@@ -1,3 +1,1 @@
-export {
-  QUERY_KEYS
-} from './queryKeys'
+export { QUERY_KEYS } from "./queryKeys";

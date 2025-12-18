@@ -2,8 +2,9 @@ import { reactRouter } from "@react-router/dev/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
+import vitePluginDevtoolsJson from "vite-plugin-devtools-json"
 
 
 export default defineConfig({
-  plugins: [reactRouter(), tsconfigPaths(), vanillaExtractPlugin()],
+  plugins: [reactRouter(), tsconfigPaths(), vanillaExtractPlugin(), vitePluginDevtoolsJson()],
 });

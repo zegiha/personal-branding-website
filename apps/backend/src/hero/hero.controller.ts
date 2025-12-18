@@ -6,6 +6,7 @@ import {
   Body,
   Query,
   Param,
+  UseGuards,
 } from '@nestjs/common';
 import {
   ApiCreatedResponse,
@@ -16,6 +17,7 @@ import {
   ApiTags,
   getSchemaPath,
 } from '@nestjs/swagger';
+import { AccessGuard } from 'src/auth/guard/access.guard';
 import { HeroService } from './hero.service';
 import { CreateHeroDto } from './dto/createHero.dto';
 import { GetHeroesDto } from './dto/getHeroes.dto';
@@ -65,6 +67,7 @@ export class HeroController {
     description: '생성된 히어로 정보',
     type: HeroResponseDto,
   })
+  @UseGuards(AccessGuard)
   @Post()
   async createHero(@Body() dto: CreateHeroDto): Promise<HeroResponseDto> {
     return this.heroService.createHero(dto);
@@ -99,6 +102,7 @@ export class HeroController {
     description: '삭제 결과',
     type: DeleteHeroResponseDto,
   })
+  @UseGuards(AccessGuard)
   @Delete(':id')
   async deleteHero(
     @Param() params: HeroIdParamDto,

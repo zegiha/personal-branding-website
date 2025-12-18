@@ -7,6 +7,7 @@ import {
   Param,
   Patch,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
 import {
   ApiCreatedResponse,
@@ -17,6 +18,7 @@ import {
   ApiTags,
   getSchemaPath,
 } from '@nestjs/swagger';
+import { AccessGuard } from 'src/auth/guard/access.guard';
 import { ArticleService } from './article.service';
 import { CreateArticleDto } from './dto/createArticle.dto';
 import { UpdateArticleDto } from './dto/updateArticle.dto';
@@ -77,6 +79,7 @@ export class ArticleController {
     description: '생성된 아티클 정보',
     type: ArticleResponseDto,
   })
+  @UseGuards(AccessGuard)
   @Post()
   async createArticle(
     @Body() dto: CreateArticleDto,
@@ -135,6 +138,7 @@ export class ArticleController {
     description: '수정된 아티클 정보',
     type: ArticleResponseDto,
   })
+  @UseGuards(AccessGuard)
   @Patch(':id')
   async updateArticle(
     @Param() params: ArticleIdParamDto,
@@ -155,6 +159,7 @@ export class ArticleController {
     description: '삭제 처리 결과',
     type: DeleteArticleResponseDto,
   })
+  @UseGuards(AccessGuard)
   @Delete(':id')
   async deleteArticle(
     @Param() params: ArticleIdParamDto,
