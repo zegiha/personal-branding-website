@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import { useEffect, useRef } from 'react';
-import katex from 'katex';
-import 'katex/dist/katex.min.css';
+import { useEffect, useRef } from "react";
+import katex from "katex";
+import "katex/dist/katex.min.css";
 import type { TypeArticleEquation } from "../../type";
 import * as st from "./style.css";
 
@@ -17,7 +17,7 @@ export function ArticleEquation({ text }: TypeArticleEquation) {
           throwOnError: false,
         });
       } catch (error) {
-        console.error('KaTeX rendering error:', error);
+        console.error("KaTeX rendering error:", error);
       }
     }
   }, [text]);
